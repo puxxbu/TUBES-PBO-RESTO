@@ -176,7 +176,7 @@ public class MenuDAO {
     }
     
     
-public void deleteComputer(String id){
+public void deleteMenu(String id){
     con = dbCon.makeConnection();
     
     String sql = "DELETE FROM detail_menu WHERE id = '"
