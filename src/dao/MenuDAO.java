@@ -111,6 +111,47 @@ public class MenuDAO {
 //        
 //    }
     
+    public List<Menu> searchMenu(String query){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM detail_menu WHERE ("
+                + "id LIKE '%"+query+"%'"
+                + "OR nama_menu LIKE '%"+query+"%'"
+                + "OR deskripsi_menu LIKE '%"+query+"%'"
+                + "OR kategori LIKE '%"+query+"%'"
+                + "OR harga_menu LIKE '%"+query+"%')";
+        
+        System.out.println("Searching Menu...");
+        
+        List<Menu> list = new ArrayList<>();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs != null){
+                while(rs.next()){
+                    Menu m = new Menu(
+                            Integer.parseInt(rs.getString("id")),
+                            rs.getString("nama_menu"),
+                            rs.getString("deskripsi_menu"),
+                            rs.getString("kategori"),
+                            Integer.parseInt(rs.getString("harga_menu"))
+                    );
+                    list.add(m);
+                }
+            }
+            
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error Searching Menu...");
+            System.out.println(e);
+        }
+        dbCon.closeConnection();
+        return list;
+    }
+    
     public void updateMenu (Menu m, String id){
         con = dbCon.makeConnection();
         
