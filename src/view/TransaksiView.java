@@ -4,17 +4,38 @@
  */
 package view;
 
-/**
- *
- * @author asus
- */
+import control.MenuControl;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.table.TableModel;
+import model.Menu;
+import model.DetailPesanan;
+import model.AkunPegawai;
+import model.Pegawai;
+import model.Pembeli;
+import table.TableMenu;
+import table.TableTempMenu;
+
 public class TransaksiView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TransaksiView
-     */
+    private MenuControl mc;
+    String action = null;
+    List<Menu> listMenu;
+    List<Menu> tempListMenu = new ArrayList<>();
+    
+    
+    
     public TransaksiView() {
         initComponents();
+        mc = new MenuControl();
+        showMenu();
+        
+    }
+    
+    public void showMenu(){
+        tblMenu.setModel(mc.showDataMenu(""));
     }
 
     /**
@@ -43,7 +64,7 @@ public class TransaksiView extends javax.swing.JFrame {
         tanggalTransaksiInput = new javax.swing.JTextField();
         panelRound4 = new view.PanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblMenu = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -182,7 +203,7 @@ public class TransaksiView extends javax.swing.JFrame {
         panelRound4.setRoundTopLeft(20);
         panelRound4.setRoundTopRight(20);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -193,7 +214,12 @@ public class TransaksiView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tblMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMenuMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblMenu);
 
         jLabel4.setText("Pilihan Menu");
 
@@ -434,6 +460,15 @@ public class TransaksiView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tambahPesananBtnActionPerformed
 
+    private void tblMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMenuMouseClicked
+        // TODO add your handling code here:
+//        int clickedRow = tblMenu.getSelectedRow();
+//        
+//        TableModel tableModel = tblMenu.getModel();
+        
+        
+    }//GEN-LAST:event_tblMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -491,7 +526,6 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
@@ -508,5 +542,6 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JButton tambahBtn;
     private javax.swing.JButton tambahPesananBtn;
     private javax.swing.JTextField tanggalTransaksiInput;
+    private javax.swing.JTable tblMenu;
     // End of variables declaration//GEN-END:variables
 }
