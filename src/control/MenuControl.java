@@ -8,7 +8,7 @@ import java.util.List;
 import model.Menu;
 import dao.MenuDAO;
 import table.TableTempMenu;
-// import table.TableMenu menunggu nessa
+import table.TableMenu;
 
 
 public class MenuControl {
@@ -21,6 +21,18 @@ public class MenuControl {
 //
 //        return tableMahasiswa;
 //    }
+    
+    public List<Menu> showListMenu(){
+        List<Menu> dataMenu = mDao.showMenu();
+        return dataMenu;
+    }
+    
+    public TableMenu showDataMenu(String query){
+        List<Menu> dataMenu = mDao.searchMenu(query);
+        TableMenu tableMenu = new TableMenu(dataMenu);
+        
+        return tableMenu;
+    }
     
     public TableTempMenu showTempMenu(List <Menu> dataMenu){
         TableTempMenu tableTempMenu = new TableTempMenu(dataMenu);
