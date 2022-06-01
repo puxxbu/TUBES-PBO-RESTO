@@ -10,10 +10,15 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+import model.Pegawai;
+import model.Menu;
+import model.DetailPesanan;
 
 public class RiwayatPembelianDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+//    public List<DetailPesanan> show(){
+//        
+//    }
 }
