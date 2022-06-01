@@ -31,11 +31,22 @@ public class TransaksiView extends javax.swing.JFrame {
         initComponents();
         mc = new MenuControl();
         showMenu();
+        clearText();
         
     }
     
     public void showMenu(){
         tblMenu.setModel(mc.showDataMenu(""));
+    }
+    
+    public void clearText(){
+        namaMenuField.setText("");
+        hargaMenuField.setText("");
+        deskripsiMenuField.setText("");
+        bnyakPesananInputField.setText("");
+        namaPembeliInput.setText("");
+        nomorHPInput.setText("");
+        tanggalTransaksiInput.setText("");
     }
 
     /**
@@ -51,7 +62,7 @@ public class TransaksiView extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblTempMenu = new javax.swing.JTable();
         tambahPesananBtn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         batalBtn2 = new javax.swing.JButton();
@@ -66,15 +77,15 @@ public class TransaksiView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblMenu = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        namaMenuField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        hargaMenuField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        bnyakPesananInput = new javax.swing.JTextField();
+        deskripsiMenuField = new javax.swing.JTextArea();
+        bnyakPesananInputField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         tambahBtn = new javax.swing.JButton();
         batalBtn1 = new javax.swing.JButton();
@@ -98,7 +109,7 @@ public class TransaksiView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(20);
         panelRound1.setRoundTopRight(20);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblTempMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -109,7 +120,7 @@ public class TransaksiView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tblTempMenu);
 
         tambahPesananBtn.setText("Tambah Pesanan");
         tambahPesananBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -223,9 +234,9 @@ public class TransaksiView extends javax.swing.JFrame {
 
         jLabel4.setText("Pilihan Menu");
 
-        jTextField1.setBackground(new java.awt.Color(210, 210, 210));
-        jTextField1.setText("test");
-        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        namaMenuField.setBackground(new java.awt.Color(210, 210, 210));
+        namaMenuField.setText("test");
+        namaMenuField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel5.setText("Detail Menu");
 
@@ -233,24 +244,24 @@ public class TransaksiView extends javax.swing.JFrame {
 
         jLabel7.setText("Deskripsi Menu :");
 
-        jTextField3.setBackground(new java.awt.Color(210, 210, 210));
-        jTextField3.setText("test");
-        jTextField3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        hargaMenuField.setBackground(new java.awt.Color(210, 210, 210));
+        hargaMenuField.setText("test");
+        hargaMenuField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel8.setText("Harga");
 
-        jTextArea1.setBackground(new java.awt.Color(210, 210, 210));
-        jTextArea1.setColumns(5);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("asda\nsdas\nasda\nsada");
-        jTextArea1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jTextArea1.setCaretColor(new java.awt.Color(210, 210, 210));
-        jTextArea1.setDisabledTextColor(new java.awt.Color(210, 210, 210));
-        jScrollPane2.setViewportView(jTextArea1);
+        deskripsiMenuField.setBackground(new java.awt.Color(210, 210, 210));
+        deskripsiMenuField.setColumns(5);
+        deskripsiMenuField.setRows(5);
+        deskripsiMenuField.setText("asda\nsdas\nasda\nsada");
+        deskripsiMenuField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        deskripsiMenuField.setCaretColor(new java.awt.Color(210, 210, 210));
+        deskripsiMenuField.setDisabledTextColor(new java.awt.Color(210, 210, 210));
+        jScrollPane2.setViewportView(deskripsiMenuField);
 
-        bnyakPesananInput.addActionListener(new java.awt.event.ActionListener() {
+        bnyakPesananInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bnyakPesananInputActionPerformed(evt);
+                bnyakPesananInputFieldActionPerformed(evt);
             }
         });
 
@@ -271,10 +282,10 @@ public class TransaksiView extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addGap(26, 26, 26)
                         .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bnyakPesananInput, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bnyakPesananInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                                .addComponent(jTextField1)
+                                .addComponent(hargaMenuField, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                                .addComponent(namaMenuField)
                                 .addComponent(jScrollPane2)))
                         .addGap(81, 81, 81))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
@@ -305,18 +316,18 @@ public class TransaksiView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(namaMenuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hargaMenuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bnyakPesananInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bnyakPesananInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -452,9 +463,9 @@ public class TransaksiView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bnyakPesananInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnyakPesananInputActionPerformed
+    private void bnyakPesananInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnyakPesananInputFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bnyakPesananInputActionPerformed
+    }//GEN-LAST:event_bnyakPesananInputFieldActionPerformed
 
     private void tambahPesananBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahPesananBtnActionPerformed
         // TODO add your handling code here:
@@ -462,9 +473,13 @@ public class TransaksiView extends javax.swing.JFrame {
 
     private void tblMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMenuMouseClicked
         // TODO add your handling code here:
-//        int clickedRow = tblMenu.getSelectedRow();
-//        
-//        TableModel tableModel = tblMenu.getModel();
+        int clickedRow = tblMenu.getSelectedRow();
+        
+        TableModel tableModel = tblMenu.getModel();
+        
+        namaMenuField.setText(tableModel.getValueAt(clickedRow, 1).toString());
+        hargaMenuField.setText(tableModel.getValueAt(clickedRow, 4).toString());
+        deskripsiMenuField.setText(tableModel.getValueAt(clickedRow, 2).toString());
         
         
     }//GEN-LAST:event_tblMenuMouseClicked
@@ -508,7 +523,9 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JLabel LabelPembeli;
     private javax.swing.JButton batalBtn1;
     private javax.swing.JButton batalBtn2;
-    private javax.swing.JTextField bnyakPesananInput;
+    private javax.swing.JTextField bnyakPesananInputField;
+    private javax.swing.JTextArea deskripsiMenuField;
+    private javax.swing.JTextField hargaMenuField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -526,11 +543,8 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JTextField namaMenuField;
     private javax.swing.JTextField namaPembeliInput;
     private javax.swing.JTextField nomorHPInput;
     private view.PanelRound panelRound1;
@@ -543,5 +557,6 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JButton tambahPesananBtn;
     private javax.swing.JTextField tanggalTransaksiInput;
     private javax.swing.JTable tblMenu;
+    private javax.swing.JTable tblTempMenu;
     // End of variables declaration//GEN-END:variables
 }
