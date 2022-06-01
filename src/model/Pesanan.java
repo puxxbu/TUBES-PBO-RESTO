@@ -10,23 +10,29 @@ package model;
  */
 public class Pesanan {
     private int id;
-    private int id_pembeli;
+//    private int id_pembeli;
+//    private int id_pegawai;
+    private Pembeli pembeli;
+    private Pegawai pegawai;
     private double sub_total;
     private String tanggal_pesanan;
 
-    public Pesanan(int id, int id_pembeli, double sub_total, String tanggal_pesanan) {
+//    public Pesanan(int id, int id_pembeli, int id_pegawai, double sub_total, String tanggal_pesanan) {
+//        this.id = id;
+//        this.id_pembeli = id_pembeli;
+//        this.id_pegawai = id_pegawai;
+//        this.sub_total = sub_total;
+//        this.tanggal_pesanan = tanggal_pesanan;
+//    }
+
+    public Pesanan(int id, Pembeli pembeli, Pegawai pegawai, double sub_total, String tanggal_pesanan) {
         this.id = id;
-        this.id_pembeli = id_pembeli;
+        this.pembeli = pembeli;
+        this.pegawai = pegawai;
         this.sub_total = sub_total;
         this.tanggal_pesanan = tanggal_pesanan;
     }
-
-    public Pesanan(int id_pembeli, double sub_total, String tanggal_pesanan) {
-        this.id_pembeli = id_pembeli;
-        this.sub_total = sub_total;
-        this.tanggal_pesanan = tanggal_pesanan;
-    }
-
+    
     public int getId() {
         return id;
     }
@@ -35,14 +41,39 @@ public class Pesanan {
         this.id = id;
     }
 
-    public int getId_pembeli() {
-        return id_pembeli;
+//    public int getId_pembeli() {
+//        return id_pembeli;
+//    }
+//
+//    public void setId_pembeli(int id_pembeli) {
+//        this.id_pembeli = id_pembeli;
+//    }
+//
+//    public int getId_pegawai() {
+//        return id_pegawai;
+//    }
+//
+//    public void setId_pegawai(int id_pegawai) {
+//        this.id_pegawai = id_pegawai;
+//    }
+
+    public Pembeli getPembeli() {
+        return pembeli;
     }
 
-    public void setId_pembeli(int id_pembeli) {
-        this.id_pembeli = id_pembeli;
+    public void setPembeli(Pembeli pembeli) {
+        this.pembeli = pembeli;
     }
 
+    public Pegawai getPegawai() {
+        return pegawai;
+    }
+
+    public void setPegawai(Pegawai pegawai) {
+        this.pegawai = pegawai;
+    }
+
+    
     public double getSub_total() {
         return sub_total;
     }
@@ -58,6 +89,8 @@ public class Pesanan {
     public void setTanggal_pesanan(String tanggal_pesanan) {
         this.tanggal_pesanan = tanggal_pesanan;
     }
+
+    
     
     
     
