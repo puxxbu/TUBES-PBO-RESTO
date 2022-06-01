@@ -10,22 +10,50 @@ package model;
  */
 public class AkunPegawai {
     private int id;
-    private int id_pegawai;
+    private Pegawai pegawai;
     private String username;
     private String password;
 
-    public AkunPegawai(int id, int id_pegawai, String username, String password) {
+    public AkunPegawai(int id, Pegawai pegawai, String username, String password) {
         this.id = id;
-        this.id_pegawai = id_pegawai;
+        this.pegawai = pegawai;
         this.username = username;
         this.password = password;
     }
 
-    public AkunPegawai(int id_pegawai, String username, String password) {
-        this.id_pegawai = id_pegawai;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Pegawai getPegawai() {
+        return pegawai;
+    }
+
+    public void setPegawai(Pegawai pegawai) {
+        this.pegawai = pegawai;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
+
+    
     
     
 }
