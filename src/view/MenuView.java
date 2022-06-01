@@ -1,20 +1,67 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
+
+import control.MenuControl;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import model.Menu;
+import table.TableMenu;
+import exception.InputanKosongException;
 
 /**
  *
  * @author asus
  */
 public class MenuView extends javax.swing.JFrame {
+    
+    private MenuControl menuControl;
+    String action = null;
+    List<Menu> listMenu;
+    int selectedId = 0;
 
     /**
      * Creates new form MenuView
      */
     public MenuView() {
         initComponents();
+        setComponents(false);
+        setEditDeleteBtn(false);
+        menuControl = new MenuControl();
+        showMenu();
+        setRadioKategori(false);
+    }
+    
+    public void setComponents(boolean value){
+        
+        cancelAddingMenuBtn.setEnabled(value);
+        
+        namaMenuInput.setEnabled(value);
+        deskripsiMenuInput.setEnabled(value);
+        hargaMenuInput.setEnabled(value);
+    }
+    
+    public void setEditDeleteBtn(boolean value){
+        editMenuBtn.setEnabled(value);
+        deleteMenuBtn.setEnabled(value);
+    }
+    
+    public void setRadioKategori(boolean value){
+        makananjRadioButton.setEnabled(value);
+        minumanjRadioButton.setEnabled(value);
+    }
+    
+    public void showMenu(){
+        tableMenu.setModel(menuControl.showDataMenu(""));
+    }
+    
+    public void clearText(){
+        searchInput.setText("");
+        namaMenuInput.setText("");
+        deskripsiMenuInput.setText("");
+        hargaMenuInput.setText("");
+        
+        kategoriGroup.clearSelection();
     }
 
     /**
@@ -26,6 +73,7 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kategoriGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
@@ -149,6 +197,7 @@ public class MenuView extends javax.swing.JFrame {
 
         cancelAddingMenuBtn.setText("Batal ");
 
+        kategoriGroup.add(makananjRadioButton);
         makananjRadioButton.setText("Makanan ");
         makananjRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +205,7 @@ public class MenuView extends javax.swing.JFrame {
             }
         });
 
+        kategoriGroup.add(minumanjRadioButton);
         minumanjRadioButton.setText("Minuman");
         minumanjRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -410,6 +460,7 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.ButtonGroup kategoriGroup;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JRadioButton makananjRadioButton;
     private javax.swing.JRadioButton minumanjRadioButton;

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="kategoriGroup">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -322,6 +326,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="makananjRadioButton">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="kategoriGroup"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Makanan "/>
                   </Properties>
                   <Events>
@@ -330,6 +337,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="minumanjRadioButton">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="kategoriGroup"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Minuman"/>
                   </Properties>
                   <Events>
