@@ -13,12 +13,20 @@ import java.util.List;
 import model.Pegawai;
 import model.Menu;
 import model.DetailPesanan;
+import model.Pesanan;
 
 public class RiwayatPembelianDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+//    tabel atas(?)  
+//    public List<Pesanan> show(){
+//        
+//    }
+    
+//    tabel bawah(?)
 //    public List<DetailPesanan> show(){
 //        
 //    }
+    
 }
