@@ -6,15 +6,15 @@ package table;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
-import model.Menu;
+import model.TempMenu;
 /**
  *
  * @author Teprutz
  */
 public class TableTempMenu extends AbstractTableModel{
-    private List<Menu> list;
+    private List<TempMenu> list;
 
-    public TableTempMenu (List<Menu> list) {
+    public TableTempMenu (List<TempMenu> list) {
         this.list = list;
     }
     
@@ -31,12 +31,13 @@ public class TableTempMenu extends AbstractTableModel{
     @Override
    public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
+            
             case 0:
-                return list.get(rowIndex).getId();
-            case 1:
                 return list.get(rowIndex).getNama_menu();
-            case 2:
+            case 1:
                 return list.get(rowIndex).getHarga_menu();
+            case 2:
+                return list.get(rowIndex).getJumlah_pesanan();
             
             default:
                 return null;
@@ -46,12 +47,13 @@ public class TableTempMenu extends AbstractTableModel{
     @Override
     public String getColumnName(int column) {
         switch (column) {
+            
             case 0:
-                return "ID";
-            case 1:
                 return "Nama Menu";
-            case 2:
+            case 1:
                 return "Harga Menu";
+            case 2:
+                return "Jumlah Pesanan";
             default:
                 return null;
         }

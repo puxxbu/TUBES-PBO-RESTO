@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.TableModel;
 import model.Menu;
+import model.TempMenu;
 import model.DetailPesanan;
 import model.AkunPegawai;
 import model.Pegawai;
@@ -19,11 +20,11 @@ import table.TableMenu;
 import table.TableTempMenu;
 
 public class TransaksiView extends javax.swing.JFrame {
-
+    private int count=0;
     private MenuControl mc;
     String action = null;
     List<Menu> listMenu;
-    List<Menu> tempListMenu = new ArrayList<>();
+    List<TempMenu> tempListMenu = new ArrayList<>();
     
     
     
@@ -268,6 +269,11 @@ public class TransaksiView extends javax.swing.JFrame {
         jLabel9.setText("Input banyak Pesanan");
 
         tambahBtn.setText("Tambah");
+        tambahBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tambahBtnActionPerformed(evt);
+            }
+        });
 
         batalBtn1.setText("batal");
 
@@ -474,15 +480,71 @@ public class TransaksiView extends javax.swing.JFrame {
     private void tblMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMenuMouseClicked
         // TODO add your handling code here:
         int clickedRow = tblMenu.getSelectedRow();
+        List<Menu> tempData = new ArrayList<>();
+        TempMenu tempMenu = null;
         
         TableModel tableModel = tblMenu.getModel();
+        
+        int selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 0).toString());
         
         namaMenuField.setText(tableModel.getValueAt(clickedRow, 1).toString());
         hargaMenuField.setText(tableModel.getValueAt(clickedRow, 4).toString());
         deskripsiMenuField.setText(tableModel.getValueAt(clickedRow, 2).toString());
         
+        // untuk memasukan data yang dipilih ke list menu temp
+//        tempData = mc.searchMenu(namaMenuField.getText());
+//        count++;
+//        tempMenu = new TempMenu(tempData.get(0).getNama_menu(), 
+//                tempData.get(0).getHarga_menu(),
+//                Integer.parseInt(bnyakPesananInputField.getText()));
+//        
+//        tempListMenu.add(tempMenu);
+//        tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
         
+        
+        
+               
     }//GEN-LAST:event_tblMenuMouseClicked
+
+    private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
+        // TODO add your handling code here:
+        List<Menu> tempData = new ArrayList<>();
+        TempMenu tempMenu = null;
+        String check = "tambah";
+        
+        tempData = mc.searchMenu(namaMenuField.getText());
+        tempMenu = new TempMenu(tempData.get(0).getNama_menu(), 
+                tempData.get(0).getHarga_menu(),
+                Integer.parseInt(bnyakPesananInputField.getText()));
+        
+        
+        
+        
+        if (tempListMenu.isEmpty()) {
+            tempListMenu.add(tempMenu);
+            System.out.println("kosong");
+        }else{
+            for (int i = 0; i < tempListMenu.size(); i++) {
+            if (tempListMenu.get(i).getNama_menu().equals(tempMenu.getNama_menu())) {
+                tempListMenu.get(i).setJumlah_pesanan(tempMenu.getJumlah_pesanan());
+                check= new String("update");
+                break;
+            }
+         
+            }
+            if (!check.equals("update")) {
+                tempListMenu.add(tempMenu);
+            }
+        }
+        
+        // kurang tombol update jika menu sudah ada di temp menu
+        // tambah fitur hapus temp  menu???
+       
+      
+        tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+        
+        
+    }//GEN-LAST:event_tambahBtnActionPerformed
 
     /**
      * @param args the command line arguments
