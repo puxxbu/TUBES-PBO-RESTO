@@ -31,9 +31,9 @@ public class TransaksiView extends javax.swing.JFrame {
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        tambahPesananBtn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        batalBtn2 = new javax.swing.JButton();
         panelRound2 = new view.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         namaPembeliInput = new javax.swing.JTextField();
@@ -53,10 +53,10 @@ public class TransaksiView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        namaPembeliInput3 = new javax.swing.JTextField();
+        bnyakPesananInput = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        tambahBtn = new javax.swing.JButton();
+        batalBtn1 = new javax.swing.JButton();
         panelRound3 = new view.PanelRound();
         jLabel12 = new javax.swing.JLabel();
         panelRound5 = new view.PanelRound();
@@ -90,16 +90,16 @@ public class TransaksiView extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable2);
 
-        jButton3.setText("Tambah Pesanan");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        tambahPesananBtn.setText("Tambah Pesanan");
+        tambahPesananBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                tambahPesananBtnActionPerformed(evt);
             }
         });
 
         jLabel10.setText("Pesanan Sementara");
 
-        jButton4.setText("batal");
+        batalBtn2.setText("batal");
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
@@ -113,9 +113,9 @@ public class TransaksiView extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(tambahPesananBtn)
                 .addGap(22, 22, 22)
-                .addComponent(jButton4)
+                .addComponent(batalBtn2)
                 .addContainerGap())
         );
         panelRound1Layout.setVerticalGroup(
@@ -127,8 +127,8 @@ public class TransaksiView extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(tambahPesananBtn)
+                    .addComponent(batalBtn2))
                 .addGap(18, 18, 18))
         );
 
@@ -222,17 +222,17 @@ public class TransaksiView extends javax.swing.JFrame {
         jTextArea1.setDisabledTextColor(new java.awt.Color(210, 210, 210));
         jScrollPane2.setViewportView(jTextArea1);
 
-        namaPembeliInput3.addActionListener(new java.awt.event.ActionListener() {
+        bnyakPesananInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namaPembeliInput3ActionPerformed(evt);
+                bnyakPesananInputActionPerformed(evt);
             }
         });
 
         jLabel9.setText("Input banyak Pesanan");
 
-        jButton1.setText("Tambah");
+        tambahBtn.setText("Tambah");
 
-        jButton2.setText("batal");
+        batalBtn1.setText("batal");
 
         javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
         panelRound4.setLayout(panelRound4Layout);
@@ -245,16 +245,16 @@ public class TransaksiView extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addGap(26, 26, 26)
                         .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(namaPembeliInput3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bnyakPesananInput, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
                                 .addComponent(jTextField1)
                                 .addComponent(jScrollPane2)))
                         .addGap(81, 81, 81))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(tambahBtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(batalBtn1)
                         .addGap(26, 26, 26))))
             .addGroup(panelRound4Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
@@ -290,12 +290,12 @@ public class TransaksiView extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(namaPembeliInput3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bnyakPesananInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(tambahBtn)
+                    .addComponent(batalBtn1))
                 .addGap(16, 16, 16))
         );
 
@@ -426,13 +426,13 @@ public class TransaksiView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void namaPembeliInput3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInput3ActionPerformed
+    private void bnyakPesananInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnyakPesananInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_namaPembeliInput3ActionPerformed
+    }//GEN-LAST:event_bnyakPesananInputActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void tambahPesananBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahPesananBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_tambahPesananBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -471,10 +471,9 @@ public class TransaksiView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelPembeli;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton batalBtn1;
+    private javax.swing.JButton batalBtn2;
+    private javax.swing.JTextField bnyakPesananInput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -499,7 +498,6 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField namaPembeliInput;
-    private javax.swing.JTextField namaPembeliInput3;
     private javax.swing.JTextField nomorHPInput;
     private view.PanelRound panelRound1;
     private view.PanelRound panelRound2;
@@ -507,6 +505,8 @@ public class TransaksiView extends javax.swing.JFrame {
     private view.PanelRound panelRound4;
     private view.PanelRound panelRound5;
     private view.PanelRound panelRound6;
+    private javax.swing.JButton tambahBtn;
+    private javax.swing.JButton tambahPesananBtn;
     private javax.swing.JTextField tanggalTransaksiInput;
     // End of variables declaration//GEN-END:variables
 }
