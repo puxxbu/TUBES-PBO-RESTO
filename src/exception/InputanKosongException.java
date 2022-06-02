@@ -8,7 +8,7 @@ package exception;
  *
  * @author Teprutz tes
  */ 
-public class InputanKosongException {
+public class InputanKosongException extends Exception {
     public String message(){
         return "Field input tidak boleh kosong!";
     }
