@@ -90,6 +90,11 @@ public class HistoryView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableDetailMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDetailMenuMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tableDetailMenu);
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
@@ -309,7 +314,13 @@ public class HistoryView extends javax.swing.JFrame {
 
     private void tableRiwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableRiwayatMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_tableRiwayatMouseClicked
+
+    private void tableDetailMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDetailMenuMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tableDetailMenuMouseClicked
 
     
     /**

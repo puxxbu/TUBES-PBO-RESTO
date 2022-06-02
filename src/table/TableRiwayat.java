@@ -40,6 +40,10 @@ public class TableRiwayat extends AbstractTableModel {
                 return list.get(rowIndex).getSub_total();
             case 4:
                 return list.get(rowIndex).getTanggal_pesanan();
+            case 5:
+                return list.get(rowIndex).getPembeli().getId();
+            case 6:
+                return list.get(rowIndex).getPegawai().getId();
             default:
                 return null;
                 
