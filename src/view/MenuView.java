@@ -135,6 +135,11 @@ public class MenuView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMenuMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tableMenu);
 
         searchInput.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +225,11 @@ public class MenuView extends javax.swing.JFrame {
         });
 
         cancelAddingMenuBtn.setText("Batal ");
+        cancelAddingMenuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelAddingMenuBtnActionPerformed(evt);
+            }
+        });
 
         kategoriGroup.add(makananjRadioButton);
         makananjRadioButton.setText("Makanan ");
@@ -510,8 +520,8 @@ public class MenuView extends javax.swing.JFrame {
         // edit menu
         setComponents(true);
         setRadioKategori(true);
-        clearText();
         action = "Ubah";
+        showMenu();
         
     }//GEN-LAST:event_editMenuBtnActionPerformed
 
@@ -534,30 +544,82 @@ public class MenuView extends javax.swing.JFrame {
                 }
                 break;
             case 1:
-                JOptionPane.showConfirmDialog(null, "Data batal dihapus!");
+                JOptionPane.showConfirmDialog(null, "Data batal dihapus!", 
+                        "Konfirmasi", JOptionPane.CLOSED_OPTION);
                 break;
         }
     }//GEN-LAST:event_deleteMenuBtnActionPerformed
 
     private void saveMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuBtnActionPerformed
         // simpan
-        String kategori = "";
         
-        if(makananjRadioButton.isSelected()){
-            kategori = "Makanan";
-        } else if(minumanjRadioButton.isSelected()){
-            kategori = "Minuman";
+        
+        try{
+            String kategori = "";
+
+            if(makananjRadioButton.isSelected()){
+                kategori = "Makanan";
+            } else if(minumanjRadioButton.isSelected()){
+                kategori = "Minuman";
+            }
+
+            Menu m = new Menu(selectedId, namaMenuInput.getText(), deskripsiMenuInput.getText(),
+                    kategori, Integer.parseInt(hargaMenuInput.getText()));
+
+            if(action.equals("Tambah")){
+                menuControl.insertDataMenu(m);
+            } else {
+                menuControl.updateDataMenu(m);
+            }
+
+            clearText();
+            showMenu();
+            setComponents(false);
+            setRadioKategori(false);
+            kategoriGroup.clearSelection();
+
+            setEditDeleteBtn(false);
+        }catch(Exception e){
+            System.out.println("Error" + e.getMessage());
         }
         
-        Menu m = new Menu(namaMenuInput.getText(), deskripsiMenuInput.getText(),
-                kategori, Integer.parseInt(hargaMenuInput.getText()));
-        
-        if(action.equals("Tambah")){
-            menuControl.insertDataMenu(m);
-        } else {
-            menuControl.updateDataMenu(m);
-        }
     }//GEN-LAST:event_saveMenuBtnActionPerformed
+
+    private void tableMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMenuMouseClicked
+        int indexMenu = -1;
+        setEditDeleteBtn(true);
+        setComponents(false);
+        setRadioKategori(false);
+        
+        kategoriGroup.clearSelection();
+        
+        int clickedRow = tableMenu.getSelectedRow();
+        TableModel tableModel = tableMenu.getModel();
+        
+        selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 0).toString());
+        namaMenuInput.setText(tableModel.getValueAt(clickedRow, 1).toString());
+        deskripsiMenuInput.setText(tableModel.getValueAt(clickedRow, 2).toString());
+        hargaMenuInput.setText(tableModel.getValueAt(clickedRow, 4).toString());
+        
+        String selectedKategori = tableModel.getValueAt(clickedRow, 3).toString();
+        switch(selectedKategori){
+            case "Makanan":
+                makananjRadioButton.setSelected(true);
+                break;
+            case "Minuman":
+                minumanjRadioButton.setSelected(true);
+                break;
+        }
+        
+    }//GEN-LAST:event_tableMenuMouseClicked
+
+    private void cancelAddingMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelAddingMenuBtnActionPerformed
+        // btn cancel
+        setComponents(false);
+        setEditDeleteBtn(false);
+        setRadioKategori(false);
+        clearText();
+    }//GEN-LAST:event_cancelAddingMenuBtnActionPerformed
 
     /**
      * @param args the command line arguments
