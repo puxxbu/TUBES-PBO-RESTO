@@ -593,7 +593,10 @@ public class TransaksiView extends javax.swing.JFrame {
     }//GEN-LAST:event_riwayatPesananPanelMouseClicked
 
     private void editMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMenuLabelMouseClicked
-        // TODO add your handling code here:
+        // klik panel edit menu
+        MenuView mv = new MenuView();
+        this.dispose();
+        mv.setVisible(true);
     }//GEN-LAST:event_editMenuLabelMouseClicked
 
     private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked

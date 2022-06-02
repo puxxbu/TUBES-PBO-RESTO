@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import model.Menu;
+import dao.MenuDAO;
 import table.TableMenu;
 import exception.InputanKosongException;
 
@@ -30,6 +31,7 @@ public class MenuView extends javax.swing.JFrame {
         menuControl = new MenuControl();
         showMenu();
         setRadioKategori(false);
+//        setActionCommandRadio();
     }
     
     public void setComponents(boolean value){
@@ -64,6 +66,11 @@ public class MenuView extends javax.swing.JFrame {
         
         kategoriGroup.clearSelection();
     }
+    
+//    public void setActionCommandRadio(){
+//        makananjRadioButton.setActionCommand("Makanan");
+//        minumanjRadioButton.setActionCommand("Minuman");
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -144,8 +151,18 @@ public class MenuView extends javax.swing.JFrame {
         });
 
         editMenuBtn.setText("Ubah Menu");
+        editMenuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editMenuBtnActionPerformed(evt);
+            }
+        });
 
         deleteMenuBtn.setText("Hapus Menu");
+        deleteMenuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMenuBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
@@ -221,6 +238,11 @@ public class MenuView extends javax.swing.JFrame {
         });
 
         saveMenuBtn.setText("Simpan");
+        saveMenuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveMenuBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
@@ -425,7 +447,14 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_searchInputActionPerformed
 
     private void addMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMenuBtnActionPerformed
-        // TODO add your handling code here:
+        // tambah menu
+        setComponents(true);
+        setRadioKategori(true);
+        kategoriGroup.clearSelection();
+        
+        clearText();
+        searchInput.setText("");
+        action = "Tambah";
     }//GEN-LAST:event_addMenuBtnActionPerformed
 
     private void makananjRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makananjRadioButtonActionPerformed
@@ -476,6 +505,59 @@ public class MenuView extends javax.swing.JFrame {
             System.out.println("error : " + e.getMessage());
         }
     }//GEN-LAST:event_searchMenuBtnActionPerformed
+
+    private void editMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMenuBtnActionPerformed
+        // edit menu
+        setComponents(true);
+        setRadioKategori(true);
+        clearText();
+        action = "Ubah";
+        
+    }//GEN-LAST:event_editMenuBtnActionPerformed
+
+    private void deleteMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMenuBtnActionPerformed
+        // hapus menu
+        int getAnswer = JOptionPane.showConfirmDialog(rootPane, "Apakah yakin ingin menghapus menu ini?",
+                        "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        
+        switch(getAnswer){
+            case 0:
+                try{
+                    menuControl.deleteDataMenu(selectedId);
+                    clearText();
+                    showMenu();
+                    setComponents(false);
+                    setEditDeleteBtn(false);
+                    setRadioKategori(false);
+                }catch(Exception e){
+                    System.out.println("Error " + e.getMessage());
+                }
+                break;
+            case 1:
+                JOptionPane.showConfirmDialog(null, "Data batal dihapus!");
+                break;
+        }
+    }//GEN-LAST:event_deleteMenuBtnActionPerformed
+
+    private void saveMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuBtnActionPerformed
+        // simpan
+        String kategori = "";
+        
+        if(makananjRadioButton.isSelected()){
+            kategori = "Makanan";
+        } else if(minumanjRadioButton.isSelected()){
+            kategori = "Minuman";
+        }
+        
+        Menu m = new Menu(namaMenuInput.getText(), deskripsiMenuInput.getText(),
+                kategori, Integer.parseInt(hargaMenuInput.getText()));
+        
+        if(action.equals("Tambah")){
+            menuControl.insertDataMenu(m);
+        } else {
+            menuControl.updateDataMenu(m);
+        }
+    }//GEN-LAST:event_saveMenuBtnActionPerformed
 
     /**
      * @param args the command line arguments

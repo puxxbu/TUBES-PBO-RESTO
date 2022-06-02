@@ -152,21 +152,20 @@ public class MenuDAO {
         return list;
     }
     
-    public void updateMenu (Menu m, String id){
+    public void updateMenu (Menu m){
         con = dbCon.makeConnection();
         
-        String sql = "UPDATE detail_menu SET id = '" +m.getId() +"',"
-                + "nama_menu = '" + m.getNama_menu() + "',"
+        String sql = "UPDATE detail_menu SET nama_menu = '" + m.getNama_menu() + "',"
                 + "deskripsi_menu = '" + m.getDeskripsi_menu() + "',"
                 + "kategori = '" + m.getKategori()+ "',"
                 + "harga_menu = '" + m.getHarga_menu()+ "' "
-                + "WHERE id = '" + id + "'";
+                + "WHERE id = "+m.getId()+"";
         System.out.println("Editing ...");
         
         try {
             Statement statement = con.createStatement();
             int result = statement.executeUpdate(sql);
-            System.out.println("Edited " + result + " Menu " + id);
+            System.out.println("Edited " + result + " Menu " + m.getId());
             statement.close();
         } catch (Exception e) {
             System.out.println("Error reading database...");
@@ -176,7 +175,7 @@ public class MenuDAO {
     }
     
     
-public void deleteMenu(String id){
+public void deleteMenu(int id){
     con = dbCon.makeConnection();
     
     String sql = "DELETE FROM detail_menu WHERE id = '"

@@ -50,11 +50,11 @@ public class MenuControl {
         mDao.insertMenu(m);
     }
     
-    public void updateDataMenu(Menu m,String id){
-        mDao.updateMenu(m, id);
+    public void updateDataMenu(Menu m){
+        mDao.updateMenu(m);
     }
     
-    public void deleteDataMenu(String id){
+    public void deleteDataMenu(int id){
         mDao.deleteMenu(id);
     }
 }
