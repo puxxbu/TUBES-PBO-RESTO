@@ -95,6 +95,7 @@ public class MenuView extends javax.swing.JFrame {
         cancelAddingMenuBtn = new javax.swing.JButton();
         makananjRadioButton = new javax.swing.JRadioButton();
         minumanjRadioButton = new javax.swing.JRadioButton();
+        saveMenuBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         tambahPegawaiPanel = new view.PanelRound();
         tambahPegawaiLabel = new javax.swing.JLabel();
@@ -213,6 +214,8 @@ public class MenuView extends javax.swing.JFrame {
             }
         });
 
+        saveMenuBtn.setText("Simpan");
+
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
         panelRound2Layout.setHorizontalGroup(
@@ -221,14 +224,19 @@ public class MenuView extends javax.swing.JFrame {
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(namaMenuInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
                             .addComponent(hargaMenuInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(deskripsiMenuInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(deskripsiMenuInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelRound2Layout.createSequentialGroup()
+                                .addComponent(addMenuBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(saveMenuBtn)
+                                .addGap(74, 74, 74))))
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(makananjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,8 +245,6 @@ public class MenuView extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(addMenuBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cancelAddingMenuBtn)
                 .addGap(24, 24, 24))
         );
@@ -266,7 +272,8 @@ public class MenuView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addMenuBtn)
-                    .addComponent(cancelAddingMenuBtn))
+                    .addComponent(cancelAddingMenuBtn)
+                    .addComponent(saveMenuBtn))
                 .addGap(29, 29, 29))
         );
 
@@ -504,6 +511,7 @@ public class MenuView extends javax.swing.JFrame {
     private view.PanelRound panelRound2;
     private javax.swing.JLabel riwayatPesananLabel;
     private view.PanelRound riwayatPesananPanel;
+    private javax.swing.JButton saveMenuBtn;
     private javax.swing.JTextField searchInput;
     private javax.swing.JButton searchMenuBtn;
     private javax.swing.JTable tableMenu;

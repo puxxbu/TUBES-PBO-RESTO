@@ -53,6 +53,7 @@ public class PegawaiView extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         usernameInput = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        saveBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         panelRound4 = new view.PanelRound();
         jLabel15 = new javax.swing.JLabel();
@@ -192,6 +193,8 @@ public class PegawaiView extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        saveBtn.setText("simpan");
+
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
         panelRound2Layout.setHorizontalGroup(
@@ -208,7 +211,7 @@ public class PegawaiView extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(shifMulaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(79, 79, 79)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
@@ -216,7 +219,9 @@ public class PegawaiView extends javax.swing.JFrame {
                         .addGap(76, 76, 76))
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(saveBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRound2Layout.createSequentialGroup()
@@ -242,7 +247,8 @@ public class PegawaiView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
-                            .addComponent(jButton4))
+                            .addComponent(jButton4)
+                            .addComponent(saveBtn))
                         .addGap(15, 15, 15))
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -453,6 +459,7 @@ public class PegawaiView extends javax.swing.JFrame {
     private view.PanelRound panelRound5;
     private view.PanelRound panelRound6;
     private javax.swing.JTextField passwordInput;
+    private javax.swing.JButton saveBtn;
     private javax.swing.JTextField searchInput;
     private javax.swing.JTextField shifMulaiInput;
     private javax.swing.JTextField shiftSelesaiInput;
