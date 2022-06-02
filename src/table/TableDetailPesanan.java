@@ -6,13 +6,14 @@
 package table;
 
 import java.util.List;
+import javax.swing.table.AbstractTableModel;
 import model.DetailPesanan;
 
 /**
  Nama : Rakai Anandhi Mahardhika
  NPM : 200710914
  */
-public class TableDetailPesanan {
+public class TableDetailPesanan extends AbstractTableModel{
     private List<DetailPesanan> list;
 
     public TableDetailPesanan(List<DetailPesanan> list) {

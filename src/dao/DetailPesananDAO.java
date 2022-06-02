@@ -40,12 +40,12 @@ public class DetailPesananDAO {
     }
     
 //     tabel bawah(?)
-    public List<DetailPesanan> show(Pesanan p){
+    public List<DetailPesanan> show(int id){
         con = dbCon.makeConnection();
         
         String sql = "SELECT d.*, m.* FROM detail_pesanan d "
                     +"JOIN detail_menu m on d.id_menu = m.id "
-                    +"WHERE d.detail_pesanan = "+p.getId()+" ";
+                    +"WHERE d.detail_pesanan = "+id+" ";
         
         System.out.println("Mengambil data pesanan...");
         

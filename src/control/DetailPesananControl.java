@@ -8,7 +8,6 @@ package control;
 import dao.DetailPesananDAO;
 import java.util.List;
 import model.DetailPesanan;
-import model.Pesanan;
 import table.TableDetailPesanan;
 
 /**
@@ -22,8 +21,8 @@ public class DetailPesananControl {
         dDAO.insert(dp);
     }
     
-    public TableDetailPesanan showDataDetailPesanan(Pesanan p){
-        List<DetailPesanan> dataDetailPesanan = dDAO.show(p);
+    public TableDetailPesanan showDataDetailPesanan(int id){
+        List<DetailPesanan> dataDetailPesanan = dDAO.show(id);
         TableDetailPesanan tableDetailPesanan = new TableDetailPesanan(dataDetailPesanan);
         
         return tableDetailPesanan;

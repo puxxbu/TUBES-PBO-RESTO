@@ -3,15 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/table/TableMenu.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/dao/RiwayatPembelianDAO.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/model/Menu.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/dao/MenuDAO.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/MenuView.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/control/MenuControl.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/connection/DbConnection.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/table/TableTempMenu.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/TransaksiView.java</file>
+            <file>file:/C:/Users/RAKA/Desktop/TUBES-PBO-RESTO/src/exception/NumberFormatException.java</file>
+            <file>file:/C:/Users/RAKA/Desktop/TUBES-PBO-RESTO/src/exception/InputanKosongException.java</file>
         </group>
     </open-files>
 </project-private>
