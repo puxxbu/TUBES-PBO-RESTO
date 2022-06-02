@@ -378,6 +378,11 @@ public class TransaksiView extends javax.swing.JFrame {
 
         riwayatPesananLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         riwayatPesananLabel.setText("Riwayat Pesanan");
+        riwayatPesananLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                riwayatPesananLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout riwayatPesananPanelLayout = new javax.swing.GroupLayout(riwayatPesananPanel);
         riwayatPesananPanel.setLayout(riwayatPesananPanelLayout);
@@ -402,6 +407,11 @@ public class TransaksiView extends javax.swing.JFrame {
 
         editMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         editMenuLabel.setText("Edit Menu");
+        editMenuLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editMenuLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout editMenuPanelLayout = new javax.swing.GroupLayout(editMenuPanel);
         editMenuPanel.setLayout(editMenuPanelLayout);
@@ -581,6 +591,14 @@ public class TransaksiView extends javax.swing.JFrame {
         this.dispose();
         hv.setVisible(true);
     }//GEN-LAST:event_riwayatPesananPanelMouseClicked
+
+    private void editMenuLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMenuLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editMenuLabelMouseClicked
+
+    private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_riwayatPesananLabelMouseClicked
 
     /**
      * @param args the command line arguments
