@@ -35,6 +35,7 @@ public class MenuView extends javax.swing.JFrame {
     public void setComponents(boolean value){
         
         cancelAddingMenuBtn.setEnabled(value);
+        saveMenuBtn.setEnabled(value);
         
         namaMenuInput.setEnabled(value);
         deskripsiMenuInput.setEnabled(value);
@@ -136,6 +137,11 @@ public class MenuView extends javax.swing.JFrame {
         });
 
         searchMenuBtn.setText("Cari");
+        searchMenuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchMenuBtnActionPerformed(evt);
+            }
+        });
 
         editMenuBtn.setText("Ubah Menu");
 
@@ -450,6 +456,26 @@ public class MenuView extends javax.swing.JFrame {
         this.dispose();
         pv.setVisible(true);
     }//GEN-LAST:event_tambahPegawaiLabelMouseClicked
+
+    private void searchMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchMenuBtnActionPerformed
+        // TODO add your handling code here:
+        setEditDeleteBtn(false);
+        setComponents(false);
+        
+        try{
+            TableMenu menu = menuControl.showDataMenu(searchInput.getText());
+            if(menu.getRowCount()== 0){
+                clearText();
+                setEditDeleteBtn(false);
+                JOptionPane.showConfirmDialog(null, "Menu tidak ditemukan",
+                        "Konfimasi", JOptionPane.DEFAULT_OPTION);
+            } else {
+                tableMenu.setModel(menu);
+            }
+        }catch(Exception e){
+            System.out.println("error : " + e.getMessage());
+        }
+    }//GEN-LAST:event_searchMenuBtnActionPerformed
 
     /**
      * @param args the command line arguments
