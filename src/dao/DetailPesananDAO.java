@@ -19,6 +19,26 @@ public class DetailPesananDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public void insert(DetailPesanan d){
+        con = dbCon.makeConnection();
+        
+        String sql = " INSERT INTO detail_pesanan(id_pesanan,id_menu,jumlah_pesanan,harga_total)"
+                + "VALUES (" + d.getId_pesanan()+", "+ d.getMenu().getId()+", "+
+                d.getJumlah_pesanan()+", "+d.getHarga_total() + ")";
+        
+        System.out.println("Adding Detail Pesanan...");
+        try {
+            Statement statement = con.createStatement();
+            int result = statement.executeUpdate(sql);
+            System.out.println("Added " + result +" detail pesanan");
+            statement.close();
+        } catch (Exception e) {
+            System.out.println("Error adding ...");
+            System.out.println(e);
+        }
+        dbCon.closeConnection();
+    }
+    
 //     tabel bawah(?)
     public List<DetailPesanan> show(Pesanan p){
         con = dbCon.makeConnection();
