@@ -8,13 +8,67 @@ package view;
  *
  * @author asus
  */
+import control.PegawaiControl;
+import control.AkunPegawaiControl;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import model.Pegawai;
+import model.AkunPegawai;
+import table.TableAkunPegawai;
 public class PegawaiView extends javax.swing.JFrame {
-
+    private AkunPegawaiControl akunPegawaiControl;
+    private PegawaiControl pegawaiControl;
+    String action = null;
+    List<Pegawai> listPegawai;
+    List<AkunPegawai> listAkunPegawai;
+    int selectedId = 0;
+    int selectedId2 = 0;
     /**
      * Creates new form PegawaiView
      */
     public PegawaiView() {
         initComponents();
+        setComponent(false);
+        setEditDeleteBtn(false);
+        akunPegawaiControl = new AkunPegawaiControl();
+        pegawaiControl = new PegawaiControl();
+        showTransaksi();
+    }
+    
+    public void showTransaksi() {
+        tableAkunPegawai.setModel(akunPegawaiControl.showDataAkunPegawai(""));
+    }
+    
+    public void setComponent (boolean value) {
+        
+        namaPegawaiInput.setEnabled(value);
+        shifMulaiInput.setEnabled(value);
+        shiftSelesaiInput.setEnabled(value);
+        gajiInput.setEnabled(value);
+        emailInput.setEnabled(value);
+        usernameInput.setEnabled(value);
+        passwordInput.setEnabled(value);
+        
+        saveBtn.setEnabled(value);
+        cancelBtn.setEnabled(value);
+        
+    }
+    
+    public void setEditDeleteBtn(boolean value){
+        editBtn.setEnabled(value);
+        deleteBtn.setEnabled(value);
+    }
+    
+    public void clearText() {
+        searchInput.setText("");
+        namaPegawaiInput.setText("");
+        shifMulaiInput.setText("");
+        shiftSelesaiInput.setText("");
+        gajiInput.setText("");
+        emailInput.setText("");
+        usernameInput.setText("");
+        passwordInput.setText("");
     }
 
     /**
@@ -30,11 +84,11 @@ public class PegawaiView extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tableAkunPegawai = new javax.swing.JTable();
         searchInput = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
         panelRound2 = new view.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         namaPegawaiInput = new javax.swing.JTextField();
@@ -46,8 +100,8 @@ public class PegawaiView extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         emailInput = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        addBtn = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
         panelRound3 = new view.PanelRound();
         passwordInput = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -74,7 +128,7 @@ public class PegawaiView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(20);
         panelRound1.setRoundTopRight(20);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tableAkunPegawai.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -85,7 +139,12 @@ public class PegawaiView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        tableAkunPegawai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableAkunPegawaiMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tableAkunPegawai);
 
         searchInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,11 +152,26 @@ public class PegawaiView extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Cari");
+        searchBtn.setText("Cari");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Edit");
+        editBtn.setText("Edit");
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtnActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Hapus");
+        deleteBtn.setText("Hapus");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
@@ -110,11 +184,11 @@ public class PegawaiView extends javax.swing.JFrame {
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addComponent(searchBtn)
                         .addGap(72, 72, 72)
-                        .addComponent(jButton2)
+                        .addComponent(editBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
+                        .addComponent(deleteBtn)
                         .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -124,9 +198,9 @@ public class PegawaiView extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5))
+                    .addComponent(searchBtn)
+                    .addComponent(editBtn)
+                    .addComponent(deleteBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
@@ -147,14 +221,19 @@ public class PegawaiView extends javax.swing.JFrame {
 
         jLabel12.setText("E-mail Aktif");
 
-        jButton3.setText("Tambah Pegawai");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        addBtn.setText("Tambah Pegawai");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                addBtnActionPerformed(evt);
             }
         });
 
-        jButton4.setText("batal");
+        cancelBtn.setText("batal");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
 
         panelRound3.setBackground(new java.awt.Color(255, 255, 255));
         panelRound3.setRoundBottomLeft(10);
@@ -194,6 +273,11 @@ public class PegawaiView extends javax.swing.JFrame {
         );
 
         saveBtn.setText("simpan");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
@@ -218,11 +302,11 @@ public class PegawaiView extends javax.swing.JFrame {
                             .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(76, 76, 76))
                     .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(addBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(saveBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
+                        .addComponent(cancelBtn)
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRound2Layout.createSequentialGroup()
                         .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,8 +330,8 @@ public class PegawaiView extends javax.swing.JFrame {
                         .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
+                            .addComponent(addBtn)
+                            .addComponent(cancelBtn)
                             .addComponent(saveBtn))
                         .addGap(15, 15, 15))
                     .addGroup(panelRound2Layout.createSequentialGroup()
@@ -385,13 +469,108 @@ public class PegawaiView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        setComponent(true);
+        clearText();
+        action = "Tambah";
+    }//GEN-LAST:event_addBtnActionPerformed
 
     private void searchInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchInputActionPerformed
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        if(action.equals("Tambah")){
+            Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
+            pegawaiControl.insertDataPembeli(P);
+            listPegawai = pegawaiControl.showListPembeli();
+             
+            
+            P = listPegawai.get(listPegawai.size()-1);
+            AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
+            akunPegawaiControl.insertDataAkunPegawai(Ap);
+        }else{
+            Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
+            pegawaiControl.updateDataPegawai(P);
+            AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
+            akunPegawaiControl.updateDataAkunPegawai(Ap);
+        }
+        
+        clearText();
+        showTransaksi();
+        setComponent(false);
+        setEditDeleteBtn(false);
+    }//GEN-LAST:event_saveBtnActionPerformed
+
+    private void tableAkunPegawaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAkunPegawaiMouseClicked
+        setEditDeleteBtn(true);
+        setComponent(false);
+        
+        int clickedRow = tableAkunPegawai.getSelectedRow();
+        TableModel tableModel = tableAkunPegawai.getModel();
+
+        selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 8).toString());
+        namaPegawaiInput.setText(tableModel.getValueAt(clickedRow, 0).toString());
+        shifMulaiInput.setText(tableModel.getValueAt(clickedRow, 1).toString());
+        shiftSelesaiInput.setText(tableModel.getValueAt(clickedRow, 2).toString());
+        gajiInput.setText(tableModel.getValueAt(clickedRow, 3).toString());
+        emailInput.setText(tableModel.getValueAt(clickedRow, 4).toString());
+        selectedId2 = Integer.parseInt(tableModel.getValueAt(clickedRow, 7).toString());
+        usernameInput.setText(tableModel.getValueAt(clickedRow, 5).toString());
+        passwordInput.setText(tableModel.getValueAt(clickedRow, 6).toString());
+    }//GEN-LAST:event_tableAkunPegawaiMouseClicked
+
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        setComponent(true);
+        action = "Ubah";
+    }//GEN-LAST:event_editBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        int getAnswer = JOptionPane.showConfirmDialog(rootPane, "Apakah yakin ingin menghapus data?","Konfirmasi", JOptionPane.YES_NO_OPTION);
+        switch(getAnswer){
+            case 0:
+            try{
+                akunPegawaiControl.deleteDataAkunPegawai(selectedId2);
+                pegawaiControl.deleteDataPegawai(selectedId);
+                clearText();
+                showTransaksi();
+                setComponent(false);
+                setEditDeleteBtn(false);
+
+            }catch (Exception e){
+                System.out.println("Error : " + e.getMessage());
+            }
+            break;
+
+            case 1:
+
+            break;
+        }
+    }//GEN-LAST:event_deleteBtnActionPerformed
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        setComponent(false);
+        clearText();
+        setEditDeleteBtn(false);
+    }//GEN-LAST:event_cancelBtnActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        setEditDeleteBtn(false);
+        setComponent(false);
+
+        try{
+            TableAkunPegawai pegawai = akunPegawaiControl.showDataAkunPegawai(searchInput.getText());
+            if(pegawai.getRowCount() == 0){
+                clearText();
+                setEditDeleteBtn(false);
+                JOptionPane.showConfirmDialog(rootPane, "Data tidak ditemukan","Konfirmasi", JOptionPane.DEFAULT_OPTION);
+            }else{
+                tableAkunPegawai.setModel(pegawai);
+            }
+        }catch(Exception e){
+            System.out.println("Error : " + e.getMessage());
+        }
+    }//GEN-LAST:event_searchBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,13 +608,12 @@ public class PegawaiView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JButton cancelBtn;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JButton editBtn;
     private javax.swing.JTextField emailInput;
     private javax.swing.JTextField gajiInput;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -449,7 +627,6 @@ public class PegawaiView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable2;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField namaPegawaiInput;
     private view.PanelRound panelRound1;
@@ -460,9 +637,11 @@ public class PegawaiView extends javax.swing.JFrame {
     private view.PanelRound panelRound6;
     private javax.swing.JTextField passwordInput;
     private javax.swing.JButton saveBtn;
+    private javax.swing.JButton searchBtn;
     private javax.swing.JTextField searchInput;
     private javax.swing.JTextField shifMulaiInput;
     private javax.swing.JTextField shiftSelesaiInput;
+    private javax.swing.JTable tableAkunPegawai;
     private javax.swing.JTextField usernameInput;
     // End of variables declaration//GEN-END:variables
 }
