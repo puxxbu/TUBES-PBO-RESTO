@@ -73,11 +73,11 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
-                              <Component id="panelRound6" min="-2" max="-2" attributes="0"/>
+                              <Component id="editMenuPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="panelRound5" min="-2" max="-2" attributes="0"/>
+                              <Component id="riwayatPesananPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="panelRound4" min="-2" max="-2" attributes="0"/>
+                              <Component id="menuTransaksiPanel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="panelRound2" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -91,9 +91,9 @@
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <Component id="panelRound6" min="-2" max="-2" attributes="0"/>
-                          <Component id="panelRound5" min="-2" max="-2" attributes="0"/>
-                          <Component id="panelRound4" min="-2" max="-2" attributes="0"/>
+                          <Component id="editMenuPanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="riwayatPesananPanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="menuTransaksiPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="panelRound2" min="-2" max="-2" attributes="0"/>
@@ -430,13 +430,16 @@
                 <Property name="text" type="java.lang.String" value="Tambah Pegawai"/>
               </Properties>
             </Component>
-            <Container class="view.PanelRound" name="panelRound4">
+            <Container class="view.PanelRound" name="menuTransaksiPanel">
               <Properties>
                 <Property name="roundBottomLeft" type="int" value="10"/>
                 <Property name="roundBottomRight" type="int" value="10"/>
                 <Property name="roundTopLeft" type="int" value="10"/>
                 <Property name="roundTopRight" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuTransaksiPanelMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -459,42 +462,51 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="view.PanelRound" name="panelRound5">
+            <Container class="view.PanelRound" name="riwayatPesananPanel">
               <Properties>
                 <Property name="roundBottomLeft" type="int" value="10"/>
                 <Property name="roundBottomRight" type="int" value="10"/>
                 <Property name="roundTopLeft" type="int" value="10"/>
                 <Property name="roundTopRight" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="riwayatPesananPanelMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel16" alignment="0" pref="100" max="32767" attributes="0"/>
+                      <Component id="riwayatPesananLabel" alignment="0" pref="100" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel16" alignment="0" pref="39" max="32767" attributes="0"/>
+                      <Component id="riwayatPesananLabel" alignment="0" pref="39" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel16">
+                <Component class="javax.swing.JLabel" name="riwayatPesananLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Riwayat Pesanan"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="riwayatPesananLabelMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="view.PanelRound" name="panelRound6">
+            <Container class="view.PanelRound" name="editMenuPanel">
               <Properties>
                 <Property name="roundBottomLeft" type="int" value="10"/>
                 <Property name="roundBottomRight" type="int" value="10"/>
                 <Property name="roundTopLeft" type="int" value="10"/>
                 <Property name="roundTopRight" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="editMenuPanelMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
