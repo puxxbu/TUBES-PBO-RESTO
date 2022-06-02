@@ -10,17 +10,17 @@ package model;
  */
 public class DetailPesanan {
     private int id_pesanan;
-    private int id_makanan;
+    private Menu menu;
     private int jumlah_pesanan;
     private int harga_total;
 
-    public DetailPesanan(int id_pesanan, int id_makanan, int jumlah_pesanan, int harga_total) {
+    public DetailPesanan(int id_pesanan, Menu menu, int jumlah_pesanan, int harga_total) {
         this.id_pesanan = id_pesanan;
-        this.id_makanan = id_makanan;
+        this.menu = menu;
         this.jumlah_pesanan = jumlah_pesanan;
         this.harga_total = harga_total;
     }
-
+    
     public int getId_pesanan() {
         return id_pesanan;
     }
@@ -29,12 +29,12 @@ public class DetailPesanan {
         this.id_pesanan = id_pesanan;
     }
 
-    public int getId_makanan() {
-        return id_makanan;
+    public Menu getMenu() {
+        return menu;
     }
 
-    public void setId_makanan(int id_makanan) {
-        this.id_makanan = id_makanan;
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
 
     public int getJumlah_pesanan() {
