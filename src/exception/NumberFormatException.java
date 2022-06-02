@@ -9,7 +9,7 @@ package exception;
  Nama : Rakai Anandhi Mahardhika
  NPM : 200710914
  */
-public class NumberFormatException {
+public class NumberFormatException extends Exception {
      public String message(){
         return "Invalid input!";
     }
