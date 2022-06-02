@@ -74,9 +74,9 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="editMenuPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="panelRound3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tambahPegawaiPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="panelRound5" min="-2" max="-2" attributes="0"/>
+                              <Component id="riwayatPesananPanel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="panelRound4" min="-2" pref="400" max="-2" attributes="0"/>
@@ -97,8 +97,8 @@
                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="panelRound5" min="-2" max="-2" attributes="0"/>
-                              <Component id="panelRound3" min="-2" max="-2" attributes="0"/>
+                              <Component id="riwayatPesananPanel" min="-2" max="-2" attributes="0"/>
+                              <Component id="tambahPegawaiPanel" min="-2" max="-2" attributes="0"/>
                               <Component id="editMenuPanel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="LabelPembeli" min="-2" pref="52" max="-2" attributes="0"/>
@@ -496,28 +496,31 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="view.PanelRound" name="panelRound3">
+            <Container class="view.PanelRound" name="tambahPegawaiPanel">
               <Properties>
                 <Property name="roundBottomLeft" type="int" value="10"/>
                 <Property name="roundBottomRight" type="int" value="10"/>
                 <Property name="roundTopLeft" type="int" value="10"/>
                 <Property name="roundTopRight" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tambahPegawaiPanelMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel12" alignment="0" pref="100" max="32767" attributes="0"/>
+                      <Component id="tambahPegawaiLabel" alignment="0" pref="100" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel12" alignment="0" pref="39" max="32767" attributes="0"/>
+                      <Component id="tambahPegawaiLabel" alignment="0" pref="39" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel12">
+                <Component class="javax.swing.JLabel" name="tambahPegawaiLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Tambah Pegawai"/>
@@ -525,28 +528,31 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="view.PanelRound" name="panelRound5">
+            <Container class="view.PanelRound" name="riwayatPesananPanel">
               <Properties>
                 <Property name="roundBottomLeft" type="int" value="10"/>
                 <Property name="roundBottomRight" type="int" value="10"/>
                 <Property name="roundTopLeft" type="int" value="10"/>
                 <Property name="roundTopRight" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="riwayatPesananPanelMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel13" alignment="0" pref="100" max="32767" attributes="0"/>
+                      <Component id="riwayatPesananLabel" alignment="0" pref="100" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel13" alignment="0" pref="39" max="32767" attributes="0"/>
+                      <Component id="riwayatPesananLabel" alignment="0" pref="39" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="riwayatPesananLabel">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Riwayat Pesanan"/>
