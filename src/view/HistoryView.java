@@ -3,20 +3,46 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import control.DetailPesananControl;
+import control.PesananControl;
+import model.DetailPesanan;
+import model.Pesanan;
+import table.TableDetailPesanan;
+import table.TableRiwayat;
 /**
  *
  * @author asus
  */
 public class HistoryView extends javax.swing.JFrame {
-
+    private DetailPesananControl dpc;
+    private PesananControl pc;
+    String action = null;
+    List<DetailPesanan> listdetailPesanan;
+    List<Pesanan> listPesanan;
+    int selectedId;
+    
     /**
      * Creates new form HistoryView
      */
     public HistoryView() {
         initComponents();
+        dpc = new DetailPesananControl();
+        pc = new PesananControl();
+        showRiwayat();
     }
 
+    public void showRiwayat(){
+        tableRiwayat.setModel(pc.showDataPesanan("", 0, 0));
+    }
+    
+    public void showDetailMenu(){
+        tableDetailMenu.setModel(dpc.showDataDetailPesanan(0));
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,10 +56,10 @@ public class HistoryView extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tableDetailMenu = new javax.swing.JTable();
         panelRound3 = new view.PanelRound();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tableRiwayat = new javax.swing.JTable();
         TransaksiPanel = new view.PanelRound();
         jLabel13 = new javax.swing.JLabel();
         editMenuPanel = new view.PanelRound();
@@ -53,7 +79,7 @@ public class HistoryView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(20);
         panelRound1.setRoundTopRight(20);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tableDetailMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -64,7 +90,7 @@ public class HistoryView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tableDetailMenu);
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
@@ -88,7 +114,7 @@ public class HistoryView extends javax.swing.JFrame {
         panelRound3.setRoundTopLeft(20);
         panelRound3.setRoundTopRight(20);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tableRiwayat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -99,7 +125,12 @@ public class HistoryView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTable3);
+        tableRiwayat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableRiwayatMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tableRiwayat);
 
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
@@ -276,6 +307,10 @@ public class HistoryView extends javax.swing.JFrame {
         pv.setVisible(true);
     }//GEN-LAST:event_PegawaiPanelMouseClicked
 
+    private void tableRiwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableRiwayatMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableRiwayatMouseClicked
+
     
     /**
      * @param args the command line arguments
@@ -322,10 +357,10 @@ public class HistoryView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JPanel mainPanel;
     private view.PanelRound panelRound1;
     private view.PanelRound panelRound3;
+    private javax.swing.JTable tableDetailMenu;
+    private javax.swing.JTable tableRiwayat;
     // End of variables declaration//GEN-END:variables
 }
