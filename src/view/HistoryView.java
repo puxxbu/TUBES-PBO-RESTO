@@ -4,7 +4,6 @@
  */
 package view;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import control.DetailPesananControl;
 import control.PesananControl;
@@ -32,14 +31,15 @@ public class HistoryView extends javax.swing.JFrame {
         dpc = new DetailPesananControl();
         pc = new PesananControl();
         showRiwayat();
+        showDetailPesanan(0);
     }
 
     public void showRiwayat(){
         tableRiwayat.setModel(pc.showDataPesanan("", 0, 0));
     }
     
-    public void showDetailMenu(){
-        tableDetailMenu.setModel(dpc.showDataDetailPesanan(0));
+    public void showDetailPesanan(int id){
+        tableDetailPesanan.setModel(dpc.showDataDetailPesanan(id));
     }
     
     
@@ -56,7 +56,9 @@ public class HistoryView extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tableDetailMenu = new javax.swing.JTable();
+        tableDetailPesanan = new javax.swing.JTable();
+        subTotalOutput = new javax.swing.JTextField();
+        Sub_total = new javax.swing.JLabel();
         panelRound3 = new view.PanelRound();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableRiwayat = new javax.swing.JTable();
@@ -79,7 +81,7 @@ public class HistoryView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(20);
         panelRound1.setRoundTopRight(20);
 
-        tableDetailMenu.setModel(new javax.swing.table.DefaultTableModel(
+        tableDetailPesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -90,28 +92,43 @@ public class HistoryView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableDetailMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableDetailPesanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableDetailMenuMouseClicked(evt);
+                tableDetailPesananMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(tableDetailMenu);
+        jScrollPane3.setViewportView(tableDetailPesanan);
+
+        subTotalOutput.setEditable(false);
+
+        Sub_total.setText("Sub total Pembelian");
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRound1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(Sub_total)
+                        .addGap(7, 7, 7)
+                        .addComponent(subTotalOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(subTotalOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Sub_total))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         panelRound3.setRoundBottomLeft(20);
@@ -314,13 +331,23 @@ public class HistoryView extends javax.swing.JFrame {
 
     private void tableRiwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableRiwayatMouseClicked
         // TODO add your handling code here:
+        int clickedRow = tableRiwayat.getSelectedRow();
+        TableModel tableModel = tableRiwayat.getModel();
+        
+        selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 0).toString());
+        showDetailPesanan(selectedId);
         
     }//GEN-LAST:event_tableRiwayatMouseClicked
 
-    private void tableDetailMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDetailMenuMouseClicked
+    private void tableDetailPesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDetailPesananMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_tableDetailMenuMouseClicked
+        int clickedRow = tableDetailPesanan.getSelectedRow();
+        TableModel tableModel = tableDetailPesanan.getModel();
+        
+        subTotalOutput.setText(tableModel.getValueAt(clickedRow, 3).toString());
+        
+    }//GEN-LAST:event_tableDetailPesananMouseClicked
 
     
     /**
@@ -360,6 +387,7 @@ public class HistoryView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.PanelRound PegawaiPanel;
+    private javax.swing.JLabel Sub_total;
     private view.PanelRound TransaksiPanel;
     private view.PanelRound editMenuPanel;
     private javax.swing.JLabel jLabel11;
@@ -371,7 +399,8 @@ public class HistoryView extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private view.PanelRound panelRound1;
     private view.PanelRound panelRound3;
-    private javax.swing.JTable tableDetailMenu;
+    private javax.swing.JTextField subTotalOutput;
+    private javax.swing.JTable tableDetailPesanan;
     private javax.swing.JTable tableRiwayat;
     // End of variables declaration//GEN-END:variables
 }

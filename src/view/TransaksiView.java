@@ -8,6 +8,8 @@ import control.MenuControl;
 import control.PembeliControl;
 import control.PesananControl;
 import control.DetailPesananControl;
+import exception.InputanKosongException;
+import exception.NegativeInputException;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +70,21 @@ public class TransaksiView extends javax.swing.JFrame {
         deskripsiMenuField.setText("");
         bnyakPesananInputField.setText("");
     }
-
+    
+    public void InputanKosongException() throws InputanKosongException{
+        if(namaMenuField.getText().isEmpty() || hargaMenuField.getText().isEmpty() || deskripsiMenuField.getText().isEmpty() 
+                || bnyakPesananInputField.getText().isEmpty() || namaPembeliInput.getText().isEmpty() 
+                    || nomorHPInput.getText().isEmpty() || tanggalTransaksiInput.getText().isEmpty()) {
+            throw new InputanKosongException();
+        }
+    }
+    
+    public void NegativeInputException() throws NegativeInputException {
+        if( Integer.parseInt(hargaMenuField.getText()) < 0 || Integer.parseInt(bnyakPesananInputField.getText()) < 0
+                || Integer.parseInt(hargaMenuField.getText()) < 0){
+            throw new NegativeInputException();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -9,6 +9,7 @@ import model.Menu;
 import dao.MenuDAO;
 import table.TableMenu;
 import exception.InputanKosongException;
+import exception.NegativeInputException;
 
 /**
  *
@@ -65,6 +66,17 @@ public class MenuView extends javax.swing.JFrame {
         hargaMenuInput.setText("");
         
         kategoriGroup.clearSelection();
+    }
+    public void InputanKosongException() throws InputanKosongException{
+        if(namaMenuInput.getText().isEmpty() || deskripsiMenuInput.getText().isEmpty() || hargaMenuInput.getText().isEmpty()) {
+            throw new InputanKosongException();
+        }
+    }
+    
+    public void NegativeInputException() throws NegativeInputException {
+        if( Integer.parseInt(hargaMenuInput.getText()) < 0) {
+            throw new NegativeInputException();
+        }
     }
     
 //    public void setActionCommandRadio(){

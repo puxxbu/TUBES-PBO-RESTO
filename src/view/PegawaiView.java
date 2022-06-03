@@ -10,6 +10,8 @@ package view;
  */
 import control.PegawaiControl;
 import control.AkunPegawaiControl;
+import exception.InputanKosongException;
+import exception.NegativeInputException;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
@@ -70,7 +72,21 @@ public class PegawaiView extends javax.swing.JFrame {
         usernameInput.setText("");
         passwordInput.setText("");
     }
-
+    
+    public void InputanKosongException() throws InputanKosongException{
+        if (namaPegawaiInput.getText().isEmpty() || shiftSelesaiInput.getText().isEmpty() 
+                || shifMulaiInput.getText().isEmpty() || gajiInput.getText().isEmpty()
+                   || emailInput.getText().isEmpty() || usernameInput.getText().isEmpty()
+                    || passwordInput.getText().isEmpty()) {
+            throw new InputanKosongException();
+        }
+    }
+    
+    public void NegativeInputException() throws NegativeInputException {
+        if ( Integer.parseInt(gajiInput.getText()) < 0) {
+            throw new NegativeInputException();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
