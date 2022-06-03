@@ -35,11 +35,27 @@ public class TableDetailPesanan extends AbstractTableModel{
             case 1:
                 return list.get(rowIndex).getJumlah_pesanan();
             case 2:
-                return list.get(rowIndex).getHarga_total()*list.get(rowIndex).getJumlah_pesanan();  
+                return list.get(rowIndex).getHarga_total()*list.get(rowIndex).getJumlah_pesanan();
+            case 3:
+                return list.get(rowIndex).getId_pesanan();
             default:
                 return null;
                 
                 
+        }
+    }
+    @Override
+    public String getColumnName(int column) {
+        switch (column) {
+            
+            case 0:
+                return "Nama Menu";
+            case 1:
+                return "Jumlah Pesanan";
+            case 2:
+                return "Total Harga Pesanan";
+            default:
+                return null;
         }
     }
 }

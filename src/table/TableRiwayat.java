@@ -50,4 +50,21 @@ public class TableRiwayat extends AbstractTableModel {
                 
         }
     }
+    @Override
+    public String getColumnName(int column) {
+        switch (column) {
+            case 0:
+                return "Id Pesanan";
+            case 1:
+                return "Nama Pembeli";
+            case 2:
+                return "Nama Pegawai";
+            case 3:
+                return "Sub Total";
+            case 4:
+                return "Tanggal Pesanan";
+            default:
+                return null;
+        }
+    }
 }
