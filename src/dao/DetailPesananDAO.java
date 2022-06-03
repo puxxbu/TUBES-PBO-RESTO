@@ -22,7 +22,7 @@ public class DetailPesananDAO {
     public void insert(DetailPesanan d){
         con = dbCon.makeConnection();
         
-        String sql = " INSERT INTO detail_pesanan(id_pesanan,id_menu,jumlah_pesanan,harga_total)"
+        String sql = " INSERT INTO detail_pesanan(id_pesanan,id_menu,jumlah_pesanan,harga_total) "
                 + "VALUES (" + d.getId_pesanan()+", "+ d.getMenu().getId()+", "+
                 d.getJumlah_pesanan()+", "+d.getHarga_total() + ")";
         

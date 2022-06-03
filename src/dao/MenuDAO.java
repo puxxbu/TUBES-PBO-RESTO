@@ -23,7 +23,7 @@ public class MenuDAO {
     public void insertMenu(Menu m){
         con = dbCon.makeConnection();
         
-        String sql = " INSERT INTO detail_menu(nama_menu,deskripsi_menu,kategori,harga_menu)"
+        String sql = " INSERT INTO detail_menu(nama_menu,deskripsi_menu,kategori,harga_menu) "
                 + "VALUES ('" + m.getNama_menu()+"', '"+ m.getDeskripsi_menu()+"', '"+
                 m.getKategori()+"', '"+
                 m.getHarga_menu() + "')";

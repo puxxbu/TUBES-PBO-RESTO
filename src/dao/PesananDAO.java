@@ -21,7 +21,7 @@ public class PesananDAO {
     public void insert(Pesanan p){
         con = dbCon.makeConnection();
         
-        String sql = " INSERT INTO pesanan(id_pembeli,id_pegawai,sub_total,tanggal_pesanan)"
+        String sql = " INSERT INTO pesanan(id_pembeli,id_pegawai,sub_total,tanggal_pesanan) "
                 + "VALUES (" + p.getId_pembeli()+", "+ p.getId_pegawai()+", "+
                 p.getSub_total()+", '"+p.getTanggal_pesanan() + "')";
         
@@ -41,8 +41,8 @@ public class PesananDAO {
     public List<Pesanan> show(String query,int id, double sub_total){
         con = dbCon.makeConnection();
         
-        String sql = "SELECT m.*,c.*, g.* FROM pembeli as m JOIN pesanan p ON m.id = p.id_pembeli"
-                       +"JOIN pegawai g ON p.id_pegawai = g.id"
+        String sql = "SELECT m.*,c.*, g.* FROM pembeli as m JOIN pesanan p ON m.id = p.id_pembeli "
+                       +"JOIN pegawai g ON p.id_pegawai = g.id "
                        +"WHERE (p.id = " +id+" "
                        +"OR m.nama_pembeli LIKE '&"+query+"&'"
                        +"OR g.nama_pegawai LIKE '&"+query+"&' "
