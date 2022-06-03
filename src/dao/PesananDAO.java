@@ -66,7 +66,7 @@ public class PesananDAO {
                             rs.getString("g.shift_mulai"), 
                             rs.getString("g.shift_berakhir"),
                             rs.getDouble("g.gaji"),
-                            rs.getString("g.emial")
+                            rs.getString("g.email_pegawai")
                     );
                     Pembeli m = new Pembeli(
                             rs.getInt("m.id"),
