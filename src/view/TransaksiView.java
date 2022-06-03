@@ -67,6 +67,7 @@ public class TransaksiView extends javax.swing.JFrame {
         tambahPesananBtn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         batalBtn2 = new javax.swing.JButton();
+        hapusPesananBtn = new javax.swing.JButton();
         panelRound2 = new view.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         namaPembeliInput = new javax.swing.JTextField();
@@ -134,22 +135,26 @@ public class TransaksiView extends javax.swing.JFrame {
 
         batalBtn2.setText("batal");
 
+        hapusPesananBtn.setText("Hapus Pesanan");
+
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(tambahPesananBtn)
-                .addGap(22, 22, 22)
+                .addGap(18, 18, 18)
                 .addComponent(batalBtn2)
-                .addContainerGap())
+                .addGap(10, 10, 10))
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(hapusPesananBtn)
+                    .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel10)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +163,9 @@ public class TransaksiView extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hapusPesananBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tambahPesananBtn)
                     .addComponent(batalBtn2))
@@ -649,6 +656,7 @@ public class TransaksiView extends javax.swing.JFrame {
     private javax.swing.JTextArea deskripsiMenuField;
     private javax.swing.JLabel editMenuLabel;
     private view.PanelRound editMenuPanel;
+    private javax.swing.JButton hapusPesananBtn;
     private javax.swing.JTextField hargaMenuField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
