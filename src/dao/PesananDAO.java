@@ -47,7 +47,7 @@ public class PesananDAO {
                        +"OR m.nama_pembeli LIKE '&"+query+"&'"
                        +"OR g.nama_pegawai LIKE '&"+query+"&' "
                        +"OR p.sub_total = "+sub_total+" "
-                       +"OR p.tanggal_pesanan LIKE '&" +query+ "*'";
+                       +"OR p.tanggal_pesanan LIKE '&" +query+ "&')";
         
         System.out.println("Mengambil data pesanan...");
         
