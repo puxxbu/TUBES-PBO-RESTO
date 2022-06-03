@@ -10,6 +10,8 @@ package model;
  */
 public class Pesanan {
     private int id;
+    private int id_pegawai;
+    private int id_pembeli;
     private Pembeli pembeli;
     private Pegawai pegawai;
     private double sub_total;
@@ -22,6 +24,32 @@ public class Pesanan {
         this.sub_total = sub_total;
         this.tanggal_pesanan = tanggal_pesanan;
     }
+
+    public Pesanan(int id_pegawai, int id_pembeli, double sub_total, String tanggal_pesanan) {
+        this.id_pegawai = id_pegawai;
+        this.id_pembeli = id_pembeli;
+        this.sub_total = sub_total;
+        this.tanggal_pesanan = tanggal_pesanan;
+    }
+
+    public int getId_pegawai() {
+        return id_pegawai;
+    }
+
+    public void setId_pegawai(int id_pegawai) {
+        this.id_pegawai = id_pegawai;
+    }
+
+    public int getId_pembeli() {
+        return id_pembeli;
+    }
+
+    public void setId_pembeli(int id_pembeli) {
+        this.id_pembeli = id_pembeli;
+    }
+    
+    
+    
     
     public int getId() {
         return id;

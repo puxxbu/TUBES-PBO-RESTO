@@ -5,6 +5,9 @@
 package view;
 
 import control.MenuControl;
+import control.PembeliControl;
+import control.PesananControl;
+import control.DetailPesananControl;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +19,18 @@ import model.DetailPesanan;
 import model.AkunPegawai;
 import model.Pegawai;
 import model.Pembeli;
+import model.Pesanan;
+
 import table.TableMenu;
 import table.TableTempMenu;
 
 public class TransaksiView extends javax.swing.JFrame {
     private int count=0;
     private MenuControl mc;
+    private PembeliControl pembeliControl;
+    private PesananControl pesananControl;
+    private DetailPesananControl detailControl;
+    private int id_pegawai =1;
     String action = null;
     List<Menu> listMenu;
     List<TempMenu> tempListMenu = new ArrayList<>();
@@ -31,6 +40,9 @@ public class TransaksiView extends javax.swing.JFrame {
     public TransaksiView() {
         initComponents();
         mc = new MenuControl();
+        pembeliControl = new PembeliControl();
+        pesananControl = new PesananControl();
+        detailControl = new DetailPesananControl();
         showMenu();
         clearText();
         
@@ -48,6 +60,13 @@ public class TransaksiView extends javax.swing.JFrame {
         namaPembeliInput.setText("");
         nomorHPInput.setText("");
         tanggalTransaksiInput.setText("");
+    }
+    
+    public void clearInputMenu(){
+        namaMenuField.setText("");
+        hargaMenuField.setText("");
+        deskripsiMenuField.setText("");
+        bnyakPesananInputField.setText("");
     }
 
     /**
@@ -122,6 +141,11 @@ public class TransaksiView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblTempMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblTempMenuMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tblTempMenu);
 
         tambahPesananBtn.setText("Tambah Pesanan");
@@ -136,6 +160,11 @@ public class TransaksiView extends javax.swing.JFrame {
         batalBtn2.setText("batal");
 
         hapusPesananBtn.setText("Hapus Pesanan");
+        hapusPesananBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusPesananBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
@@ -178,6 +207,12 @@ public class TransaksiView extends javax.swing.JFrame {
         panelRound2.setRoundTopRight(20);
 
         jLabel1.setText("NamaPembeli");
+
+        namaPembeliInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaPembeliInputActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nomor HP");
 
@@ -510,6 +545,45 @@ public class TransaksiView extends javax.swing.JFrame {
 
     private void tambahPesananBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahPesananBtnActionPerformed
         // TODO add your handling code here:
+        float sub_total=0;
+        List<Menu> tempData = new ArrayList<>();
+        TempMenu tempMenu = null;
+        Pembeli tempPembeli=null;
+        Pesanan tempPesanan=null;
+        
+        
+        
+        //error handling jika menu masih kosong !!!!!!!!!!!
+        
+        for (int i = 0; i < tempListMenu.size(); i++){
+           sub_total += (tempListMenu.get(i).getHarga_menu()*tempListMenu.get(i).getJumlah_pesanan());
+        }
+        
+        
+        Pembeli pembeli = new Pembeli(namaPembeliInput.getText(), nomorHPInput.getText());
+        
+        
+        
+        pembeliControl.insertPembeli(pembeli);
+        
+        tempPembeli = pembeliControl.getLastPembeli();
+        
+        
+        Pesanan pesanan = new Pesanan(id_pegawai, tempPembeli.getId(), sub_total, tanggalTransaksiInput.getText());
+        
+        
+        pesananControl.insertDetailPesanan(pesanan);
+        
+        for (int i = 0; i < tempListMenu.size(); i++){
+           tempData = mc.searchMenu(tempListMenu.get(i).getNama_menu());
+           
+           DetailPesanan dp = new DetailPesanan(pesananControl.getLastPesanan().getId(),
+                   tempData.get(0),
+                   tempListMenu.get(i).getJumlah_pesanan(),
+                    (tempListMenu.get(i).getJumlah_pesanan()* tempListMenu.get(i).getHarga_menu()));
+           detailControl.insertDetailPesanan(dp);
+        }
+       
     }//GEN-LAST:event_tambahPesananBtnActionPerformed
 
     private void tblMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMenuMouseClicked
@@ -575,9 +649,9 @@ public class TransaksiView extends javax.swing.JFrame {
         // kurang tombol update jika menu sudah ada di temp menu
         // tambah fitur hapus temp  menu???
        
-      
-        tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
         
+        tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+        clearInputMenu();
         
     }//GEN-LAST:event_tambahBtnActionPerformed
 
@@ -612,6 +686,53 @@ public class TransaksiView extends javax.swing.JFrame {
     private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_riwayatPesananLabelMouseClicked
+
+    private void tblTempMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTempMenuMouseClicked
+        // TODO add your handling code here:
+        int clickedRow = tblTempMenu.getSelectedRow();
+        List<Menu> tempData = new ArrayList<>();
+        Menu menu = null;
+        
+        TableModel tableModel = tblTempMenu.getModel();
+        
+        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
+        menu = new Menu(tempData.get(0).getNama_menu(),
+                tempData.get(0).getDeskripsi_menu(),
+                tempData.get(0).getKategori(),
+                tempData.get(0).getHarga_menu());
+        
+        
+        
+        namaMenuField.setText(menu.getNama_menu());
+        hargaMenuField.setText(Integer.toString(menu.getHarga_menu()));
+        deskripsiMenuField.setText(menu.getDeskripsi_menu());
+        bnyakPesananInputField.setText(tblTempMenu.getValueAt(clickedRow, 2).toString());
+    }//GEN-LAST:event_tblTempMenuMouseClicked
+
+    private void hapusPesananBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusPesananBtnActionPerformed
+        // TODO add your handling code here:
+        int clickedRow = tblTempMenu.getSelectedRow();
+        List<Menu> tempData = new ArrayList<>();
+        Menu menu = null;
+        
+        TableModel tableModel = tblTempMenu.getModel();
+        
+        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
+        
+        for (int i = 0; i < tempListMenu.size(); i++) {
+            if (tempListMenu.get(i).getNama_menu().equals(tempData.get(0).getNama_menu())) {
+                tempListMenu.remove(i);
+                break;
+            }
+         
+            }
+        tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+    }//GEN-LAST:event_hapusPesananBtnActionPerformed
+
+    private void namaPembeliInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInputActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_namaPembeliInputActionPerformed
 
     /**
      * @param args the command line arguments

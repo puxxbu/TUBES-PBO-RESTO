@@ -21,6 +21,10 @@ public class PesananControl {
         pDAO.insert(p);
     }
     
+    public Pesanan getLastPesanan(){
+        return pDAO.getLastPesanan();
+    }
+    
     public TableRiwayat showDataPesanan(String query, int id, double sub_total){
         List<Pesanan> dataPesanan = pDAO.show(query,id,sub_total);
         TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
