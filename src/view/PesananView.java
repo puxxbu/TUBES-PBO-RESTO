@@ -26,7 +26,7 @@ import model.Pesanan;
 import table.TableMenu;
 import table.TableTempMenu;
 
-public class TransaksiView extends javax.swing.JFrame {
+public class PesananView extends javax.swing.JFrame {
     private int count=0;
     private MenuControl mc;
     private PembeliControl pembeliControl;
@@ -39,7 +39,7 @@ public class TransaksiView extends javax.swing.JFrame {
     
     
     
-    public TransaksiView() {
+    public PesananView() {
         initComponents();
         mc = new MenuControl();
         pembeliControl = new PembeliControl();
@@ -767,20 +767,21 @@ public class TransaksiView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TransaksiView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TransaksiView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TransaksiView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TransaksiView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TransaksiView().setVisible(true);
+                new PesananView().setVisible(true);
             }
         });
     }

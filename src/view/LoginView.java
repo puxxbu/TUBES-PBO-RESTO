@@ -162,7 +162,7 @@ public class LoginView extends javax.swing.JFrame {
            
             if(check == 1){
                 JOptionPane.showConfirmDialog(rootPane, "Berhasil Login!, Selamat Datang " + user + "","Konfirmasi", JOptionPane.DEFAULT_OPTION);
-                TransaksiView tv = new TransaksiView();
+                PesananView tv = new PesananView();
                 this.dispose();
                 tv.setVisible(true);
             }else{

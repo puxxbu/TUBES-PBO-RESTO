@@ -483,7 +483,7 @@ public class MenuView extends javax.swing.JFrame {
 
     private void menuTransaksiLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTransaksiLabelMouseClicked
         // klik panel menu transaksi
-        TransaksiView tv = new TransaksiView();
+        PesananView tv = new PesananView();
         this.dispose();
         tv.setVisible(true);
     }//GEN-LAST:event_menuTransaksiLabelMouseClicked

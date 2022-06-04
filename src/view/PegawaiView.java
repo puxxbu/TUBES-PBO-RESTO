@@ -641,7 +641,7 @@ public class PegawaiView extends javax.swing.JFrame {
     }//GEN-LAST:event_riwayatPesananPanelMouseClicked
 
     private void menuTransaksiPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTransaksiPanelMouseClicked
-        TransaksiView tv = new TransaksiView();
+        PesananView tv = new PesananView();
         this.dispose();
         tv.setVisible(true);
     }//GEN-LAST:event_menuTransaksiPanelMouseClicked

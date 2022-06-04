@@ -310,7 +310,7 @@ public class HistoryView extends javax.swing.JFrame {
 
     private void TransaksiPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransaksiPanelMouseClicked
         // TODO add your handling code here:
-        TransaksiView tv = new TransaksiView();
+        PesananView tv = new PesananView();
         this.dispose();
         tv.setVisible(true);
     }//GEN-LAST:event_TransaksiPanelMouseClicked
