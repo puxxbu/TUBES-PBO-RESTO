@@ -15,6 +15,11 @@ public class AkunPegawaiControl {
         ApDao.insertAkunPegawai(Ap);
     }
     
+    public List<AkunPegawai> showListAkunPegawai (String query){
+        List<AkunPegawai> dataAkunPegawai = ApDao.showAkunPegawai(query);
+        return dataAkunPegawai;
+    }
+    
     public TableAkunPegawai showDataAkunPegawai (String query){
         List<AkunPegawai> dataAkunPegawai = ApDao.showAkunPegawai(query);
         TableAkunPegawai tableAkunPegawai = new TableAkunPegawai(dataAkunPegawai);
