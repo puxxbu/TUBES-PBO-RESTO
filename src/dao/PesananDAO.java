@@ -41,7 +41,7 @@ public class PesananDAO {
     public List<Pesanan> show(String query,int id, double sub_total){
         con = dbCon.makeConnection();
         
-        String sql = "SELECT m.*,c.*, g.* FROM pembeli as m JOIN pesanan p ON m.id = p.id_pembeli "
+        String sql = "SELECT m.*,p.*, g.* FROM pembeli as m JOIN pesanan p ON m.id = p.id_pembeli "
                        +"JOIN pegawai g ON p.id_pegawai = g.id "
                        +"WHERE (p.id = " +id+" "
                        +"OR m.nama_pembeli LIKE '&"+query+"&'"
