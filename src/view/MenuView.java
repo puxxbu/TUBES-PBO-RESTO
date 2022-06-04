@@ -32,7 +32,6 @@ public class MenuView extends javax.swing.JFrame {
         menuControl = new MenuControl();
         showMenu();
         setRadioKategori(false);
-//        setActionCommandRadio();
     }
     
     public void setComponents(boolean value){
@@ -78,11 +77,6 @@ public class MenuView extends javax.swing.JFrame {
             throw new NegativeInputException();
         }
     }
-    
-//    public void setActionCommandRadio(){
-//        makananjRadioButton.setActionCommand("Makanan");
-//        minumanjRadioButton.setActionCommand("Minuman");
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -567,6 +561,8 @@ public class MenuView extends javax.swing.JFrame {
         
         
         try{
+            InputanKosongException();
+            NegativeInputException();
             String kategori = "";
 
             if(makananjRadioButton.isSelected()){
@@ -580,9 +576,12 @@ public class MenuView extends javax.swing.JFrame {
 
             if(action.equals("Tambah")){
                 menuControl.insertDataMenu(m);
+                JOptionPane.showMessageDialog(null, "Data berhasil ditambah!");
             } else {
                 menuControl.updateDataMenu(m);
+                JOptionPane.showMessageDialog(null, "Data berhasil diubah!");
             }
+            
 
             clearText();
             showMenu();
@@ -591,8 +590,12 @@ public class MenuView extends javax.swing.JFrame {
             kategoriGroup.clearSelection();
 
             setEditDeleteBtn(false);
-        }catch(Exception e){
-            System.out.println("Error" + e.getMessage());
+        }catch(InputanKosongException e){
+            JOptionPane.showMessageDialog(this, e.message());
+        } catch(NegativeInputException e1){
+            JOptionPane.showMessageDialog(this, e1.message());
+        } catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
         }
         
     }//GEN-LAST:event_saveMenuBtnActionPerformed
