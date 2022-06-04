@@ -516,36 +516,42 @@ public class PegawaiView extends javax.swing.JFrame {
     }//GEN-LAST:event_searchInputActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-        try{
-            InputanKosongException();
-            NegativeInputException();
-            if(action.equals("Tambah")){
-                Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
-                pegawaiControl.insertDataPembeli(P);
-                listPegawai = pegawaiControl.showListPembeli();
+        int getAnswer = JOptionPane.showConfirmDialog(rootPane,"Apakah yakin ingin menambah data ?","Konfirmasi",JOptionPane.YES_NO_OPTION);
+        if(getAnswer == JOptionPane.YES_OPTION){
+            try{
+                InputanKosongException();
+                NegativeInputException();
+
+                if(action.equals("Tambah")){
+                    Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
+                    pegawaiControl.insertDataPembeli(P);
+                    listPegawai = pegawaiControl.showListPembeli();
 
 
-                P = listPegawai.get(listPegawai.size()-1);
-                AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
-                akunPegawaiControl.insertDataAkunPegawai(Ap);
-            }else{
-                Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
-                pegawaiControl.updateDataPegawai(P);
-                AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
-                akunPegawaiControl.updateDataAkunPegawai(Ap);
+                    P = listPegawai.get(listPegawai.size()-1);
+                    AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
+                    akunPegawaiControl.insertDataAkunPegawai(Ap);
+                }else{
+                    Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
+                    pegawaiControl.updateDataPegawai(P);
+                    AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
+                    akunPegawaiControl.updateDataAkunPegawai(Ap);
+                }
+                JOptionPane.showMessageDialog(null, "Data berhasil diubah!");
+
+
+            }catch(InputanKosongException e){
+                JOptionPane.showMessageDialog(this, e.message());
+            }catch(NegativeInputException e){
+                JOptionPane.showMessageDialog(this, e.message());
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
             }
-
-            clearText();
-            showTransaksi();
-            setComponent(false);
-            setEditDeleteBtn(false);
-        }catch(InputanKosongException e){
-            JOptionPane.showMessageDialog(this, e.message());
-        }catch(NegativeInputException e){
-            JOptionPane.showMessageDialog(this, e.message());
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
-        }
+        }else {JOptionPane.showMessageDialog(null, "Data tidak jadi diubah!");}
+        clearText();
+        showTransaksi();
+        setComponent(false);
+        setEditDeleteBtn(false);
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void tableAkunPegawaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAkunPegawaiMouseClicked
