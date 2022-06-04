@@ -512,8 +512,7 @@ public class MenuView extends javax.swing.JFrame {
             if(menu.getRowCount()== 0){
                 clearText();
                 setEditDeleteBtn(false);
-                JOptionPane.showConfirmDialog(null, "Menu tidak ditemukan",
-                        "Konfimasi", JOptionPane.DEFAULT_OPTION);
+                JOptionPane.showMessageDialog(null, "Menu tidak ditemukan");
             } else {
                 tableMenu.setModel(menu);
             }
@@ -550,8 +549,7 @@ public class MenuView extends javax.swing.JFrame {
                 }
                 break;
             case 1:
-                JOptionPane.showConfirmDialog(null, "Data batal dihapus!", 
-                        "Konfirmasi", JOptionPane.CLOSED_OPTION);
+                JOptionPane.showMessageDialog(null, "Data tidak jadi dihapus!");
                 break;
         }
     }//GEN-LAST:event_deleteMenuBtnActionPerformed
