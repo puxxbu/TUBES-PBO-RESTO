@@ -588,14 +588,14 @@ public class PegawaiView extends javax.swing.JFrame {
                 showTransaksi();
                 setComponent(false);
                 setEditDeleteBtn(false);
-
+                JOptionPane.showMessageDialog(null, "Data berhasil dihapus!");
             }catch (Exception e){
                 System.out.println("Error : " + e.getMessage());
             }
             break;
 
             case 1:
-
+                JOptionPane.showMessageDialog(null, "Data tidak jadi dihapus!");
             break;
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
