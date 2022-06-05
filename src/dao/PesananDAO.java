@@ -21,9 +21,9 @@ public class PesananDAO {
     public void insert(Pesanan p){
         con = dbCon.makeConnection();
         
-        String sql = " INSERT INTO pesanan(id_pembeli,id_pegawai,sub_total,tanggal_pesanan) "
+        String sql = " INSERT INTO pesanan(id_pembeli,id_pegawai,sub_total,tanggal_pesanan, status_pembayaran) "
                 + "VALUES (" + p.getId_pembeli()+", "+ p.getId_pegawai()+", "+
-                p.getSub_total()+", '"+p.getTanggal_pesanan() + "')";
+                p.getSub_total()+", '"+p.getTanggal_pesanan() + "', '"+p.getStatus_pembayaran()+ "')";
         
         System.out.println("Adding Pesanan...");
         try {
@@ -127,7 +127,8 @@ public class PesananDAO {
                             rs.getInt("p.id"),
                             m,g,
                             rs.getDouble("p.sub_total"),
-                            rs.getString("p.tanggal_pesanan")   
+                            rs.getString("p.tanggal_pesanan"),
+                            rs.getString("p.status_pembayaran")
                     );
                     
                     list.add(p);
@@ -178,7 +179,8 @@ public class PesananDAO {
                             rs.getInt("p.id"),
                             m,g,
                             rs.getDouble("p.sub_total"),
-                            rs.getString("p.tanggal_pesanan")   
+                            rs.getString("p.tanggal_pesanan"),
+                            rs.getString("p.status_pembayaran")
                     );
                     
                     list.add(p);

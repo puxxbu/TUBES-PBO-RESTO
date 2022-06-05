@@ -16,20 +16,23 @@ public class Pesanan {
     private Pegawai pegawai;
     private double sub_total;
     private String tanggal_pesanan;
+    private String status_pembayaran;
 
-    public Pesanan(int id, Pembeli pembeli, Pegawai pegawai, double sub_total, String tanggal_pesanan) {
+    public Pesanan(int id, Pembeli pembeli, Pegawai pegawai, double sub_total, String tanggal_pesanan, String status_pembayaran) {
         this.id = id;
         this.pembeli = pembeli;
         this.pegawai = pegawai;
         this.sub_total = sub_total;
         this.tanggal_pesanan = tanggal_pesanan;
+        this.status_pembayaran = status_pembayaran;
     }
 
-    public Pesanan(int id_pegawai, int id_pembeli, double sub_total, String tanggal_pesanan) {
+    public Pesanan(int id_pegawai, int id_pembeli, double sub_total, String tanggal_pesanan, String status_pembayaran) {
         this.id_pegawai = id_pegawai;
         this.id_pembeli = id_pembeli;
         this.sub_total = sub_total;
         this.tanggal_pesanan = tanggal_pesanan;
+        this.status_pembayaran = status_pembayaran;
     }
 
     public int getId_pegawai() {
@@ -48,7 +51,13 @@ public class Pesanan {
         this.id_pembeli = id_pembeli;
     }
     
-    
+    public String getStatus_pembayaran() {
+        return status_pembayaran;
+    }
+
+    public void setStatus_pembayaran(String status_pembayaran) {
+        this.status_pembayaran = status_pembayaran;
+    }
     
     
     public int getId() {

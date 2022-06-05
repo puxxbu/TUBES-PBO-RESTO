@@ -598,10 +598,10 @@ public class PesananView extends javax.swing.JFrame {
         tempPembeli = pembeliControl.getLastPembeli();
         
         
-        Pesanan pesanan = new Pesanan(pegawai.getId(), tempPembeli.getId(), sub_total, tanggalTransaksiInput.getText());
+//        Pesanan pesanan = new Pesanan(pegawai.getId(), tempPembeli.getId(), sub_total, tanggalTransaksiInput.getText());
         
         
-        pesananControl.insertDetailPesanan(pesanan);
+//        pesananControl.insertDetailPesanan(pesanan);
         
         for (int i = 0; i < tempListMenu.size(); i++){
            tempData = mc.searchMenu(tempListMenu.get(i).getNama_menu());

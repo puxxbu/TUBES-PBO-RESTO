@@ -38,8 +38,10 @@ public class TableRiwayat extends AbstractTableModel {
             case 4:
                 return list.get(rowIndex).getTanggal_pesanan();
             case 5:
-                return list.get(rowIndex).getId_pembeli();
+                return list.get(rowIndex).getStatus_pembayaran();
             case 6:
+                return list.get(rowIndex).getId_pembeli();
+            case 7:
                 return list.get(rowIndex).getId_pegawai();
             default:
                 return null;
