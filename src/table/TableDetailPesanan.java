@@ -9,10 +9,7 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import model.DetailPesanan;
 
-/**
- Nama : Rakai Anandhi Mahardhika
- NPM : 200710914
- */
+
 public class TableDetailPesanan extends AbstractTableModel{
     private List<DetailPesanan> list;
 
@@ -29,7 +26,6 @@ public class TableDetailPesanan extends AbstractTableModel{
     }
     
     public Object getValueAt(int rowIndex, int columnIndex){
-        int subtotal = list.get(0).getHarga_total();
         switch(columnIndex){
             case 0:
                 return list.get(rowIndex).getMenu().getNama_menu();
@@ -39,11 +35,6 @@ public class TableDetailPesanan extends AbstractTableModel{
                 return list.get(rowIndex).getHarga_total();
             case 3:
                 return list.get(rowIndex).getId_pesanan();
-            case 4:
-                for(int i = 0; i<rowIndex; i++){
-                    subtotal += list.get(rowIndex).getHarga_total();
-                }
-                return subtotal;
             default:
                 return null;
                 

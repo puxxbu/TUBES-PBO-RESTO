@@ -4,16 +4,14 @@
  */
 
 package table;
-
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import model.Pesanan;
+import model.Pembayaran;
 
+public class TablePembayaran extends AbstractTableModel {
+    private List<Pembayaran> list;
 
-public class TableRiwayat extends AbstractTableModel {
-    private List<Pesanan> list;
-
-    public TableRiwayat(List<Pesanan> list) {
+    public TablePembayaran(List<Pembayaran> list) {
         this.list = list;
     }
     
@@ -38,8 +36,10 @@ public class TableRiwayat extends AbstractTableModel {
             case 4:
                 return list.get(rowIndex).getTanggal_pesanan();
             case 5:
-                return list.get(rowIndex).getId_pembeli();
+                return list.get(rowIndex).getStatus_pembayaran();
             case 6:
+                return list.get(rowIndex).getId_pembeli();
+            case 7:
                 return list.get(rowIndex).getId_pegawai();
             default:
                 return null;
@@ -60,6 +60,8 @@ public class TableRiwayat extends AbstractTableModel {
                 return "Sub Total";
             case 4:
                 return "Tanggal Pesanan";
+            case 5:
+                return "Status Pembayaran";
             default:
                 return null;
         }
