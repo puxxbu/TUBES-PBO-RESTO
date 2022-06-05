@@ -22,7 +22,7 @@ public class TableRiwayat extends AbstractTableModel {
     }
     
     public int getColumnCount(){
-        return 5;
+        return 6;
     }
     
     public Object getValueAt(int rowIndex, int columnIndex){
@@ -62,6 +62,8 @@ public class TableRiwayat extends AbstractTableModel {
                 return "Sub Total";
             case 4:
                 return "Tanggal Pesanan";
+            case 5:
+                return "Status Pembayaran";
             default:
                 return null;
         }
