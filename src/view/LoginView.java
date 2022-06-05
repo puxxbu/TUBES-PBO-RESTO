@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.AkunPegawai;
 import model.Pegawai;
+import exception.InputanKosongException;
 
 public class LoginView extends javax.swing.JFrame {
     private AkunPegawaiControl akunPegawaiControl;
@@ -29,6 +30,11 @@ public class LoginView extends javax.swing.JFrame {
     public void clearText() {
         usernameInput.setText("");
         passwordInput.setText("");
+    }
+    
+    public void InputanKosongException() throws InputanKosongException{
+        if(usernameInput.getText().isEmpty() || passwordInput.getText().isEmpty())
+            throw new InputanKosongException();
     }
 
     /**
@@ -145,35 +151,41 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        String user = null;
-        if(usernameInput.getText().equals("admin") && passwordInput.getText().equals("admin")){
-            JOptionPane.showConfirmDialog(rootPane, "Berhasil Login Sebagai Admin!","Konfirmasi", JOptionPane.DEFAULT_OPTION);
-            PegawaiView pv = new PegawaiView();
-            this.dispose();
-            pv.setVisible(true);
-        }else{
-            int check = 0;
-            listAkunPegawai = akunPegawaiControl.showListAkunPegawai("");
-            for (int i = 0; i < listAkunPegawai.size(); i++) {
-                if(usernameInput.getText().equals(listAkunPegawai.get(i).getUsername()) && passwordInput.getText().equals(listAkunPegawai.get(i).getPassword())){
-                  user = listAkunPegawai.get(i).getPegawai().getNama_pegawai();
-                  pegawai = listAkunPegawai.get(i).getPegawai();
-                  check = 1;
-                  break;
-                }
-            }
-           
-            if(check == 1){
-                JOptionPane.showConfirmDialog(rootPane, "Berhasil Login!, Selamat Datang " + user + "","Konfirmasi", JOptionPane.DEFAULT_OPTION);
-                PesananView tv = new PesananView(pegawai);
+        try{
+            InputanKosongException();
+            String user = null;
+            if(usernameInput.getText().equals("admin") && passwordInput.getText().equals("admin")){
+                JOptionPane.showConfirmDialog(rootPane, "Berhasil Login Sebagai Admin!","Konfirmasi", JOptionPane.DEFAULT_OPTION);
+                PegawaiView pv = new PegawaiView();
                 this.dispose();
-                tv.setVisible(true);
+                pv.setVisible(true);
             }else{
-                JOptionPane.showConfirmDialog(rootPane, "Username / Password Salah!","Konfirmasi", JOptionPane.DEFAULT_OPTION);
-                clearText();
+                int check = 0;
+                listAkunPegawai = akunPegawaiControl.showListAkunPegawai("");
+                for (int i = 0; i < listAkunPegawai.size(); i++) {
+                    if(usernameInput.getText().equals(listAkunPegawai.get(i).getUsername()) && passwordInput.getText().equals(listAkunPegawai.get(i).getPassword())){
+                      user = listAkunPegawai.get(i).getPegawai().getNama_pegawai();
+                      pegawai = listAkunPegawai.get(i).getPegawai();
+                      check = 1;
+                      break;
+                    }
+                }
+
+                if(check == 1){
+                    JOptionPane.showConfirmDialog(rootPane, "Berhasil Login!, Selamat Datang " + user + "","Konfirmasi", JOptionPane.DEFAULT_OPTION);
+                    PesananView tv = new PesananView(pegawai);
+                    this.dispose();
+                    tv.setVisible(true);
+                }else{
+                    JOptionPane.showConfirmDialog(rootPane, "Username / Password Salah!","Konfirmasi", JOptionPane.DEFAULT_OPTION);
+                    clearText();
+                }
+
             }
-            
+        }catch(InputanKosongException e){
+            JOptionPane.showMessageDialog(this, e.message());
         }
+        
     }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
