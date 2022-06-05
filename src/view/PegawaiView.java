@@ -24,6 +24,7 @@ public class PegawaiView extends javax.swing.JFrame {
     String action = null;
     List<Pegawai> listPegawai;
     List<AkunPegawai> listAkunPegawai;
+    private Pegawai pegawai;
     int selectedId = 0;
     int selectedId2 = 0;
     /**
@@ -36,6 +37,16 @@ public class PegawaiView extends javax.swing.JFrame {
         akunPegawaiControl = new AkunPegawaiControl();
         pegawaiControl = new PegawaiControl();
         showTransaksi();
+    }
+    
+    public PegawaiView(Pegawai pegawai) {
+        initComponents();
+        setComponent(false);
+        setEditDeleteBtn(false);
+        akunPegawaiControl = new AkunPegawaiControl();
+        pegawaiControl = new PegawaiControl();
+        showTransaksi();
+        this.pegawai = pegawai;
     }
     
     public void showTransaksi() {
@@ -629,19 +640,19 @@ public class PegawaiView extends javax.swing.JFrame {
     }//GEN-LAST:event_riwayatPesananLabelMouseClicked
 
     private void editMenuPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMenuPanelMouseClicked
-        MenuView mv = new MenuView();
+        MenuView mv = new MenuView(pegawai);
         this.dispose();
         mv.setVisible(true);
     }//GEN-LAST:event_editMenuPanelMouseClicked
 
     private void riwayatPesananPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananPanelMouseClicked
-        HistoryView hv = new HistoryView();
+        HistoryView hv = new HistoryView(pegawai);
         this.dispose();
         hv.setVisible(true);
     }//GEN-LAST:event_riwayatPesananPanelMouseClicked
 
     private void menuTransaksiPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTransaksiPanelMouseClicked
-        PesananView tv = new PesananView();
+        PesananView tv = new PesananView(pegawai);
         this.dispose();
         tv.setVisible(true);
     }//GEN-LAST:event_menuTransaksiPanelMouseClicked

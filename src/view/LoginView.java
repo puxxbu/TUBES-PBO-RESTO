@@ -12,10 +12,12 @@ import control.AkunPegawaiControl;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.AkunPegawai;
+import model.Pegawai;
 
 public class LoginView extends javax.swing.JFrame {
     private AkunPegawaiControl akunPegawaiControl;
     List<AkunPegawai> listAkunPegawai;
+    private Pegawai pegawai;
     /**
      * Creates new form LoginView
      */
@@ -155,6 +157,7 @@ public class LoginView extends javax.swing.JFrame {
             for (int i = 0; i < listAkunPegawai.size(); i++) {
                 if(usernameInput.getText().equals(listAkunPegawai.get(i).getUsername()) && passwordInput.getText().equals(listAkunPegawai.get(i).getPassword())){
                   user = listAkunPegawai.get(i).getPegawai().getNama_pegawai();
+                  pegawai = listAkunPegawai.get(i).getPegawai();
                   check = 1;
                   break;
                 }
@@ -162,7 +165,7 @@ public class LoginView extends javax.swing.JFrame {
            
             if(check == 1){
                 JOptionPane.showConfirmDialog(rootPane, "Berhasil Login!, Selamat Datang " + user + "","Konfirmasi", JOptionPane.DEFAULT_OPTION);
-                PesananView tv = new PesananView();
+                PesananView tv = new PesananView(pegawai);
                 this.dispose();
                 tv.setVisible(true);
             }else{

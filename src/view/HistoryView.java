@@ -8,6 +8,7 @@ import javax.swing.table.TableModel;
 import control.DetailPesananControl;
 import control.PesananControl;
 import model.DetailPesanan;
+import model.Pegawai;
 import model.Pesanan;
 import table.TableDetailPesanan;
 import table.TableRiwayat;
@@ -21,6 +22,7 @@ public class HistoryView extends javax.swing.JFrame {
     String action = null;
     List<DetailPesanan> listdetailPesanan;
     List<Pesanan> listPesanan;
+    private Pegawai pegawai;
     int selectedId;
     
     /**
@@ -32,6 +34,15 @@ public class HistoryView extends javax.swing.JFrame {
         pc = new PesananControl();
         showRiwayat();
         showDetailPesanan(0);
+    }
+    
+    public HistoryView(Pegawai pegawai) {
+        initComponents();
+        dpc = new DetailPesananControl();
+        pc = new PesananControl();
+        showRiwayat();
+        showDetailPesanan(0);
+        this.pegawai = pegawai;
     }
 
     public void showRiwayat(){

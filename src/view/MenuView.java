@@ -10,6 +10,7 @@ import dao.MenuDAO;
 import table.TableMenu;
 import exception.InputanKosongException;
 import exception.NegativeInputException;
+import model.Pegawai;
 
 /**
  *
@@ -21,6 +22,7 @@ public class MenuView extends javax.swing.JFrame {
     String action = null;
     List<Menu> listMenu;
     int selectedId = 0;
+    private Pegawai pegawai;
 
     /**
      * Creates new form MenuView
@@ -32,6 +34,18 @@ public class MenuView extends javax.swing.JFrame {
         menuControl = new MenuControl();
         showMenu();
         setRadioKategori(false);
+        
+    }
+    
+    public MenuView(Pegawai pegawai) {
+        initComponents();
+        setComponents(false);
+        setEditDeleteBtn(false);
+        menuControl = new MenuControl();
+        showMenu();
+        setRadioKategori(false);
+        this.pegawai = pegawai;
+        
     }
     
     public void setComponents(boolean value){
@@ -483,21 +497,21 @@ public class MenuView extends javax.swing.JFrame {
 
     private void menuTransaksiLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTransaksiLabelMouseClicked
         // klik panel menu transaksi
-        PesananView tv = new PesananView();
+        PesananView tv = new PesananView(pegawai);
         this.dispose();
         tv.setVisible(true);
     }//GEN-LAST:event_menuTransaksiLabelMouseClicked
 
     private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked
         // klik panel riwayat pesanan
-        HistoryView hv = new HistoryView();
+        HistoryView hv = new HistoryView(pegawai);
         this.dispose();
         hv.setVisible(true);
     }//GEN-LAST:event_riwayatPesananLabelMouseClicked
 
     private void tambahPegawaiLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahPegawaiLabelMouseClicked
         // klik panel tambah pegawai
-        PegawaiView pv = new PegawaiView();
+        PegawaiView pv = new PegawaiView(pegawai);
         this.dispose();
         pv.setVisible(true);
     }//GEN-LAST:event_tambahPegawaiLabelMouseClicked
