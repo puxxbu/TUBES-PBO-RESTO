@@ -25,8 +25,14 @@ public class PesananControl {
         return pDAO.getLastPesanan();
     }
     
-    public TableRiwayat showDataPesanan(String query, int id, double sub_total){
-        List<Pesanan> dataPesanan = pDAO.show(query,id,sub_total);
+//    public TableRiwayat showDataPesanan(String query, int id, double sub_total){
+//        List<Pesanan> dataPesanan = pDAO.show(query,id,sub_total);
+//        TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
+//        
+//        return tablePesanan;
+//    }
+    public TableRiwayat showDataPesanan(){
+        List<Pesanan> dataPesanan = pDAO.show();
         TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
         
         return tablePesanan;

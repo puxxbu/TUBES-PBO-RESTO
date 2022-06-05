@@ -35,7 +35,7 @@ public class HistoryView extends javax.swing.JFrame {
     }
 
     public void showRiwayat(){
-        tableRiwayat.setModel(pc.showDataPesanan("", 0, 0));
+        tableRiwayat.setModel(pc.showDataPesanan());
     }
     
     public void showDetailPesanan(int id){
@@ -345,7 +345,7 @@ public class HistoryView extends javax.swing.JFrame {
         int clickedRow = tableDetailPesanan.getSelectedRow();
         TableModel tableModel = tableDetailPesanan.getModel();
         
-        subTotalOutput.setText(tableModel.getValueAt(clickedRow, 3).toString());
+        subTotalOutput.setText(tableModel.getValueAt(clickedRow, 4).toString());
         
     }//GEN-LAST:event_tableDetailPesananMouseClicked
 

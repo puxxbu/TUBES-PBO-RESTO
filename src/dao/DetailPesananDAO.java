@@ -45,7 +45,7 @@ public class DetailPesananDAO {
         
         String sql = "SELECT d.*, m.* FROM detail_pesanan d "
                     +"JOIN detail_menu m on d.id_menu = m.id "
-                    +"WHERE d.id_menu = "+id+" ";
+                    +"WHERE d.id_pesanan = "+id+" ";
         
         System.out.println("Mengambil data pesanan...");
         
@@ -65,7 +65,7 @@ public class DetailPesananDAO {
                             rs.getInt("m.harga_menu")
                     );
                     DetailPesanan d = new DetailPesanan(
-                            rs.getInt("d.id"),
+                            rs.getInt("d.id_menu"),
                             m,
                             rs.getInt("d.jumlah_pesanan"),
                             rs.getInt("d.harga_total")

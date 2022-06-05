@@ -29,15 +29,21 @@ public class TableDetailPesanan extends AbstractTableModel{
     }
     
     public Object getValueAt(int rowIndex, int columnIndex){
+        int subtotal = list.get(0).getHarga_total();
         switch(columnIndex){
             case 0:
                 return list.get(rowIndex).getMenu().getNama_menu();
             case 1:
                 return list.get(rowIndex).getJumlah_pesanan();
             case 2:
-                return list.get(rowIndex).getHarga_total()*list.get(rowIndex).getJumlah_pesanan();
+                return list.get(rowIndex).getHarga_total();
             case 3:
                 return list.get(rowIndex).getId_pesanan();
+            case 4:
+                for(int i = 0; i<rowIndex; i++){
+                    subtotal += list.get(rowIndex).getHarga_total();
+                }
+                return subtotal;
             default:
                 return null;
                 
