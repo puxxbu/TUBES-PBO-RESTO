@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import model.Menu;
 import model.TempMenu;
@@ -60,11 +61,22 @@ public class PesananView extends javax.swing.JFrame {
         this.pegawai = pegawai;
         showMenu();
         clearText();
+        setComponent(false);
         
     }
     
     public void showMenu(){
         tblMenu.setModel(mc.showDataMenu(""));
+        tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+    }
+    
+    public void setComponent(boolean value){
+        bnyakPesananInputField.setEnabled(value);
+        tambahBtn.setEnabled(value);
+        batalBtn1.setEnabled(value);
+        tambahPesananBtn.setEnabled(value);
+        hapusPesananBtn.setEnabled(value);
+        batalBtn2.setEnabled(value);
     }
     
     public void clearText(){
@@ -85,16 +97,14 @@ public class PesananView extends javax.swing.JFrame {
     }
     
     public void InputanKosongException() throws InputanKosongException{
-        if(namaMenuField.getText().isEmpty() || hargaMenuField.getText().isEmpty() || deskripsiMenuField.getText().isEmpty() 
-                || bnyakPesananInputField.getText().isEmpty() || namaPembeliInput.getText().isEmpty() 
+        if(namaPembeliInput.getText().isEmpty() 
                     || nomorHPInput.getText().isEmpty() || tanggalTransaksiInput.getText().isEmpty()) {
             throw new InputanKosongException();
         }
     }
     
     public void NegativeInputException() throws NegativeInputException {
-        if( Integer.parseInt(hargaMenuField.getText()) < 0 || Integer.parseInt(bnyakPesananInputField.getText()) < 0
-                || Integer.parseInt(hargaMenuField.getText()) < 0){
+        if( Integer.parseInt(bnyakPesananInputField.getText()) <= 0){
             throw new NegativeInputException();
         }
     }
@@ -187,6 +197,11 @@ public class PesananView extends javax.swing.JFrame {
         jLabel10.setText("Pesanan Sementara");
 
         batalBtn2.setText("batal");
+        batalBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                batalBtn2ActionPerformed(evt);
+            }
+        });
 
         hapusPesananBtn.setText("Hapus Pesanan");
         hapusPesananBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -348,6 +363,11 @@ public class PesananView extends javax.swing.JFrame {
         });
 
         batalBtn1.setText("batal");
+        batalBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                batalBtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
         panelRound4.setLayout(panelRound4Layout);
@@ -580,38 +600,45 @@ public class PesananView extends javax.swing.JFrame {
         Pembeli tempPembeli=null;
         Pesanan tempPesanan=null;
         
-        
-        
-        //error handling jika menu masih kosong !!!!!!!!!!!
-        
-        for (int i = 0; i < tempListMenu.size(); i++){
-           sub_total += (tempListMenu.get(i).getHarga_menu()*tempListMenu.get(i).getJumlah_pesanan());
+        try {
+            InputanKosongException();
+            
+            for (int i = 0; i < tempListMenu.size(); i++){
+                sub_total += (tempListMenu.get(i).getHarga_menu()*tempListMenu.get(i).getJumlah_pesanan());
+            }
+
+            Pembeli pembeli = new Pembeli(namaPembeliInput.getText(), nomorHPInput.getText());
+
+            pembeliControl.insertPembeli(pembeli);
+
+            tempPembeli = pembeliControl.getLastPembeli();
+
+            Pesanan pesanan = new Pesanan(pegawai.getId(), tempPembeli.getId(), sub_total, tanggalTransaksiInput.getText(),"BELUM DIBAYAR");
+
+            pesananControl.insertDetailPesanan(pesanan);
+
+            for (int i = 0; i < tempListMenu.size(); i++){
+                tempData = mc.searchMenu(tempListMenu.get(i).getNama_menu());
+
+                DetailPesanan dp = new DetailPesanan(pesananControl.getLastPesanan().getId(),
+                        tempData.get(0),
+                        tempListMenu.get(i).getJumlah_pesanan(),
+                         (tempListMenu.get(i).getJumlah_pesanan()* tempListMenu.get(i).getHarga_menu()));
+                detailControl.insertDetailPesanan(dp);
+              
+            }
+            
+            tempListMenu.removeAll(tempListMenu);
+            tambahPesananBtn.setEnabled(false);
+            batalBtn2.setEnabled(false);
+            clearText();
+            showMenu();
+        } catch (InputanKosongException e) {
+            JOptionPane.showMessageDialog(this, e.message());
         }
         
         
-        Pembeli pembeli = new Pembeli(namaPembeliInput.getText(), nomorHPInput.getText());
         
-        
-        
-        pembeliControl.insertPembeli(pembeli);
-        
-        tempPembeli = pembeliControl.getLastPembeli();
-        
-        
-//        Pesanan pesanan = new Pesanan(pegawai.getId(), tempPembeli.getId(), sub_total, tanggalTransaksiInput.getText());
-        
-        
-//        pesananControl.insertDetailPesanan(pesanan);
-        
-        for (int i = 0; i < tempListMenu.size(); i++){
-           tempData = mc.searchMenu(tempListMenu.get(i).getNama_menu());
-           
-           DetailPesanan dp = new DetailPesanan(pesananControl.getLastPesanan().getId(),
-                   tempData.get(0),
-                   tempListMenu.get(i).getJumlah_pesanan(),
-                    (tempListMenu.get(i).getJumlah_pesanan()* tempListMenu.get(i).getHarga_menu()));
-           detailControl.insertDetailPesanan(dp);
-        }
        
     }//GEN-LAST:event_tambahPesananBtnActionPerformed
 
@@ -628,6 +655,11 @@ public class PesananView extends javax.swing.JFrame {
         namaMenuField.setText(tableModel.getValueAt(clickedRow, 1).toString());
         hargaMenuField.setText(tableModel.getValueAt(clickedRow, 4).toString());
         deskripsiMenuField.setText(tableModel.getValueAt(clickedRow, 2).toString());
+        
+        bnyakPesananInputField.setEnabled(true);
+        tambahBtn.setEnabled(true);
+        batalBtn1.setEnabled(true);
+        bnyakPesananInputField.setText("");
         
         // untuk memasukan data yang dipilih ke list menu temp
 //        tempData = mc.searchMenu(namaMenuField.getText());
@@ -650,37 +682,47 @@ public class PesananView extends javax.swing.JFrame {
         TempMenu tempMenu = null;
         String check = "tambah";
         
-        tempData = mc.searchMenu(namaMenuField.getText());
-        tempMenu = new TempMenu(tempData.get(0).getNama_menu(), 
-                tempData.get(0).getHarga_menu(),
-                Integer.parseInt(bnyakPesananInputField.getText()));
-        
-        
-        
-        
-        if (tempListMenu.isEmpty()) {
-            tempListMenu.add(tempMenu);
-            System.out.println("kosong");
-        }else{
-            for (int i = 0; i < tempListMenu.size(); i++) {
-            if (tempListMenu.get(i).getNama_menu().equals(tempMenu.getNama_menu())) {
-                tempListMenu.get(i).setJumlah_pesanan(tempMenu.getJumlah_pesanan());
-                check= new String("update");
-                break;
-            }
-         
-            }
-            if (!check.equals("update")) {
+        try {
+            NegativeInputException();
+            
+            tempData = mc.searchMenu(namaMenuField.getText());
+            tempMenu = new TempMenu(tempData.get(0).getNama_menu(), 
+                    tempData.get(0).getHarga_menu(),
+                    Integer.parseInt(bnyakPesananInputField.getText()));
+            if (tempListMenu.isEmpty()) {
                 tempListMenu.add(tempMenu);
+                System.out.println("kosong");
+            }else{
+                for (int i = 0; i < tempListMenu.size(); i++) {
+                if (tempListMenu.get(i).getNama_menu().equals(tempMenu.getNama_menu())) {
+                    tempListMenu.get(i).setJumlah_pesanan(tempMenu.getJumlah_pesanan());
+                    check= new String("update");
+                    break;
+                }
+
+                }
+                if (!check.equals("update")) {
+                    tempListMenu.add(tempMenu);
+                }
             }
+
+        } catch (NegativeInputException e) {
+            JOptionPane.showMessageDialog(this, "Banyak pesanan harus lebih dari 0");
         }
         
-        // kurang tombol update jika menu sudah ada di temp menu
+        
+        
+        
         // tambah fitur hapus temp  menu???
        
         
         tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
         clearInputMenu();
+        tambahPesananBtn.setEnabled(true);
+        batalBtn2.setEnabled(true);
+        tambahBtn.setEnabled(false);
+        batalBtn1.setEnabled(false);
+        bnyakPesananInputField.setEnabled(false);
         
     }//GEN-LAST:event_tambahBtnActionPerformed
 
@@ -736,6 +778,7 @@ public class PesananView extends javax.swing.JFrame {
         hargaMenuField.setText(Integer.toString(menu.getHarga_menu()));
         deskripsiMenuField.setText(menu.getDeskripsi_menu());
         bnyakPesananInputField.setText(tblTempMenu.getValueAt(clickedRow, 2).toString());
+        hapusPesananBtn.setEnabled(true);
     }//GEN-LAST:event_tblTempMenuMouseClicked
 
     private void hapusPesananBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusPesananBtnActionPerformed
@@ -748,20 +791,53 @@ public class PesananView extends javax.swing.JFrame {
         
         tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
         
-        for (int i = 0; i < tempListMenu.size(); i++) {
+        if (tempListMenu.size() > 1) {
+            for (int i = 0; i < tempListMenu.size(); i++) {
             if (tempListMenu.get(i).getNama_menu().equals(tempData.get(0).getNama_menu())) {
                 tempListMenu.remove(i);
                 break;
             }
          
             }
+        }else{
+            tempListMenu.remove(0);
+            tambahPesananBtn.setEnabled(false);
+        }
         tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+        hapusPesananBtn.setEnabled(false);
     }//GEN-LAST:event_hapusPesananBtnActionPerformed
 
     private void namaPembeliInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInputActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_namaPembeliInputActionPerformed
+
+    private void batalBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalBtn1ActionPerformed
+        // TODO add your handling code here:
+        namaMenuField.setText("");
+        hargaMenuField.setText("");
+        deskripsiMenuField.setText("");
+        bnyakPesananInputField.setText("");
+        bnyakPesananInputField.setEnabled(false);
+        tambahBtn.setEnabled(false);
+        batalBtn1.setEnabled(false);
+        
+    }//GEN-LAST:event_batalBtn1ActionPerformed
+
+    private void batalBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalBtn2ActionPerformed
+        // TODO add your handling code here:
+        int getAnswer = JOptionPane.showConfirmDialog(rootPane,"Apakah yakin ingin membatalkan pesanan ?","Konfirmasi",JOptionPane.YES_NO_OPTION);
+        if(getAnswer == JOptionPane.YES_OPTION){
+             tempListMenu.removeAll(tempListMenu);
+             tambahPesananBtn.setEnabled(false);
+             batalBtn2.setEnabled(false);
+             clearText();
+             tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+        }else{
+            JOptionPane.showMessageDialog(null, "Pesanan tidak jadi dibatalkan!");
+        }
+       
+    }//GEN-LAST:event_batalBtn2ActionPerformed
 
     /**
      * @param args the command line arguments

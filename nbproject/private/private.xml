@@ -7,16 +7,17 @@
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/control/PegawaiControl.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/control/PesananControl.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/model/Pesanan.java</file>
+            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/MenuView.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/LoginView.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/TransaksiView.java</file>
+            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/table/TableRiwayat.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/model/Pembeli.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/dao/PegawaiDAO.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/model/DetailPesanan.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/PegawaiView.java</file>
+            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/PesananView.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/view/HistoryView.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/dao/PesananDAO.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/dao/DetailPesananDAO.java</file>
-            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/control/DetailPesananControl.java</file>
+            <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/dao/PesananDAO.java</file>
             <file>file:/G:/nguli/PBO/TUBES%20PBO/B_6_Restoran/src/control/PembeliControl.java</file>
         </group>
     </open-files>
