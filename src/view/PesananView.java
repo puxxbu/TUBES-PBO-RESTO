@@ -633,6 +633,7 @@ public class PesananView extends javax.swing.JFrame {
             batalBtn2.setEnabled(false);
             clearText();
             showMenu();
+            JOptionPane.showMessageDialog(this, "Pesanan Berhasil dibuat !");
         } catch (InputanKosongException e) {
             JOptionPane.showMessageDialog(this, e.message());
         }
