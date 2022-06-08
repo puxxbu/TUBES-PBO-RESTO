@@ -661,6 +661,7 @@ public class PesananView extends javax.swing.JFrame {
         tambahBtn.setEnabled(true);
         batalBtn1.setEnabled(true);
         bnyakPesananInputField.setText("");
+        action = "tambah";
         
         // untuk memasukan data yang dipilih ke list menu temp
 //        tempData = mc.searchMenu(namaMenuField.getText());
@@ -695,14 +696,19 @@ public class PesananView extends javax.swing.JFrame {
                 System.out.println("kosong");
             }else{
                 for (int i = 0; i < tempListMenu.size(); i++) {
-                if (tempListMenu.get(i).getNama_menu().equals(tempMenu.getNama_menu())) {
+                if (tempListMenu.get(i).getNama_menu().equals(tempMenu.getNama_menu())&& action.equals("edit")) {
                     tempListMenu.get(i).setJumlah_pesanan(tempMenu.getJumlah_pesanan());
-                    check= new String("update");
+                    check = "update";
+                    System.out.println(check);
+                    break;
+                }else if (tempListMenu.get(i).getNama_menu().equals(tempMenu.getNama_menu())&& action.equals("tambah")) {
+                    tempListMenu.get(i).setJumlah_pesanan(tempMenu.getJumlah_pesanan()+tempListMenu.get(i).getJumlah_pesanan());
+                    check= "update";
                     break;
                 }
 
                 }
-                if (!check.equals("update")) {
+                if (!check.equals("update") ) {
                     tempListMenu.add(tempMenu);
                 }
             }
@@ -780,6 +786,11 @@ public class PesananView extends javax.swing.JFrame {
         deskripsiMenuField.setText(menu.getDeskripsi_menu());
         bnyakPesananInputField.setText(tblTempMenu.getValueAt(clickedRow, 2).toString());
         hapusPesananBtn.setEnabled(true);
+        bnyakPesananInputField.setEnabled(true);
+        tambahBtn.setEnabled(true);
+        batalBtn1.setEnabled(true);
+        action = "edit";
+        
     }//GEN-LAST:event_tblTempMenuMouseClicked
 
     private void hapusPesananBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusPesananBtnActionPerformed
