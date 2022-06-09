@@ -43,6 +43,8 @@ public class TableRiwayat extends AbstractTableModel {
                 return list.get(rowIndex).getId_pembeli();
             case 7:
                 return list.get(rowIndex).getId_pegawai();
+            case 8:
+                return list.get(rowIndex).getPembeli().getNo_hp();
             default:
                 return null;
                 

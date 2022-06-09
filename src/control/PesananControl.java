@@ -31,8 +31,15 @@ public class PesananControl {
 //        
 //        return tablePesanan;
 //    }
-    public TableRiwayat showDataPesanan(){
+    public TableRiwayat showDataRiwayat(){
         List<Pesanan> dataPesanan = pDAO.show();
+        TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
+        
+        return tablePesanan;
+    }
+    
+    public TableRiwayat showDataPesanan(){
+        List<Pesanan> dataPesanan = pDAO.showPesanan();
         TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
         
         return tablePesanan;

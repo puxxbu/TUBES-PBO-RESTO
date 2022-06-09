@@ -3,18 +3,54 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import control.MenuControl;
+import control.PembeliControl;
+import control.PesananControl;
+import control.DetailPesananControl;
+import exception.InputanKosongException;
+import exception.NegativeInputException;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import model.Menu;
+import model.TempMenu;
+import model.DetailPesanan;
+import model.AkunPegawai;
+import model.Pegawai;
+import model.Pembeli;
+import model.Pesanan;
 /**
  *
  * @author asus
  */
 public class PembayaranView extends javax.swing.JFrame {
+    private DetailPesananControl dpc;
+    private PesananControl pc;
+    private PembeliControl pembeliControl;
+    String action = null;
+    List<DetailPesanan> listdetailPesanan;
+    List<Pesanan> listPesanan;
+    private Pegawai pegawai;
+    int selectedId;
 
-    /**
-     * Creates new form PembayaranView
-     */
     public PembayaranView() {
         initComponents();
+        dpc = new DetailPesananControl();
+        pc = new PesananControl();
+        pembeliControl = new PembeliControl();
+        showPesanan();
+//        showDetailPesanan(0);
+    }
+    
+    public void showPesanan(){
+        tableRiwayat.setModel(pc.showDataPesanan());
+    }
+    
+    public void showDetailPesanan(int id){
+        tblTempMenu.setModel(dpc.showDataDetailPesanan(id));
     }
 
     /**
@@ -30,7 +66,7 @@ public class PembayaranView extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         panelRound2 = new view.PanelRound();
         jLabel1 = new javax.swing.JLabel();
-        namaPembeliInput = new javax.swing.JTextField();
+        totalHargaField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         nomorHPInput = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -56,7 +92,7 @@ public class PembayaranView extends javax.swing.JFrame {
         tanggalTransaksiInput2 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        tanggalTransaksiInput3 = new javax.swing.JTextField();
+        namaPegawaiField = new javax.swing.JTextField();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblTempMenu = new javax.swing.JTable();
@@ -76,9 +112,9 @@ public class PembayaranView extends javax.swing.JFrame {
 
         jLabel1.setText("Total Harga");
 
-        namaPembeliInput.addActionListener(new java.awt.event.ActionListener() {
+        totalHargaField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namaPembeliInputActionPerformed(evt);
+                totalHargaFieldActionPerformed(evt);
             }
         });
 
@@ -108,7 +144,7 @@ public class PembayaranView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nomorHPInput)
-                            .addComponent(namaPembeliInput, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(48, 48, 48))
                     .addGroup(panelRound2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -130,7 +166,7 @@ public class PembayaranView extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel2))
                     .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(namaPembeliInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nomorHPInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,7 +342,7 @@ public class PembayaranView extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRound4Layout.createSequentialGroup()
                             .addComponent(jLabel14)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                            .addComponent(tanggalTransaksiInput3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(namaPegawaiField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRound4Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addGap(53, 53, 53)
@@ -335,7 +371,7 @@ public class PembayaranView extends javax.swing.JFrame {
                     .addComponent(tanggalTransaksiInput2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tanggalTransaksiInput3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaPegawaiField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
@@ -495,16 +531,22 @@ public class PembayaranView extends javax.swing.JFrame {
     private void tableRiwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableRiwayatMouseClicked
         // TODO add your handling code here:
         int clickedRow = tableRiwayat.getSelectedRow();
-//        TableModel tableModel = tableRiwayat.getModel();
-//
-//        selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 0).toString());
-//        showDetailPesanan(selectedId);
-//        subTotalOutput.setText(tableModel.getValueAt(clickedRow, 3).toString());
+        TableModel tableModel = tableRiwayat.getModel();
+       
+        
+        namaPembeliInput1.setText(tableModel.getValueAt(clickedRow, 1).toString());
+        nomorHPInput1.setText(tableModel.getValueAt(clickedRow, 8).toString());
+        tanggalTransaksiInput2.setText(tableModel.getValueAt(clickedRow, 4).toString());
+        namaPegawaiField.setText(tableModel.getValueAt(clickedRow, 2).toString());
+        
+        selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 0).toString());
+        showDetailPesanan(selectedId);
+        totalHargaField.setText(tableModel.getValueAt(clickedRow, 3).toString());
     }//GEN-LAST:event_tableRiwayatMouseClicked
 
-    private void namaPembeliInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInputActionPerformed
+    private void totalHargaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalHargaFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_namaPembeliInputActionPerformed
+    }//GEN-LAST:event_totalHargaFieldActionPerformed
 
     private void namaPembeliInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInput1ActionPerformed
         // TODO add your handling code here:
@@ -513,22 +555,22 @@ public class PembayaranView extends javax.swing.JFrame {
     private void tblTempMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTempMenuMouseClicked
         // TODO add your handling code here:
         int clickedRow = tblTempMenu.getSelectedRow();
-        List<Menu> tempData = new ArrayList<>();
-        Menu menu = null;
-
-        TableModel tableModel = tblTempMenu.getModel();
-
-        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
-        menu = new Menu(tempData.get(0).getNama_menu(),
-            tempData.get(0).getDeskripsi_menu(),
-            tempData.get(0).getKategori(),
-            tempData.get(0).getHarga_menu());
-
-        namaMenuField.setText(menu.getNama_menu());
-        hargaMenuField.setText(Integer.toString(menu.getHarga_menu()));
-        deskripsiMenuField.setText(menu.getDeskripsi_menu());
-        bnyakPesananInputField.setText(tblTempMenu.getValueAt(clickedRow, 2).toString());
-        hapusPesananBtn.setEnabled(true);
+//        List<Menu> tempData = new ArrayList<>();
+//        Menu menu = null;
+//
+//        TableModel tableModel = tblTempMenu.getModel();
+//
+//        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
+//        menu = new Menu(tempData.get(0).getNama_menu(),
+//            tempData.get(0).getDeskripsi_menu(),
+//            tempData.get(0).getKategori(),
+//            tempData.get(0).getHarga_menu());
+//
+//        namaMenuField.setText(menu.getNama_menu());
+//        hargaMenuField.setText(Integer.toString(menu.getHarga_menu()));
+//        deskripsiMenuField.setText(menu.getDeskripsi_menu());
+//        bnyakPesananInputField.setText(tblTempMenu.getValueAt(clickedRow, 2).toString());
+//        hapusPesananBtn.setEnabled(true);
     }//GEN-LAST:event_tblTempMenuMouseClicked
 
     /**
@@ -586,7 +628,7 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JTextField namaPembeliInput;
+    private javax.swing.JTextField namaPegawaiField;
     private javax.swing.JTextField namaPembeliInput1;
     private javax.swing.JTextField nomorHPInput;
     private javax.swing.JTextField nomorHPInput1;
@@ -600,7 +642,7 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JLabel tambahPegawaiLabel;
     private view.PanelRound tambahPegawaiPanel;
     private javax.swing.JTextField tanggalTransaksiInput2;
-    private javax.swing.JTextField tanggalTransaksiInput3;
     private javax.swing.JTable tblTempMenu;
+    private javax.swing.JTextField totalHargaField;
     // End of variables declaration//GEN-END:variables
 }
