@@ -58,7 +58,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="riwayatPesananLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="editMenuPanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="logoutPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
@@ -85,11 +85,13 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="editMenuLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="riwayatPesananLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="LabelPembeli" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="editMenuPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="logoutPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="editMenuLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="riwayatPesananLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelPembeli" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
@@ -834,7 +836,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="view.PanelRound" name="editMenuPanel">
+        <Container class="view.PanelRound" name="logoutPanel">
           <Properties>
             <Property name="roundBottomLeft" type="int" value="10"/>
             <Property name="roundBottomRight" type="int" value="10"/>
@@ -842,7 +844,7 @@
             <Property name="roundTopRight" type="int" value="10"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="editMenuPanelMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutPanelMouseClicked"/>
           </Events>
 
           <Layout>

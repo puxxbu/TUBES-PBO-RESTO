@@ -150,7 +150,7 @@ public class PesananView extends javax.swing.JFrame {
         bnyakPesananInputField = new javax.swing.JTextField();
         panelRound5 = new view.PanelRound();
         jLabel4 = new javax.swing.JLabel();
-        editMenuPanel = new view.PanelRound();
+        logoutPanel = new view.PanelRound();
         jLabel12 = new javax.swing.JLabel();
         LabelPembeli = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -594,30 +594,30 @@ public class PesananView extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        editMenuPanel.setRoundBottomLeft(10);
-        editMenuPanel.setRoundBottomRight(10);
-        editMenuPanel.setRoundTopLeft(10);
-        editMenuPanel.setRoundTopRight(10);
-        editMenuPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        logoutPanel.setRoundBottomLeft(10);
+        logoutPanel.setRoundBottomRight(10);
+        logoutPanel.setRoundTopLeft(10);
+        logoutPanel.setRoundTopRight(10);
+        logoutPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                editMenuPanelMouseClicked(evt);
+                logoutPanelMouseClicked(evt);
             }
         });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel12.setText("LOGOUT");
 
-        javax.swing.GroupLayout editMenuPanelLayout = new javax.swing.GroupLayout(editMenuPanel);
-        editMenuPanel.setLayout(editMenuPanelLayout);
-        editMenuPanelLayout.setHorizontalGroup(
-            editMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editMenuPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout logoutPanelLayout = new javax.swing.GroupLayout(logoutPanel);
+        logoutPanel.setLayout(logoutPanelLayout);
+        logoutPanelLayout.setHorizontalGroup(
+            logoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoutPanelLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18))
         );
-        editMenuPanelLayout.setVerticalGroup(
-            editMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        logoutPanelLayout.setVerticalGroup(
+            logoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
@@ -664,7 +664,7 @@ public class PesananView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(riwayatPesananLabel)
                         .addGap(37, 37, 37)
-                        .addComponent(editMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(logoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -684,11 +684,12 @@ public class PesananView extends javax.swing.JFrame {
                         .addGap(0, 12, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(editMenuLabel)
-                            .addComponent(riwayatPesananLabel)
-                            .addComponent(LabelPembeli)
-                            .addComponent(editMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(logoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(editMenuLabel)
+                                .addComponent(riwayatPesananLabel)
+                                .addComponent(LabelPembeli)))
                         .addGap(34, 34, 34)))
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
@@ -867,6 +868,9 @@ public class PesananView extends javax.swing.JFrame {
 
     private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked
         // TODO add your handling code here:
+        HistoryView hv = new HistoryView(pegawai);
+        this.dispose();
+        hv.setVisible(true);
     }//GEN-LAST:event_riwayatPesananLabelMouseClicked
 
     private void tblTempMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTempMenuMouseClicked
@@ -955,12 +959,12 @@ public class PesananView extends javax.swing.JFrame {
        
     }//GEN-LAST:event_batalBtn2ActionPerformed
 
-    private void editMenuPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMenuPanelMouseClicked
+    private void logoutPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutPanelMouseClicked
         // klik panel edit menu
-        MenuView mv = new MenuView(pegawai);
+        LoginView lv = new LoginView();
         this.dispose();
-        mv.setVisible(true);
-    }//GEN-LAST:event_editMenuPanelMouseClicked
+        lv.setVisible(true);
+    }//GEN-LAST:event_logoutPanelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1005,7 +1009,6 @@ public class PesananView extends javax.swing.JFrame {
     private javax.swing.JTextField bnyakPesananInputField;
     private javax.swing.JTextArea deskripsiMenuField;
     private javax.swing.JLabel editMenuLabel;
-    private view.PanelRound editMenuPanel;
     private javax.swing.JButton hapusPesananBtn;
     private javax.swing.JTextField hargaMenuField;
     private javax.swing.JLabel jLabel1;
@@ -1024,6 +1027,7 @@ public class PesananView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private view.PanelRound logoutPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField namaMenuField;
     private javax.swing.JTextField namaPembeliInput;
