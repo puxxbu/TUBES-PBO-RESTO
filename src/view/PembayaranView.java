@@ -55,6 +55,7 @@ public class PembayaranView extends javax.swing.JFrame {
         tanggalTransaksiInput.setText("");
         totalHargaField.setText("");
         uangInputField.setText("");
+        nomorHPInput.setText("");
     }
     
     public void showPesanan(){
@@ -66,8 +67,13 @@ public class PembayaranView extends javax.swing.JFrame {
     }
     
     public void initComponent(boolean value){
-        bayarPesananBtn.setEnabled(value);
-        cancelBtn.setEnabled(value);
+//        bayarPesananBtn.setEnabled(value);
+//        cancelBtn.setEnabled(value);
+        
+        namaPembeliInput.setEnabled(value);
+        nomorHPInput.setEnabled(value);
+        tanggalTransaksiInput.setEnabled(value);
+        namaPegawaiField.setEnabled(value);
     }
     
     public void InputanKosongException() throws InputanKosongException{
@@ -580,7 +586,7 @@ public class PembayaranView extends javax.swing.JFrame {
         // TODO add your handling code here:
         int clickedRow = tableRiwayat.getSelectedRow();
         TableModel tableModel = tableRiwayat.getModel();
-        initComponent(true);
+        initComponent(false);
        
         
         namaPembeliInput.setText(tableModel.getValueAt(clickedRow, 1).toString());
