@@ -196,7 +196,7 @@ public class PesananView extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Clarendon BT", 1, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(252, 233, 201));
         jLabel10.setText("Pesanan Sementara");
 
@@ -271,7 +271,7 @@ public class PesananView extends javax.swing.JFrame {
         panelRound6.setRoundTopLeft(10);
         panelRound6.setRoundTopRight(10);
 
-        jLabel13.setFont(new java.awt.Font("Clarendon BT", 1, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(252, 233, 201));
         jLabel13.setText("INPUT PEMBELI");
 
@@ -282,7 +282,7 @@ public class PesananView extends javax.swing.JFrame {
             .addGroup(panelRound6Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel13)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound6Layout.setVerticalGroup(
             panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,7 +295,7 @@ public class PesananView extends javax.swing.JFrame {
         panelRound7.setRoundTopLeft(10);
         panelRound7.setRoundTopRight(10);
 
-        jLabel1.setFont(new java.awt.Font("Clarendon BT", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("NamaPembeli");
 
@@ -305,11 +305,11 @@ public class PesananView extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Clarendon BT", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nomor HP");
 
-        jLabel3.setFont(new java.awt.Font("Clarendon BT", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tanggal Transaksi");
 
@@ -432,19 +432,19 @@ public class PesananView extends javax.swing.JFrame {
         panelRound3.setRoundTopLeft(10);
         panelRound3.setRoundTopRight(10);
 
-        jLabel5.setFont(new java.awt.Font("Clarendon Blk BT", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(252, 233, 201));
         jLabel5.setText("Detail Menu");
 
-        jLabel6.setFont(new java.awt.Font("Clarendon Blk BT", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(252, 233, 201));
         jLabel6.setText("Nama Menu       :");
 
-        jLabel8.setFont(new java.awt.Font("Clarendon Blk BT", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(252, 233, 201));
         jLabel8.setText("Harga                :");
 
-        jLabel7.setFont(new java.awt.Font("Clarendon Blk BT", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(252, 233, 201));
         jLabel7.setText("Deskripsi Menu :");
 
@@ -471,7 +471,7 @@ public class PesananView extends javax.swing.JFrame {
         namaMenuField.setText("test");
         namaMenuField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jLabel9.setFont(new java.awt.Font("Clarendon BT", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(252, 233, 201));
         jLabel9.setText("Input banyak Pesanan");
 
@@ -540,7 +540,7 @@ public class PesananView extends javax.swing.JFrame {
         panelRound5.setRoundTopLeft(10);
         panelRound5.setRoundTopRight(10);
 
-        jLabel4.setFont(new java.awt.Font("Clarendon BT", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(252, 233, 201));
         jLabel4.setText("MENU");
 
