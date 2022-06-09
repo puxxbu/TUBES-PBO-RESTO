@@ -136,12 +136,6 @@ public class PegawaiView extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         saveBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        menuTransaksiPanel = new view.PanelRound();
-        jLabel15 = new javax.swing.JLabel();
-        riwayatPesananPanel = new view.PanelRound();
-        riwayatPesananLabel = new javax.swing.JLabel();
-        editMenuPanel = new view.PanelRound();
-        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -329,15 +323,15 @@ public class PegawaiView extends javax.swing.JFrame {
                             .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(76, 76, 76))
                     .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(addBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(saveBtn)
+                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelRound2Layout.createSequentialGroup()
+                                .addComponent(addBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(saveBtn)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cancelBtn)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(20, 20, 20))))
         );
         panelRound2Layout.setVerticalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,83 +373,6 @@ public class PegawaiView extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel4.setText("Tambah Pegawai");
 
-        menuTransaksiPanel.setRoundBottomLeft(10);
-        menuTransaksiPanel.setRoundBottomRight(10);
-        menuTransaksiPanel.setRoundTopLeft(10);
-        menuTransaksiPanel.setRoundTopRight(10);
-        menuTransaksiPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuTransaksiPanelMouseClicked(evt);
-            }
-        });
-
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Menu Transaksi");
-
-        javax.swing.GroupLayout menuTransaksiPanelLayout = new javax.swing.GroupLayout(menuTransaksiPanel);
-        menuTransaksiPanel.setLayout(menuTransaksiPanelLayout);
-        menuTransaksiPanelLayout.setHorizontalGroup(
-            menuTransaksiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-        menuTransaksiPanelLayout.setVerticalGroup(
-            menuTransaksiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-        );
-
-        riwayatPesananPanel.setRoundBottomLeft(10);
-        riwayatPesananPanel.setRoundBottomRight(10);
-        riwayatPesananPanel.setRoundTopLeft(10);
-        riwayatPesananPanel.setRoundTopRight(10);
-        riwayatPesananPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                riwayatPesananPanelMouseClicked(evt);
-            }
-        });
-
-        riwayatPesananLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        riwayatPesananLabel.setText("Riwayat Pesanan");
-        riwayatPesananLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                riwayatPesananLabelMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout riwayatPesananPanelLayout = new javax.swing.GroupLayout(riwayatPesananPanel);
-        riwayatPesananPanel.setLayout(riwayatPesananPanelLayout);
-        riwayatPesananPanelLayout.setHorizontalGroup(
-            riwayatPesananPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(riwayatPesananLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-        riwayatPesananPanelLayout.setVerticalGroup(
-            riwayatPesananPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(riwayatPesananLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-        );
-
-        editMenuPanel.setRoundBottomLeft(10);
-        editMenuPanel.setRoundBottomRight(10);
-        editMenuPanel.setRoundTopLeft(10);
-        editMenuPanel.setRoundTopRight(10);
-        editMenuPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                editMenuPanelMouseClicked(evt);
-            }
-        });
-
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Edit Menu");
-
-        javax.swing.GroupLayout editMenuPanelLayout = new javax.swing.GroupLayout(editMenuPanel);
-        editMenuPanel.setLayout(editMenuPanelLayout);
-        editMenuPanelLayout.setHorizontalGroup(
-            editMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-        editMenuPanelLayout.setVerticalGroup(
-            editMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -464,26 +381,15 @@ public class PegawaiView extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(270, 270, 270)
-                        .addComponent(editMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(riwayatPesananPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(menuTransaksiPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4)
                     .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(editMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(riwayatPesananPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuTransaksiPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -635,28 +541,6 @@ public class PegawaiView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchBtnActionPerformed
 
-    private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_riwayatPesananLabelMouseClicked
-
-    private void editMenuPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMenuPanelMouseClicked
-        MenuView mv = new MenuView(pegawai);
-        this.dispose();
-        mv.setVisible(true);
-    }//GEN-LAST:event_editMenuPanelMouseClicked
-
-    private void riwayatPesananPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananPanelMouseClicked
-        HistoryView hv = new HistoryView(pegawai);
-        this.dispose();
-        hv.setVisible(true);
-    }//GEN-LAST:event_riwayatPesananPanelMouseClicked
-
-    private void menuTransaksiPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTransaksiPanelMouseClicked
-        PesananView tv = new PesananView(pegawai);
-        this.dispose();
-        tv.setVisible(true);
-    }//GEN-LAST:event_menuTransaksiPanelMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -697,7 +581,6 @@ public class PegawaiView extends javax.swing.JFrame {
     private javax.swing.JButton cancelBtn;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JButton editBtn;
-    private view.PanelRound editMenuPanel;
     private javax.swing.JTextField emailInput;
     private javax.swing.JTextField gajiInput;
     private javax.swing.JLabel jLabel1;
@@ -705,22 +588,17 @@ public class PegawaiView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel mainPanel;
-    private view.PanelRound menuTransaksiPanel;
     private javax.swing.JTextField namaPegawaiInput;
     private view.PanelRound panelRound1;
     private view.PanelRound panelRound2;
     private view.PanelRound panelRound3;
     private javax.swing.JTextField passwordInput;
-    private javax.swing.JLabel riwayatPesananLabel;
-    private view.PanelRound riwayatPesananPanel;
     private javax.swing.JButton saveBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField searchInput;
