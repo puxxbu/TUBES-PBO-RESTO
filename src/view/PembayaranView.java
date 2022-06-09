@@ -172,6 +172,11 @@ public class PembayaranView extends javax.swing.JFrame {
         });
 
         cancelBtn.setText("Batal");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
@@ -664,6 +669,12 @@ public class PembayaranView extends javax.swing.JFrame {
         tv.setVisible(true);
         
     }//GEN-LAST:event_menuTransaksiLabelMouseClicked
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        initComponent(false);
+        setComponent();
+        JOptionPane.showMessageDialog(this, "Pembayaran dibatalkan!");
+    }//GEN-LAST:event_cancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
