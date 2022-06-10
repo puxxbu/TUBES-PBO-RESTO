@@ -59,16 +59,20 @@ public class LoginView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(242, 217, 99));
 
-        panelRound1.setBackground(new java.awt.Color(125, 125, 125));
+        panelRound1.setBackground(new java.awt.Color(48, 81, 90));
         panelRound1.setRoundBottomLeft(15);
         panelRound1.setRoundBottomRight(15);
         panelRound1.setRoundTopLeft(15);
         panelRound1.setRoundTopRight(15);
 
+        jLabel1.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(242, 217, 99));
         jLabel1.setText("Username");
 
+        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 217, 99));
         jLabel2.setText("Password");
 
         loginBtn.setText("Masuk");
@@ -78,7 +82,8 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(242, 217, 99));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("LOGIN PEGAWAI");
 
@@ -90,18 +95,22 @@ public class LoginView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
                     .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
-                    .addComponent(passwordInput))
+                    .addComponent(passwordInput)
+                    .addGroup(panelRound1Layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel2))
+                    .addGroup(panelRound1Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel1)))
                 .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,6 +129,9 @@ public class LoginView extends javax.swing.JFrame {
                 .addComponent(loginBtn)
                 .addContainerGap(48, Short.MAX_VALUE))
         );
+
+        jPanel2.setBackground(new java.awt.Color(242, 217, 99));
+        jPanel2.setForeground(new java.awt.Color(242, 217, 99));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/gambar-depan.png"))); // NOI18N
@@ -153,7 +165,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

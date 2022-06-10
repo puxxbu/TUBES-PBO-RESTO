@@ -812,6 +812,11 @@ public class PembayaranView extends javax.swing.JFrame {
         LabelPembeli.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
         LabelPembeli.setForeground(new java.awt.Color(48, 81, 90));
         LabelPembeli.setText("Transaksi");
+        LabelPembeli.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelPembeliMouseClicked(evt);
+            }
+        });
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/LogoUtama.png"))); // NOI18N
 
@@ -1027,6 +1032,13 @@ public class PembayaranView extends javax.swing.JFrame {
         this.dispose();
         mv.setVisible(true);
     }//GEN-LAST:event_editMenuLabelMouseClicked
+
+    private void LabelPembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelPembeliMouseClicked
+        // TODO add your handling code here:
+        PesananView mv = new PesananView(pegawai);
+        this.dispose();
+        mv.setVisible(true);
+    }//GEN-LAST:event_LabelPembeliMouseClicked
 
     /**
      * @param args the command line arguments
