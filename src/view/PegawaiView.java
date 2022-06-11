@@ -441,8 +441,8 @@ public class PegawaiView extends javax.swing.JFrame {
 
                 if(action.equals("Tambah")){
                     Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
-                    pegawaiControl.insertDataPembeli(P);
-                    listPegawai = pegawaiControl.showListPembeli();
+                    pegawaiControl.insertDataPegawai(P);
+                    listPegawai = pegawaiControl.showListPegawai();
 
 
                     P = listPegawai.get(listPegawai.size()-1);
