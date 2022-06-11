@@ -15,12 +15,12 @@ import model.Pegawai;
 public class PegawaiControl {
     private PegawaiDAO pDao = new PegawaiDAO();
 
-    public List<Pegawai> showListPembeli() {
+    public List<Pegawai> showListPegawai() {
         List<Pegawai> dataPegawai = pDao.showPegawai();
         return dataPegawai;
     }
     
-    public void insertDataPembeli(Pegawai p){
+    public void insertDataPegawai(Pegawai p){
         pDao.insertPegawai(p);
     }
 

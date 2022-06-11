@@ -490,21 +490,35 @@ public class PegawaiView extends javax.swing.JFrame {
                 NegativeInputException();
 
                 if(action.equals("Tambah")){
-                    Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
-                    pegawaiControl.insertDataPembeli(P);
-                    listPegawai = pegawaiControl.showListPembeli();
+                    int result = 0;
+                    listAkunPegawai = akunPegawaiControl.showListAkunPegawai("");
+                    for (int i = 0; i < listAkunPegawai.size(); i++) {
+                        if(usernameInput.getText().equals(listAkunPegawai.get(i).getUsername()))
+                            result = 1;        
+                    }
+                    
+                    if(result == 0){
+                        Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
+                        pegawaiControl.insertDataPegawai(P);
+                        listPegawai = pegawaiControl.showListPegawai();
 
 
-                    P = listPegawai.get(listPegawai.size()-1);
-                    AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
-                    akunPegawaiControl.insertDataAkunPegawai(Ap);
+                        P = listPegawai.get(listPegawai.size()-1);
+                        AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
+                        akunPegawaiControl.insertDataAkunPegawai(Ap);
+                        JOptionPane.showMessageDialog(null, "Data berhasil ditambah!");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Username sudah ada!");
+                    }
+                    
                 }else{
                     Pegawai P = new Pegawai (selectedId,namaPegawaiInput.getText(),shifMulaiInput.getText(), shiftSelesaiInput.getText(),Double.parseDouble(gajiInput.getText()), emailInput.getText());
                     pegawaiControl.updateDataPegawai(P);
                     AkunPegawai Ap = new AkunPegawai(selectedId,P,usernameInput.getText(), passwordInput.getText());
                     akunPegawaiControl.updateDataAkunPegawai(Ap);
+                    JOptionPane.showMessageDialog(null, "Data berhasil diubah!");
                 }
-                JOptionPane.showMessageDialog(null, "Data berhasil diubah!");
+                
 
 
             }catch(InputanKosongException e){
