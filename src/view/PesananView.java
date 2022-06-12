@@ -67,6 +67,13 @@ public class PesananView extends javax.swing.JFrame {
         tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
     }
     
+    public void clearDetailMenu(){
+        namaMenuField.setText("");
+        hargaMenuField.setText("");
+        deskripsiMenuField.setText("");
+        bnyakPesananInputField.setText("");
+    }
+    
     public void setComponent(boolean value){
         bnyakPesananInputField.setEnabled(value);
         tambahBtn.setEnabled(value);
@@ -883,7 +890,7 @@ public class PesananView extends javax.swing.JFrame {
         // TODO add your handling code here:
         List<Menu> tempData = new ArrayList<>();
         TempMenu tempMenu = null;
-        String check = "tambah";
+        String check="";
         
         try {
             NegativeInputException();
@@ -909,7 +916,7 @@ public class PesananView extends javax.swing.JFrame {
                 }
 
                 }
-                if (!check.equals("update") ) {
+                if (!check.equals("update")) {
                     tempListMenu.add(tempMenu);
                 }
             }
@@ -956,7 +963,7 @@ public class PesananView extends javax.swing.JFrame {
         
         TableModel tableModel = tblTempMenu.getModel();
         
-        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
+        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 0).toString());
         menu = new Menu(tempData.get(0).getNama_menu(),
                 tempData.get(0).getDeskripsi_menu(),
                 tempData.get(0).getKategori(),
@@ -984,7 +991,7 @@ public class PesananView extends javax.swing.JFrame {
         
         TableModel tableModel = tblTempMenu.getModel();
         
-        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 1).toString());
+        tempData = mc.searchMenu(tableModel.getValueAt(clickedRow, 0).toString());
         
         if (tempListMenu.size() > 1) {
             for (int i = 0; i < tempListMenu.size(); i++) {
@@ -999,7 +1006,11 @@ public class PesananView extends javax.swing.JFrame {
             tambahPesananBtn.setEnabled(false);
         }
         tblTempMenu.setModel(mc.showTempMenu(tempListMenu));
+        
         hapusPesananBtn.setEnabled(false);
+        tambahBtn.setEnabled(false);
+        batalBtn1.setEnabled(false);
+        clearDetailMenu();
     }//GEN-LAST:event_hapusPesananBtnActionPerformed
 
     private void namaPembeliInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInputActionPerformed
@@ -1009,10 +1020,7 @@ public class PesananView extends javax.swing.JFrame {
 
     private void batalBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalBtn1ActionPerformed
         // TODO add your handling code here:
-        namaMenuField.setText("");
-        hargaMenuField.setText("");
-        deskripsiMenuField.setText("");
-        bnyakPesananInputField.setText("");
+        clearDetailMenu();
         bnyakPesananInputField.setEnabled(false);
         tambahBtn.setEnabled(false);
         batalBtn1.setEnabled(false);
