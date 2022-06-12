@@ -154,7 +154,7 @@ public class LoginView extends javax.swing.JFrame {
             .addGroup(UtamaLayout.createSequentialGroup()
                 .addGap(333, 333, 333)
                 .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
         UtamaLayout.setVerticalGroup(
             UtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

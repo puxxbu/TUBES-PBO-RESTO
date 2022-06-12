@@ -133,15 +133,6 @@ public class PembayaranView extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         mainPanel = new javax.swing.JPanel();
-        panelRound2 = new view.PanelRound();
-        jLabel2 = new javax.swing.JLabel();
-        uangInputField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        bayarPesananBtn = new javax.swing.JButton();
-        cancelBtn = new javax.swing.JButton();
-        totalHargaField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         panelRound3 = new view.PanelRound();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableRiwayat = new javax.swing.JTable();
@@ -157,11 +148,18 @@ public class PembayaranView extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         namaPegawaiField = new javax.swing.JTextField();
+        totalHargaField = new javax.swing.JTextField();
+        uangInputField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        cancelBtn = new javax.swing.JButton();
+        bayarPesananBtn = new javax.swing.JButton();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblTempMenu = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
-        riwayatPesananLabel1 = new javax.swing.JLabel();
+        pembayaranView = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         riwayatPesananLabel = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -472,100 +470,6 @@ public class PembayaranView extends javax.swing.JFrame {
         mainPanel.setBackground(new java.awt.Color(242, 217, 99));
         mainPanel.setForeground(new java.awt.Color(0, 0, 0));
 
-        panelRound2.setBackground(new java.awt.Color(81, 175, 157));
-        panelRound2.setRoundBottomLeft(15);
-        panelRound2.setRoundBottomRight(15);
-        panelRound2.setRoundTopLeft(15);
-        panelRound2.setRoundTopRight(15);
-
-        jLabel2.setBackground(new java.awt.Color(243, 161, 97));
-        jLabel2.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(48, 81, 90));
-        jLabel2.setText("Masukan Uang");
-
-        jLabel5.setBackground(new java.awt.Color(243, 161, 97));
-        jLabel5.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(48, 81, 90));
-        jLabel5.setText("Bayar");
-
-        bayarPesananBtn.setText("Bayar Pesanan");
-        bayarPesananBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bayarPesananBtnActionPerformed(evt);
-            }
-        });
-
-        cancelBtn.setText("Batal");
-        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelBtnActionPerformed(evt);
-            }
-        });
-
-        totalHargaField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalHargaFieldActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Total Harga");
-
-        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
-        panelRound2.setLayout(panelRound2Layout);
-        panelRound2Layout.setHorizontalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 331, Short.MAX_VALUE))
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelRound2Layout.createSequentialGroup()
-                                        .addComponent(bayarPesananBtn)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cancelBtn))
-                                    .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panelRound2Layout.createSequentialGroup()
-                                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addGroup(panelRound2Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27))))
-        );
-        panelRound2Layout.setVerticalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bayarPesananBtn)
-                            .addComponent(cancelBtn)))
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(87, 87, 87)
-                        .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         panelRound3.setBackground(new java.awt.Color(81, 175, 157));
         panelRound3.setRoundBottomLeft(15);
         panelRound3.setRoundBottomRight(15);
@@ -625,13 +529,12 @@ public class PembayaranView extends javax.swing.JFrame {
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
-                        .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(388, 388, 388))))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 869, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(panelRound3Layout.createSequentialGroup()
+                .addGap(364, 364, 364)
+                .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -706,6 +609,49 @@ public class PembayaranView extends javax.swing.JFrame {
         namaPegawaiField.setCaretColor(new java.awt.Color(48, 81, 90));
         namaPegawaiField.setDisabledTextColor(new java.awt.Color(48, 81, 90));
 
+        totalHargaField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        totalHargaField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalHargaFieldActionPerformed(evt);
+            }
+        });
+
+        uangInputField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+
+        jLabel2.setBackground(new java.awt.Color(243, 161, 97));
+        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel2.setText("Masukan Uang");
+
+        jLabel1.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(252, 233, 201));
+        jLabel1.setText("Total Harga");
+
+        jLabel5.setBackground(new java.awt.Color(243, 161, 97));
+        jLabel5.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(252, 233, 201));
+        jLabel5.setText("Bayar");
+
+        cancelBtn.setBackground(new java.awt.Color(252, 233, 201));
+        cancelBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        cancelBtn.setForeground(new java.awt.Color(48, 81, 90));
+        cancelBtn.setText("Batal");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
+
+        bayarPesananBtn.setBackground(new java.awt.Color(243, 161, 97));
+        bayarPesananBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        bayarPesananBtn.setForeground(new java.awt.Color(48, 81, 90));
+        bayarPesananBtn.setText("Bayar Pesanan");
+        bayarPesananBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bayarPesananBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
         panelRound4.setLayout(panelRound4Layout);
         panelRound4Layout.setHorizontalGroup(
@@ -722,16 +668,33 @@ public class PembayaranView extends javax.swing.JFrame {
                             .addComponent(jLabel14))
                         .addGap(49, 49, 49)
                         .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(namaPegawaiField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                            .addComponent(namaPegawaiField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(namaPembeliInput)
-                            .addComponent(nomorHPInput)
-                            .addComponent(tanggalTransaksiInput))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                            .addComponent(nomorHPInput, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(tanggalTransaksiInput)))
+                    .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(panelRound4Layout.createSequentialGroup()
+                            .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel1))
+                            .addGap(37, 37, 37)
+                            .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRound4Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(18, 18, 18)
+                            .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bayarPesananBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cancelBtn)
+                .addGap(15, 15, 15))
         );
         panelRound4Layout.setVerticalGroup(
             panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -749,7 +712,21 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(namaPegawaiField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addGap(9, 9, 9)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelBtn)
+                    .addComponent(bayarPesananBtn))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         panelRound1.setBackground(new java.awt.Color(81, 175, 157));
@@ -801,13 +778,13 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        riwayatPesananLabel1.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
-        riwayatPesananLabel1.setForeground(new java.awt.Color(81, 175, 157));
-        riwayatPesananLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        riwayatPesananLabel1.setText("Pembayaran");
-        riwayatPesananLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        pembayaranView.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
+        pembayaranView.setForeground(new java.awt.Color(81, 175, 157));
+        pembayaranView.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pembayaranView.setText("Pembayaran");
+        pembayaranView.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                riwayatPesananLabel1MouseClicked(evt);
+                pembayaranViewMouseClicked(evt);
             }
         });
 
@@ -934,21 +911,21 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(riwayatPesananLabel1)
+                .addComponent(pembayaranView)
                 .addGap(18, 18, 18)
                 .addComponent(logoutPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 39, Short.MAX_VALUE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelRound4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelRound2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 59, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(39, Short.MAX_VALUE))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -969,17 +946,14 @@ public class PembayaranView extends javax.swing.JFrame {
                                     .addComponent(editMenuLabel)
                                     .addComponent(riwayatPesananLabel)
                                     .addComponent(LabelPembeli)
-                                    .addComponent(riwayatPesananLabel1))))
+                                    .addComponent(pembayaranView))))
                         .addGap(30, 30, 30)))
                 .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -1114,9 +1088,9 @@ public class PembayaranView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblTempMenu1MouseClicked
 
-    private void riwayatPesananLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabel1MouseClicked
+    private void pembayaranViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pembayaranViewMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_riwayatPesananLabel1MouseClicked
+    }//GEN-LAST:event_pembayaranViewMouseClicked
 
     private void riwayatPesananLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatPesananLabelMouseClicked
         // TODO add your handling code here:
@@ -1204,7 +1178,6 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1236,7 +1209,6 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JTextField nomorHPInput;
     private javax.swing.JTextField nomorHPInput1;
     private view.PanelRound panelRound1;
-    private view.PanelRound panelRound2;
     private view.PanelRound panelRound3;
     private view.PanelRound panelRound4;
     private view.PanelRound panelRound5;
@@ -1244,8 +1216,8 @@ public class PembayaranView extends javax.swing.JFrame {
     private view.PanelRound panelRound7;
     private view.PanelRound panelRound8;
     private view.PanelRound panelRound9;
+    private javax.swing.JLabel pembayaranView;
     private javax.swing.JLabel riwayatPesananLabel;
-    private javax.swing.JLabel riwayatPesananLabel1;
     private javax.swing.JTable tableRiwayat;
     private javax.swing.JTable tableRiwayat1;
     private javax.swing.JTextField tanggalTransaksiInput;
