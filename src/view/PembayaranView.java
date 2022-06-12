@@ -169,6 +169,8 @@ public class PembayaranView extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         LabelPembeli = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        logoutPanel3 = new view.PanelRound();
+        logoutLabel3 = new javax.swing.JLabel();
 
         mainPanel1.setBackground(new java.awt.Color(255, 252, 247));
         mainPanel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -564,7 +566,7 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelRound3.setBackground(new java.awt.Color(243, 161, 97));
+        panelRound3.setBackground(new java.awt.Color(81, 175, 157));
         panelRound3.setRoundBottomLeft(15);
         panelRound3.setRoundBottomRight(15);
         panelRound3.setRoundTopLeft(15);
@@ -750,7 +752,7 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        panelRound1.setBackground(new java.awt.Color(243, 161, 97));
+        panelRound1.setBackground(new java.awt.Color(81, 175, 157));
         panelRound1.setRoundBottomLeft(15);
         panelRound1.setRoundBottomRight(15);
         panelRound1.setRoundTopLeft(15);
@@ -774,6 +776,7 @@ public class PembayaranView extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tblTempMenu);
 
+        jLabel11.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(48, 81, 90));
         jLabel11.setText("Menu Yang Dipesan");
 
@@ -882,6 +885,35 @@ public class PembayaranView extends javax.swing.JFrame {
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/LogoUtama.png"))); // NOI18N
 
+        logoutPanel3.setBackground(new java.awt.Color(239, 50, 64));
+        logoutPanel3.setRoundBottomLeft(10);
+        logoutPanel3.setRoundBottomRight(10);
+        logoutPanel3.setRoundTopLeft(10);
+        logoutPanel3.setRoundTopRight(10);
+        logoutPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutPanel3MouseClicked(evt);
+            }
+        });
+
+        logoutLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        logoutLabel3.setForeground(new java.awt.Color(252, 233, 201));
+        logoutLabel3.setText("LOGOUT");
+
+        javax.swing.GroupLayout logoutPanel3Layout = new javax.swing.GroupLayout(logoutPanel3);
+        logoutPanel3.setLayout(logoutPanel3Layout);
+        logoutPanel3Layout.setHorizontalGroup(
+            logoutPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoutPanel3Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(logoutLabel3)
+                .addGap(18, 18, 18))
+        );
+        logoutPanel3Layout.setVerticalGroup(
+            logoutPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(logoutLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -903,7 +935,9 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(riwayatPesananLabel1)
-                .addGap(108, 108, 108))
+                .addGap(18, 18, 18)
+                .addComponent(logoutPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -922,28 +956,30 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel21))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addComponent(jLabel21)
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(editMenuLabel)
-                                .addComponent(riwayatPesananLabel)
-                                .addComponent(LabelPembeli)
-                                .addComponent(riwayatPesananLabel1))
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(logoutPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(editMenuLabel)
+                                    .addComponent(riwayatPesananLabel)
+                                    .addComponent(LabelPembeli)
+                                    .addComponent(riwayatPesananLabel1))))
+                        .addGap(30, 30, 30)))
                 .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -956,7 +992,7 @@ public class PembayaranView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1103,6 +1139,13 @@ public class PembayaranView extends javax.swing.JFrame {
         mv.setVisible(true);
     }//GEN-LAST:event_LabelPembeliMouseClicked
 
+    private void logoutPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutPanel3MouseClicked
+        // klik panel edit menu
+        LoginView lv = new LoginView();
+        this.dispose();
+        lv.setVisible(true);
+    }//GEN-LAST:event_logoutPanel3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1176,6 +1219,14 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JLabel logoutLabel;
+    private javax.swing.JLabel logoutLabel1;
+    private javax.swing.JLabel logoutLabel2;
+    private javax.swing.JLabel logoutLabel3;
+    private view.PanelRound logoutPanel;
+    private view.PanelRound logoutPanel1;
+    private view.PanelRound logoutPanel2;
+    private view.PanelRound logoutPanel3;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel mainPanel1;
     private javax.swing.JTextField namaPegawaiField;

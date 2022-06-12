@@ -110,14 +110,16 @@ public class PegawaiView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
-        deleteBtn = new javax.swing.JButton();
-        editBtn = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         panelRound3 = new view.PanelRound();
         searchInput = new javax.swing.JTextField();
         searchBtn = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableAkunPegawai = new javax.swing.JTable();
+        deleteBtn = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
+        addBtn = new javax.swing.JButton();
+        panelRound4 = new view.PanelRound();
+        jLabel4 = new javax.swing.JLabel();
         panelRound2 = new view.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         namaPegawaiInput = new javax.swing.JTextField();
@@ -129,7 +131,6 @@ public class PegawaiView extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         emailInput = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        addBtn = new javax.swing.JButton();
         saveBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
         passwordInput = new javax.swing.JTextField();
@@ -146,29 +147,10 @@ public class PegawaiView extends javax.swing.JFrame {
         mainPanel.setForeground(new java.awt.Color(0, 0, 0));
 
         panelRound1.setBackground(new java.awt.Color(81, 175, 157));
-        panelRound1.setRoundBottomLeft(20);
-        panelRound1.setRoundBottomRight(20);
-        panelRound1.setRoundTopLeft(20);
-        panelRound1.setRoundTopRight(20);
-
-        deleteBtn.setText("Hapus");
-        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteBtnActionPerformed(evt);
-            }
-        });
-
-        editBtn.setText("Edit");
-        editBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(48, 81, 90));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("DAFTAR PEGAWAI");
+        panelRound1.setRoundBottomLeft(15);
+        panelRound1.setRoundBottomRight(15);
+        panelRound1.setRoundTopLeft(15);
+        panelRound1.setRoundTopRight(15);
 
         panelRound3.setBackground(new java.awt.Color(48, 81, 90));
         panelRound3.setRoundBottomLeft(10);
@@ -176,13 +158,16 @@ public class PegawaiView extends javax.swing.JFrame {
         panelRound3.setRoundTopLeft(10);
         panelRound3.setRoundTopRight(10);
 
-        searchInput.setBorder(null);
+        searchInput.setHighlighter(null);
         searchInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchInputActionPerformed(evt);
             }
         });
 
+        searchBtn.setBackground(new java.awt.Color(81, 175, 157));
+        searchBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(48, 81, 90));
         searchBtn.setText("Cari");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,21 +193,63 @@ public class PegawaiView extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tableAkunPegawai);
 
+        deleteBtn.setBackground(new java.awt.Color(239, 50, 64));
+        deleteBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(252, 233, 201));
+        deleteBtn.setText("Hapus");
+        deleteBtn.setBorderPainted(false);
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
+        editBtn.setBackground(new java.awt.Color(252, 233, 201));
+        editBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        editBtn.setForeground(new java.awt.Color(48, 81, 90));
+        editBtn.setText("Edit");
+        editBtn.setBorderPainted(false);
+        editBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtnActionPerformed(evt);
+            }
+        });
+
+        addBtn.setBackground(new java.awt.Color(243, 161, 97));
+        addBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        addBtn.setForeground(new java.awt.Color(48, 81, 90));
+        addBtn.setText("Tambah Pegawai");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
         panelRound3Layout.setHorizontalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
-                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
-                        .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchBtn)
-                        .addGap(22, 22, 22))
+                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
+                        .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelRound3Layout.createSequentialGroup()
+                                .addComponent(addBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(editBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deleteBtn))
+                            .addGroup(panelRound3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(searchBtn)))
+                        .addGap(22, 22, 22))))
         );
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,25 +259,49 @@ public class PegawaiView extends javax.swing.JFrame {
                     .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteBtn)
+                    .addComponent(editBtn)
+                    .addComponent(addBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
+        );
+
+        panelRound4.setBackground(new java.awt.Color(48, 81, 90));
+        panelRound4.setRoundBottomLeft(5);
+        panelRound4.setRoundBottomRight(7);
+        panelRound4.setRoundTopLeft(7);
+        panelRound4.setRoundTopRight(7);
+
+        jLabel4.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(252, 233, 201));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("DAFTAR PEGAWAI");
+
+        javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
+        panelRound4.setLayout(panelRound4Layout);
+        panelRound4Layout.setHorizontalGroup(
+            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelRound4Layout.setVerticalGroup(
+            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(editBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(deleteBtn)
-                .addGap(39, 39, 39))
             .addGroup(panelRound1Layout.createSequentialGroup()
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRound1Layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(jLabel4))
+                        .addGap(177, 177, 177)
+                        .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -260,88 +311,74 @@ public class PegawaiView extends javax.swing.JFrame {
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel4)
-                .addGap(34, 34, 34)
+                .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteBtn)
-                    .addComponent(editBtn))
-                .addGap(15, 15, 15))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        panelRound2.setBackground(new java.awt.Color(81, 175, 157));
-        panelRound2.setRoundBottomLeft(20);
-        panelRound2.setRoundBottomRight(20);
-        panelRound2.setRoundTopLeft(20);
-        panelRound2.setRoundTopRight(20);
+        panelRound2.setBackground(new java.awt.Color(243, 161, 97));
+        panelRound2.setRoundBottomLeft(15);
+        panelRound2.setRoundBottomRight(15);
+        panelRound2.setRoundTopLeft(15);
+        panelRound2.setRoundTopRight(15);
 
-        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(48, 81, 90));
         jLabel1.setText("Nama ");
 
         namaPegawaiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         namaPegawaiInput.setText("asdasd");
-        namaPegawaiInput.setBorder(null);
 
-        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(48, 81, 90));
         jLabel2.setText("Shif Mulai");
 
         shifMulaiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        shifMulaiInput.setBorder(null);
 
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(48, 81, 90));
         jLabel3.setText("Shif Selesai");
 
         shiftSelesaiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        shiftSelesaiInput.setBorder(null);
 
         gajiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        gajiInput.setBorder(null);
 
-        jLabel11.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(48, 81, 90));
         jLabel11.setText("Gaji");
 
         emailInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        emailInput.setBorder(null);
 
-        jLabel12.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(48, 81, 90));
         jLabel12.setText("E-mail Aktif");
 
-        addBtn.setText("Tambah Pegawai");
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
-            }
-        });
-
-        saveBtn.setText("simpan");
+        saveBtn.setBackground(new java.awt.Color(81, 175, 157));
+        saveBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        saveBtn.setForeground(new java.awt.Color(48, 81, 90));
+        saveBtn.setText("Simpan");
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBtnActionPerformed(evt);
             }
         });
 
-        cancelBtn.setText("batal");
+        cancelBtn.setBackground(new java.awt.Color(252, 233, 201));
+        cancelBtn.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        cancelBtn.setForeground(new java.awt.Color(48, 81, 90));
+        cancelBtn.setText("Batal");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelBtnActionPerformed(evt);
             }
         });
 
-        passwordInput.setBorder(null);
-
-        jLabel14.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(48, 81, 90));
         jLabel14.setText("Password");
 
-        usernameInput.setBorder(null);
-
-        jLabel13.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(48, 81, 90));
         jLabel13.setText("Username");
 
@@ -350,33 +387,30 @@ public class PegawaiView extends javax.swing.JFrame {
         panelRound2Layout.setHorizontalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(namaPegawaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11)
-                            .addComponent(gajiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(shiftSelesaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(shifMulaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)
-                            .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel13)
-                                .addComponent(jLabel14)
-                                .addComponent(passwordInput)
-                                .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(addBtn)
-                        .addGap(104, 104, 104)
-                        .addComponent(saveBtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(cancelBtn)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(namaPegawaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(gajiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(shiftSelesaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(shifMulaiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel13)
+                        .addComponent(jLabel14)
+                        .addComponent(passwordInput)
+                        .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(saveBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancelBtn)
+                .addGap(21, 21, 21))
         );
         panelRound2Layout.setVerticalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,7 +445,6 @@ public class PegawaiView extends javax.swing.JFrame {
                 .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn)
                     .addComponent(saveBtn)
                     .addComponent(cancelBtn))
                 .addGap(0, 13, Short.MAX_VALUE))
@@ -424,16 +457,15 @@ public class PegawaiView extends javax.swing.JFrame {
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel15))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50)
+                .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,7 +476,7 @@ public class PegawaiView extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -663,6 +695,7 @@ public class PegawaiView extends javax.swing.JFrame {
     private view.PanelRound panelRound1;
     private view.PanelRound panelRound2;
     private view.PanelRound panelRound3;
+    private view.PanelRound panelRound4;
     private javax.swing.JTextField passwordInput;
     private javax.swing.JButton saveBtn;
     private javax.swing.JButton searchBtn;
