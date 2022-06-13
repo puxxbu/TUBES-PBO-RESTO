@@ -15,14 +15,6 @@ import table.TableMenu;
 public class MenuControl {
     private MenuDAO mDao = new MenuDAO();
     
-//    public TableMahasiswa showMahasiswa(String query)
-//    {
-//        List<Mahasiswa> dataMahasiswa = mDao.showMahasiswa(query);
-//        TableMahasiswa tableMahasiswa = new TableMahasiswa(dataMahasiswa);
-//
-//        return tableMahasiswa;
-//    }
-    
     public List<Menu> searchMenu(String query){
         List<Menu> dataMenu = mDao.searchMenu(query);
         return dataMenu;
