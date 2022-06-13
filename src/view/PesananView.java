@@ -810,7 +810,6 @@ public class PesananView extends javax.swing.JFrame {
         
         try {
             InputanKosongException();
-            NegativeInputException();
             
             for (int i = 0; i < tempListMenu.size(); i++){
                 sub_total += (tempListMenu.get(i).getHarga_menu()*tempListMenu.get(i).getJumlah_pesanan());
@@ -845,9 +844,7 @@ public class PesananView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Pesanan Berhasil dibuat !");
         } catch (InputanKosongException e) {
             JOptionPane.showMessageDialog(this, e.message());
-        } catch(NegativeInputException e){
-                JOptionPane.showMessageDialog(this, e.message());
-        }
+        } 
         
         
         
