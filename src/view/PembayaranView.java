@@ -485,7 +485,7 @@ public class PembayaranView extends javax.swing.JFrame {
         panelRound9.setRoundTopLeft(7);
         panelRound9.setRoundTopRight(7);
 
-        jLabel22.setFont(new java.awt.Font("Bodoni Bd BT", 0, 18)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(252, 233, 201));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("DAFTAR PESANAN");

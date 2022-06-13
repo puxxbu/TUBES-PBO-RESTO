@@ -121,6 +121,7 @@ public class PesananView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
         mainPanel = new javax.swing.JPanel();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -314,7 +315,7 @@ public class PesananView extends javax.swing.JFrame {
         tanggalTransaksiInput.setForeground(new java.awt.Color(48, 81, 90));
         tanggalTransaksiInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabel13.setFont(new java.awt.Font("Bodoni Bd BT", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(252, 233, 201));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("INPUT PEMBELI");
@@ -518,7 +519,7 @@ public class PesananView extends javax.swing.JFrame {
         panelRound5.setRoundTopLeft(7);
         panelRound5.setRoundTopRight(7);
 
-        jLabel4.setFont(new java.awt.Font("Bodoni Bd BT", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(252, 233, 201));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("MENU");
@@ -793,15 +794,17 @@ public class PesananView extends javax.swing.JFrame {
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
+        jScrollPane2.setViewportView(mainPanel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
@@ -1136,6 +1139,7 @@ public class PesananView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel logoutLabel;
     private view.PanelRound logoutPanel;
