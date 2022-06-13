@@ -49,13 +49,13 @@ public class PembayaranView extends javax.swing.JFrame {
     
     public void setComponent(){
         showDetailPesanan(0);
-        namaPegawaiField.setText("");
-        namaPembeliInput.setText("");
+        namaPegawaiFieldLabel.setText("");
+        namaPembeliInputLabel.setText("");
         uangInputField.setText("");
-        tanggalTransaksiInput.setText("");
-        totalHargaField.setText("");
+        tanggalTransaksiInputLabel.setText("");
+        totalHargaFieldLabel.setText("");
         uangInputField.setText("");
-        nomorHPInput.setText("");
+        nomorHPInputLabel.setText("");
     }
     
     public void showPesanan(){
@@ -67,10 +67,10 @@ public class PembayaranView extends javax.swing.JFrame {
     }
     
     public void initComponent(boolean value){
-        namaPembeliInput.setEnabled(value);
-        nomorHPInput.setEnabled(value);
-        tanggalTransaksiInput.setEnabled(value);
-        namaPegawaiField.setEnabled(value);
+        namaPembeliInputLabel.setEnabled(value);
+        nomorHPInputLabel.setEnabled(value);
+        tanggalTransaksiInputLabel.setEnabled(value);
+        namaPegawaiFieldLabel.setEnabled(value);
     }
     
     public void InputanKosongException() throws InputanKosongException{
@@ -86,7 +86,7 @@ public class PembayaranView extends javax.swing.JFrame {
     }
     
     public void InputUangException() throws InputUangException {
-        if( Integer.parseInt(uangInputField.getText()) < Float.parseFloat(totalHargaField.getText()) ){
+        if( Integer.parseInt(uangInputField.getText()) < Float.parseFloat(totalHargaFieldLabel.getText()) ){
             throw new InputUangException();
         }
     }
@@ -128,6 +128,7 @@ public class PembayaranView extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         tblTempMenu1 = new javax.swing.JTable();
         jLabel20 = new javax.swing.JLabel();
+        jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
         mainPanel = new javax.swing.JPanel();
         panelRound3 = new view.PanelRound();
@@ -137,21 +138,21 @@ public class PembayaranView extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         panelRound4 = new view.PanelRound();
         jLabel4 = new javax.swing.JLabel();
-        namaPembeliInput = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        nomorHPInput = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        tanggalTransaksiInput = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        namaPegawaiField = new javax.swing.JTextField();
-        totalHargaField = new javax.swing.JTextField();
         uangInputField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         cancelBtn = new javax.swing.JButton();
         bayarPesananBtn = new javax.swing.JButton();
+        namaPembeliInputLabel = new javax.swing.JLabel();
+        nomorHPInputLabel = new javax.swing.JLabel();
+        tanggalTransaksiInputLabel = new javax.swing.JLabel();
+        namaPegawaiFieldLabel = new javax.swing.JLabel();
+        totalHargaFieldLabel = new javax.swing.JLabel();
         panelRound1 = new view.PanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblTempMenu = new javax.swing.JTable();
@@ -551,44 +552,15 @@ public class PembayaranView extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(252, 233, 201));
-        jLabel4.setText("NamaPembeli");
-
-        namaPembeliInput.setBackground(new java.awt.Color(48, 81, 90));
-        namaPembeliInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        namaPembeliInput.setForeground(new java.awt.Color(252, 233, 201));
-        namaPembeliInput.setText("Tebri");
-        namaPembeliInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(48, 81, 90)));
-        namaPembeliInput.setCaretColor(new java.awt.Color(48, 81, 90));
-        namaPembeliInput.setDisabledTextColor(new java.awt.Color(48, 81, 90));
-        namaPembeliInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namaPembeliInputActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("NamaPembeli         :");
 
         jLabel10.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(252, 233, 201));
-        jLabel10.setText("Nomor HP");
-
-        nomorHPInput.setBackground(new java.awt.Color(48, 81, 90));
-        nomorHPInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        nomorHPInput.setForeground(new java.awt.Color(252, 233, 201));
-        nomorHPInput.setText("08213481923");
-        nomorHPInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(48, 81, 90)));
-        nomorHPInput.setCaretColor(new java.awt.Color(48, 81, 90));
-        nomorHPInput.setDisabledTextColor(new java.awt.Color(48, 81, 90));
+        jLabel10.setText("Nomor HP              :");
 
         jLabel12.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(252, 233, 201));
-        jLabel12.setText("Tanggal Transaksi");
-
-        tanggalTransaksiInput.setBackground(new java.awt.Color(48, 81, 90));
-        tanggalTransaksiInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tanggalTransaksiInput.setForeground(new java.awt.Color(252, 233, 201));
-        tanggalTransaksiInput.setText("7 Juni 2022");
-        tanggalTransaksiInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(48, 81, 90)));
-        tanggalTransaksiInput.setCaretColor(new java.awt.Color(48, 81, 90));
-        tanggalTransaksiInput.setDisabledTextColor(new java.awt.Color(48, 81, 90));
+        jLabel12.setText("Tanggal Transaksi :");
 
         jLabel13.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(252, 233, 201));
@@ -596,22 +568,7 @@ public class PembayaranView extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(252, 233, 201));
-        jLabel14.setText("Nama Pegawai");
-
-        namaPegawaiField.setBackground(new java.awt.Color(48, 81, 90));
-        namaPegawaiField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        namaPegawaiField.setForeground(new java.awt.Color(252, 233, 201));
-        namaPegawaiField.setText("Doni");
-        namaPegawaiField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(48, 81, 90)));
-        namaPegawaiField.setCaretColor(new java.awt.Color(48, 81, 90));
-        namaPegawaiField.setDisabledTextColor(new java.awt.Color(48, 81, 90));
-
-        totalHargaField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        totalHargaField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalHargaFieldActionPerformed(evt);
-            }
-        });
+        jLabel14.setText("Nama Pegawai        :");
 
         uangInputField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
 
@@ -649,43 +606,77 @@ public class PembayaranView extends javax.swing.JFrame {
             }
         });
 
+        namaPembeliInputLabel.setBackground(new java.awt.Color(252, 233, 201));
+        namaPembeliInputLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        namaPembeliInputLabel.setForeground(new java.awt.Color(252, 233, 201));
+        namaPembeliInputLabel.setText("jLabel12");
+
+        nomorHPInputLabel.setBackground(new java.awt.Color(252, 233, 201));
+        nomorHPInputLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        nomorHPInputLabel.setForeground(new java.awt.Color(252, 233, 201));
+        nomorHPInputLabel.setText("jLabel12");
+
+        tanggalTransaksiInputLabel.setBackground(new java.awt.Color(252, 233, 201));
+        tanggalTransaksiInputLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tanggalTransaksiInputLabel.setForeground(new java.awt.Color(252, 233, 201));
+        tanggalTransaksiInputLabel.setText("jLabel14");
+
+        namaPegawaiFieldLabel.setBackground(new java.awt.Color(252, 233, 201));
+        namaPegawaiFieldLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        namaPegawaiFieldLabel.setForeground(new java.awt.Color(252, 233, 201));
+        namaPegawaiFieldLabel.setText("jLabel14");
+
+        totalHargaFieldLabel.setBackground(new java.awt.Color(252, 233, 201));
+        totalHargaFieldLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        totalHargaFieldLabel.setForeground(new java.awt.Color(252, 233, 201));
+        totalHargaFieldLabel.setText("jLabel14");
+
         javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
         panelRound4.setLayout(panelRound4Layout);
         panelRound4Layout.setHorizontalGroup(
             panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addGroup(panelRound4Layout.createSequentialGroup()
-                        .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel14))
-                        .addGap(49, 49, 49)
-                        .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(namaPegawaiField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(namaPembeliInput)
-                            .addComponent(nomorHPInput, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(tanggalTransaksiInput)))
-                    .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(panelRound4Layout.createSequentialGroup()
-                            .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel1))
-                            .addGap(37, 37, 37)
-                            .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelRound4Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(18, 18, 18)
-                            .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bayarPesananBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cancelBtn)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelRound4Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel1))
+                                .addGap(37, 37, 37)
+                                .addComponent(totalHargaFieldLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(85, 85, 85))
+                            .addGroup(panelRound4Layout.createSequentialGroup()
+                                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(namaPembeliInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel13)
+                                        .addGroup(panelRound4Layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(panelRound4Layout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(namaPegawaiFieldLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel4)
+                                            .addGroup(panelRound4Layout.createSequentialGroup()
+                                                .addComponent(jLabel12)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(tanggalTransaksiInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(panelRound4Layout.createSequentialGroup()
+                                            .addComponent(jLabel10)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(nomorHPInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(panelRound4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bayarPesananBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cancelBtn)))
                 .addGap(15, 15, 15))
         );
         panelRound4Layout.setVerticalGroup(
@@ -695,26 +686,26 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(namaPembeliInput, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(namaPembeliInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(nomorHPInput, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nomorHPInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(tanggalTransaksiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tanggalTransaksiInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(namaPegawaiField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addGap(9, 9, 9)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel14)
+                    .addComponent(namaPegawaiFieldLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addComponent(jLabel5)
+                .addGap(10, 10, 10)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(totalHargaFieldLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uangInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -950,7 +941,7 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -987,23 +978,15 @@ public class PembayaranView extends javax.swing.JFrame {
         initComponent(false);
        
         
-        namaPembeliInput.setText(tableModel.getValueAt(clickedRow, 1).toString());
-        nomorHPInput.setText(tableModel.getValueAt(clickedRow, 8).toString());
-        tanggalTransaksiInput.setText(tableModel.getValueAt(clickedRow, 4).toString());
-        namaPegawaiField.setText(tableModel.getValueAt(clickedRow, 2).toString());
+        namaPembeliInputLabel.setText(tableModel.getValueAt(clickedRow, 1).toString());
+        nomorHPInputLabel.setText(tableModel.getValueAt(clickedRow, 8).toString());
+        tanggalTransaksiInputLabel.setText(tableModel.getValueAt(clickedRow, 4).toString());
+        namaPegawaiFieldLabel.setText(tableModel.getValueAt(clickedRow, 2).toString());
         
         selectedId = Integer.parseInt(tableModel.getValueAt(clickedRow, 0).toString());
         showDetailPesanan(selectedId);
-        totalHargaField.setText(tableModel.getValueAt(clickedRow, 3).toString());
+        totalHargaFieldLabel.setText(tableModel.getValueAt(clickedRow, 3).toString());
     }//GEN-LAST:event_tableRiwayatMouseClicked
-
-    private void totalHargaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalHargaFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalHargaFieldActionPerformed
-
-    private void namaPembeliInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaPembeliInputActionPerformed
 
     private void tblTempMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTempMenuMouseClicked
         // TODO add your handling code here:
@@ -1037,7 +1020,7 @@ public class PembayaranView extends javax.swing.JFrame {
             InputanKosongException();
             InputUangException();
             
-            kembalian = Float.parseFloat(uangInputField.getText())-Float.parseFloat(totalHargaField.getText()) ;
+            kembalian = Float.parseFloat(uangInputField.getText())-Float.parseFloat(totalHargaFieldLabel.getText()) ;
             if (kembalian>0) {
                 JOptionPane.showMessageDialog(this, "Kembalian yang diberikan: "+kembalian);
             }else{
@@ -1162,6 +1145,7 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JButton cancelBtn;
     private javax.swing.JButton cancelBtn1;
     private javax.swing.JLabel editMenuLabel;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1191,22 +1175,16 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JLabel logoutLabel;
-    private javax.swing.JLabel logoutLabel1;
-    private javax.swing.JLabel logoutLabel2;
     private javax.swing.JLabel logoutLabel3;
-    private view.PanelRound logoutPanel;
-    private view.PanelRound logoutPanel1;
-    private view.PanelRound logoutPanel2;
     private view.PanelRound logoutPanel3;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel mainPanel1;
-    private javax.swing.JTextField namaPegawaiField;
     private javax.swing.JTextField namaPegawaiField1;
-    private javax.swing.JTextField namaPembeliInput;
+    private javax.swing.JLabel namaPegawaiFieldLabel;
     private javax.swing.JTextField namaPembeliInput1;
-    private javax.swing.JTextField nomorHPInput;
+    private javax.swing.JLabel namaPembeliInputLabel;
     private javax.swing.JTextField nomorHPInput1;
+    private javax.swing.JLabel nomorHPInputLabel;
     private view.PanelRound panelRound1;
     private view.PanelRound panelRound3;
     private view.PanelRound panelRound4;
@@ -1219,12 +1197,12 @@ public class PembayaranView extends javax.swing.JFrame {
     private javax.swing.JLabel riwayatPesananLabel;
     private javax.swing.JTable tableRiwayat;
     private javax.swing.JTable tableRiwayat1;
-    private javax.swing.JTextField tanggalTransaksiInput;
     private javax.swing.JTextField tanggalTransaksiInput1;
+    private javax.swing.JLabel tanggalTransaksiInputLabel;
     private javax.swing.JTable tblTempMenu;
     private javax.swing.JTable tblTempMenu1;
-    private javax.swing.JTextField totalHargaField;
     private javax.swing.JTextField totalHargaField1;
+    private javax.swing.JLabel totalHargaFieldLabel;
     private javax.swing.JTextField uangInputField;
     private javax.swing.JTextField uangInputField1;
     // End of variables declaration//GEN-END:variables
