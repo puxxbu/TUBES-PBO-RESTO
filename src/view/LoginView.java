@@ -73,15 +73,17 @@ public class LoginView extends javax.swing.JFrame {
         panelRound1.setRoundTopRight(15);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(243, 161, 97));
+        jLabel1.setForeground(new java.awt.Color(242, 217, 99));
         jLabel1.setText("Username");
 
         usernameInput.setBackground(new java.awt.Color(81, 175, 157));
+        usernameInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        usernameInput.setForeground(new java.awt.Color(250, 250, 250));
         usernameInput.setSelectedTextColor(new java.awt.Color(48, 81, 90));
         usernameInput.setSelectionColor(new java.awt.Color(48, 81, 90));
 
         jLabel2.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(243, 161, 97));
+        jLabel2.setForeground(new java.awt.Color(242, 217, 99));
         jLabel2.setText("Password");
 
         loginBtn.setBackground(new java.awt.Color(243, 161, 97));
@@ -95,11 +97,13 @@ public class LoginView extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Bell MT", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(243, 161, 97));
+        jLabel3.setForeground(new java.awt.Color(242, 217, 99));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("LOGIN PEGAWAI");
 
         passwordInput.setBackground(new java.awt.Color(81, 175, 157));
+        passwordInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        passwordInput.setForeground(new java.awt.Color(250, 250, 250));
         passwordInput.setSelectedTextColor(new java.awt.Color(48, 81, 90));
         passwordInput.setSelectionColor(new java.awt.Color(48, 81, 90));
 

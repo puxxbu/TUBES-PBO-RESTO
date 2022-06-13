@@ -625,7 +625,7 @@ public class PembayaranView extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(250, 250, 250));
         jLabel2.setText("Masukan Uang");
 
-        uangInputField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        uangInputField.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         totalHargaField.setBackground(new java.awt.Color(252, 233, 201));
         totalHargaField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -971,7 +971,7 @@ public class PembayaranView extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -286,7 +286,8 @@ public class PesananView extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NamaPembeli");
 
-        namaPembeliInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        namaPembeliInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        namaPembeliInput.setForeground(new java.awt.Color(48, 81, 90));
         namaPembeliInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         namaPembeliInput.setCaretColor(new java.awt.Color(243, 161, 97));
         namaPembeliInput.addActionListener(new java.awt.event.ActionListener() {
@@ -300,7 +301,8 @@ public class PesananView extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Nomor HP");
 
-        nomorHPInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        nomorHPInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        nomorHPInput.setForeground(new java.awt.Color(48, 81, 90));
         nomorHPInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel3.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
@@ -308,7 +310,8 @@ public class PesananView extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Tanggal Transaksi");
 
-        tanggalTransaksiInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        tanggalTransaksiInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tanggalTransaksiInput.setForeground(new java.awt.Color(48, 81, 90));
         tanggalTransaksiInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel13.setFont(new java.awt.Font("Bodoni Bd BT", 0, 18)); // NOI18N
@@ -352,15 +355,15 @@ public class PesananView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(namaPembeliInput, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(namaPembeliInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nomorHPInput, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomorHPInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tanggalTransaksiInput, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tanggalTransaksiInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -436,8 +439,8 @@ public class PesananView extends javax.swing.JFrame {
         jLabel9.setText("Input banyak Pesanan");
 
         bnyakPesananInputField.setBackground(new java.awt.Color(89, 108, 118));
-        bnyakPesananInputField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        bnyakPesananInputField.setForeground(new java.awt.Color(252, 233, 201));
+        bnyakPesananInputField.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        bnyakPesananInputField.setForeground(new java.awt.Color(48, 81, 90));
         bnyakPesananInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bnyakPesananInputFieldActionPerformed(evt);
@@ -787,7 +790,7 @@ public class PesananView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

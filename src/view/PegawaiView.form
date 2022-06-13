@@ -213,6 +213,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="searchInput">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI Semibold" size="14" style="0"/>
+                        </Property>
                         <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="null"/>
                         </Property>
@@ -435,7 +438,7 @@
                 <Component class="javax.swing.JTextField" name="namaPegawaiInput">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -453,7 +456,7 @@
                 <Component class="javax.swing.JTextField" name="shifMulaiInput">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -471,14 +474,14 @@
                 <Component class="javax.swing.JTextField" name="shiftSelesaiInput">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="gajiInput">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -496,7 +499,7 @@
                 <Component class="javax.swing.JTextField" name="emailInput">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -546,6 +549,11 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="passwordInput">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
@@ -559,6 +567,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="usernameInput">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>

@@ -160,6 +160,7 @@ public class PegawaiView extends javax.swing.JFrame {
         panelRound3.setRoundTopLeft(10);
         panelRound3.setRoundTopRight(10);
 
+        searchInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         searchInput.setHighlighter(null);
         searchInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,27 +306,27 @@ public class PegawaiView extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(48, 81, 90));
         jLabel1.setText("Nama ");
 
-        namaPegawaiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        namaPegawaiInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(48, 81, 90));
         jLabel2.setText("Shif Mulai");
 
-        shifMulaiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        shifMulaiInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(48, 81, 90));
         jLabel3.setText("Shif Selesai");
 
-        shiftSelesaiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        shiftSelesaiInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
-        gajiInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        gajiInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(48, 81, 90));
         jLabel11.setText("Gaji");
 
-        emailInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        emailInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(48, 81, 90));
@@ -351,9 +352,13 @@ public class PegawaiView extends javax.swing.JFrame {
             }
         });
 
+        passwordInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+
         jLabel14.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(48, 81, 90));
         jLabel14.setText("Password");
+
+        usernameInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(48, 81, 90));
