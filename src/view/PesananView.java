@@ -847,8 +847,6 @@ public class PesananView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.message());
         } catch(NegativeInputException e){
                 JOptionPane.showMessageDialog(this, e.message());
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
         }
         
         
