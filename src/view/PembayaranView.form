@@ -570,13 +570,11 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
-                          <Component id="panelRound9" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="369" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="panelRound9" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="889" max="32767" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -638,20 +636,12 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel22" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel22" alignment="1" pref="34" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -694,23 +684,23 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="namaPegawaiFieldLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="namaPegawaiField" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="namaPembeliInputLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="namaPembeliInput" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="tanggalTransaksiInputLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="tanggalTransaksiInput" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="nomorHPInputLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="nomorHPInput" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="75" max="32767" attributes="0"/>
@@ -736,22 +726,22 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="namaPembeliInputLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="namaPembeliInput" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nomorHPInputLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="nomorHPInput" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tanggalTransaksiInputLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="tanggalTransaksiInput" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="namaPegawaiFieldLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="namaPegawaiField" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="panelRound2" min="-2" max="-2" attributes="0"/>
@@ -855,7 +845,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bayarPesananBtnActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="namaPembeliInputLabel">
+                <Component class="javax.swing.JLabel" name="namaPembeliInput">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c9" green="e9" red="fc" type="rgb"/>
@@ -869,7 +859,7 @@
                     <Property name="text" type="java.lang.String" value="jLabel12"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="nomorHPInputLabel">
+                <Component class="javax.swing.JLabel" name="nomorHPInput">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c9" green="e9" red="fc" type="rgb"/>
@@ -883,7 +873,7 @@
                     <Property name="text" type="java.lang.String" value="jLabel12"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="tanggalTransaksiInputLabel">
+                <Component class="javax.swing.JLabel" name="tanggalTransaksiInput">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c9" green="e9" red="fc" type="rgb"/>
@@ -897,7 +887,7 @@
                     <Property name="text" type="java.lang.String" value="jLabel14"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="namaPegawaiFieldLabel">
+                <Component class="javax.swing.JLabel" name="namaPegawaiField">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c9" green="e9" red="fc" type="rgb"/>
@@ -936,7 +926,7 @@
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="uangInputField" max="32767" attributes="0"/>
-                                          <Component id="totalHargaFieldLabel" max="32767" attributes="0"/>
+                                          <Component id="totalHargaField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -952,7 +942,7 @@
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="totalHargaFieldLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="totalHargaField" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1011,7 +1001,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="totalHargaFieldLabel">
+                    <Component class="javax.swing.JLabel" name="totalHargaField">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="c9" green="e9" red="fc" type="rgb"/>
@@ -1047,9 +1037,9 @@
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="413" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" pref="413" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
