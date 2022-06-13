@@ -595,22 +595,18 @@ public class PembayaranView extends javax.swing.JFrame {
         namaPembeliInput.setBackground(new java.awt.Color(252, 233, 201));
         namaPembeliInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         namaPembeliInput.setForeground(new java.awt.Color(252, 233, 201));
-        namaPembeliInput.setText("jLabel12");
 
         nomorHPInput.setBackground(new java.awt.Color(252, 233, 201));
         nomorHPInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         nomorHPInput.setForeground(new java.awt.Color(252, 233, 201));
-        nomorHPInput.setText("jLabel12");
 
         tanggalTransaksiInput.setBackground(new java.awt.Color(252, 233, 201));
         tanggalTransaksiInput.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         tanggalTransaksiInput.setForeground(new java.awt.Color(252, 233, 201));
-        tanggalTransaksiInput.setText("jLabel14");
 
         namaPegawaiField.setBackground(new java.awt.Color(252, 233, 201));
         namaPegawaiField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         namaPegawaiField.setForeground(new java.awt.Color(252, 233, 201));
-        namaPegawaiField.setText("jLabel14");
 
         panelRound2.setBackground(new java.awt.Color(48, 81, 90));
 
@@ -633,7 +629,6 @@ public class PembayaranView extends javax.swing.JFrame {
         totalHargaField.setBackground(new java.awt.Color(252, 233, 201));
         totalHargaField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         totalHargaField.setForeground(new java.awt.Color(252, 233, 201));
-        totalHargaField.setText("jLabel14");
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);

@@ -571,8 +571,8 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="namaMenuField" pref="276" max="32767" attributes="0"/>
-                                          <Component id="hargaMenuField" max="32767" attributes="0"/>
+                                          <Component id="namaMenuField" max="32767" attributes="0"/>
+                                          <Component id="hargaMenuField" pref="276" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -593,17 +593,17 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="namaMenuField" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="namaMenuField" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel8" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Component id="hargaMenuField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hargaMenuField" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deskripsiMenuField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deskripsiMenuField" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -698,7 +698,6 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="c9" green="e9" red="fc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel12"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="hargaMenuField">
@@ -712,7 +711,6 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="c9" green="e9" red="fc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel12"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="deskripsiMenuField">
@@ -726,7 +724,6 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="c9" green="e9" red="fc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel14"/>
                       </Properties>
                     </Component>
                   </SubComponents>

@@ -452,17 +452,14 @@ public class PesananView extends javax.swing.JFrame {
         namaMenuField.setBackground(new java.awt.Color(252, 233, 201));
         namaMenuField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         namaMenuField.setForeground(new java.awt.Color(252, 233, 201));
-        namaMenuField.setText("jLabel12");
 
         hargaMenuField.setBackground(new java.awt.Color(252, 233, 201));
         hargaMenuField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         hargaMenuField.setForeground(new java.awt.Color(252, 233, 201));
-        hargaMenuField.setText("jLabel12");
 
         deskripsiMenuField.setBackground(new java.awt.Color(252, 233, 201));
         deskripsiMenuField.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         deskripsiMenuField.setForeground(new java.awt.Color(252, 233, 201));
-        deskripsiMenuField.setText("jLabel14");
 
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
@@ -482,8 +479,8 @@ public class PesananView extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
                         .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(namaMenuField, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                            .addComponent(hargaMenuField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(namaMenuField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(hargaMenuField, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)))
                     .addGroup(panelRound3Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
@@ -498,15 +495,15 @@ public class PesananView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(namaMenuField))
+                    .addComponent(namaMenuField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hargaMenuField))
+                    .addComponent(hargaMenuField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(deskripsiMenuField))
+                    .addComponent(deskripsiMenuField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)

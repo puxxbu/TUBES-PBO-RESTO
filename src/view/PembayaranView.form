@@ -891,7 +891,6 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="c9" green="e9" red="fc" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="jLabel12"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="nomorHPInput">
@@ -905,7 +904,6 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="c9" green="e9" red="fc" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="jLabel12"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="tanggalTransaksiInput">
@@ -919,7 +917,6 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="c9" green="e9" red="fc" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="jLabel14"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="namaPegawaiField">
@@ -933,7 +930,6 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="c9" green="e9" red="fc" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="jLabel14"/>
                           </Properties>
                         </Component>
                         <Container class="view.PanelRound" name="panelRound2">
@@ -1047,7 +1043,6 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="c9" green="e9" red="fc" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="jLabel14"/>
                               </Properties>
                             </Component>
                           </SubComponents>
