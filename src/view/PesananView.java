@@ -179,6 +179,7 @@ public class PesananView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(15);
         panelRound1.setRoundTopRight(15);
 
+        tblTempMenu.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tblTempMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -285,7 +286,7 @@ public class PesananView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(252, 233, 201));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("NamaPembeli");
+        jLabel1.setText("Nama Pembeli");
 
         namaPembeliInput.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         namaPembeliInput.setForeground(new java.awt.Color(48, 81, 90));
@@ -525,6 +526,7 @@ public class PesananView extends javax.swing.JFrame {
         jLabel4.setText("MENU");
 
         tblMenu.setBackground(new java.awt.Color(48, 81, 90));
+        tblMenu.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tblMenu.setForeground(new java.awt.Color(252, 233, 201));
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

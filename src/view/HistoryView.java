@@ -115,6 +115,7 @@ public class HistoryView extends javax.swing.JFrame {
         jLabel23.setText("DAFTAR PESANAN");
 
         tableRiwayat.setBackground(new java.awt.Color(81, 175, 157));
+        tableRiwayat.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tableRiwayat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -345,6 +346,7 @@ public class HistoryView extends javax.swing.JFrame {
         jLabel4.setText("MENU YANG DIPESAN");
 
         tableDetailPesanan.setBackground(new java.awt.Color(81, 175, 157));
+        tableDetailPesanan.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tableDetailPesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

@@ -287,6 +287,7 @@ public class MenuView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(15);
         panelRound1.setRoundTopRight(15);
 
+        tableMenu.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tableMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

@@ -179,6 +179,7 @@ public class PegawaiView extends javax.swing.JFrame {
             }
         });
 
+        tableAkunPegawai.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tableAkunPegawai.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

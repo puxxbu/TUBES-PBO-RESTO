@@ -490,6 +490,7 @@ public class PembayaranView extends javax.swing.JFrame {
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("DAFTAR PESANAN");
 
+        tableRiwayat.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tableRiwayat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -742,6 +743,7 @@ public class PembayaranView extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(15);
         panelRound1.setRoundTopRight(15);
 
+        tblTempMenu.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tblTempMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
