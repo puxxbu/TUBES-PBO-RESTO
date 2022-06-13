@@ -43,7 +43,7 @@ public class PesananDAO {
         
         String sql = "SELECT m.*,p.*, g.* FROM pembeli as m JOIN pesanan p ON m.id = p.id_pembeli "
                        +"JOIN pegawai g ON p.id_pegawai = g.id "+
-                        "WHERE p.status_pembayaran = 'SUDAH DIBAYAR'";
+                        "WHERE p.status_pembayaran = 'BELUM DIBAYAR'";
         
         System.out.println("Mengambil data pesanan...");
         
@@ -90,12 +90,12 @@ public class PesananDAO {
         return list;
     }
     
-    public List<Pesanan> showPesanan(){
+    public List<Pesanan> showTerbayar(){
         con = dbCon.makeConnection();
         
         String sql = "SELECT m.*,p.*, g.* FROM pembeli as m JOIN pesanan p ON m.id = p.id_pembeli "
                        +"JOIN pegawai g ON p.id_pegawai = g.id "+
-                        "WHERE p.status_pembayaran = 'BELUM DIBAYAR'";
+                        "WHERE p.status_pembayaran = 'SUDAH DIBAYAR'";
         
         System.out.println("Mengambil data pesanan...");
         

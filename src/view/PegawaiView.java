@@ -622,8 +622,9 @@ public class PegawaiView extends javax.swing.JFrame {
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         setEditDeleteBtn(false);
         setComponent(false);
-
+        
         try{
+            InputanKosongException();
             TableAkunPegawai pegawai = akunPegawaiControl.showDataAkunPegawai(searchInput.getText());
             if(pegawai.getRowCount() == 0){
                 clearText();
@@ -632,6 +633,9 @@ public class PegawaiView extends javax.swing.JFrame {
             }else{
                 tableAkunPegawai.setModel(pegawai);
             }
+            
+        }catch(InputanKosongException e){
+                JOptionPane.showMessageDialog(this, e.message());
         }catch(Exception e){
             System.out.println("Error : " + e.getMessage());
         }

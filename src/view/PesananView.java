@@ -346,7 +346,7 @@ public class PesananView extends javax.swing.JFrame {
                     .addGroup(panelRound7Layout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addComponent(jLabel1)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound7Layout.setVerticalGroup(
             panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -783,7 +783,7 @@ public class PesananView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -810,6 +810,7 @@ public class PesananView extends javax.swing.JFrame {
         
         try {
             InputanKosongException();
+            NegativeInputException();
             
             for (int i = 0; i < tempListMenu.size(); i++){
                 sub_total += (tempListMenu.get(i).getHarga_menu()*tempListMenu.get(i).getJumlah_pesanan());
@@ -844,6 +845,10 @@ public class PesananView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Pesanan Berhasil dibuat !");
         } catch (InputanKosongException e) {
             JOptionPane.showMessageDialog(this, e.message());
+        } catch(NegativeInputException e){
+                JOptionPane.showMessageDialog(this, e.message());
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
         }
         
         
@@ -923,6 +928,8 @@ public class PesananView extends javax.swing.JFrame {
 
         } catch (NegativeInputException e) {
             JOptionPane.showMessageDialog(this, "Banyak pesanan harus lebih dari 0");
+        }  catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
         }
         
         

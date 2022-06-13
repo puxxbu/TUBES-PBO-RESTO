@@ -59,7 +59,7 @@ public class PembayaranView extends javax.swing.JFrame {
     }
     
     public void showPesanan(){
-        tableRiwayat.setModel(pc.showDataPesanan());
+        tableRiwayat.setModel(pc.showData());
     }
     
     public void showDetailPesanan(int id){
@@ -1055,6 +1055,8 @@ public class PembayaranView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.message());
         }catch(InputanKosongException e){
             JOptionPane.showMessageDialog(this, e.message());
+        } catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Inputan Harus Berupa Angka");
         }
     }//GEN-LAST:event_bayarPesananBtnActionPerformed
 

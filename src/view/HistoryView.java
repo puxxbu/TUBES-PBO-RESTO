@@ -46,7 +46,7 @@ public class HistoryView extends javax.swing.JFrame {
     }
 
     public void showRiwayat(){
-        tableRiwayat.setModel(pc.showDataRiwayat());
+        tableRiwayat.setModel(pc.showDataPesananTerbayar());
     }
     
     public void showDetailPesanan(int id){

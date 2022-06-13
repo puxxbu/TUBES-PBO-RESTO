@@ -30,15 +30,15 @@ public class PesananControl {
     }
     
 
-    public TableRiwayat showDataRiwayat(){
+    public TableRiwayat showData(){
         List<Pesanan> dataPesanan = pDAO.show();
         TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
         
         return tablePesanan;
     }
     
-    public TableRiwayat showDataPesanan(){
-        List<Pesanan> dataPesanan = pDAO.showPesanan();
+    public TableRiwayat showDataPesananTerbayar(){
+        List<Pesanan> dataPesanan = pDAO.showTerbayar();
         TableRiwayat tablePesanan = new TableRiwayat(dataPesanan);
         
         return tablePesanan;
