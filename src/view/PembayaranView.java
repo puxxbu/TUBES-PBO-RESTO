@@ -67,9 +67,6 @@ public class PembayaranView extends javax.swing.JFrame {
     }
     
     public void initComponent(boolean value){
-//        bayarPesananBtn.setEnabled(value);
-//        cancelBtn.setEnabled(value);
-        
         namaPembeliInput.setEnabled(value);
         nomorHPInput.setEnabled(value);
         tanggalTransaksiInput.setEnabled(value);

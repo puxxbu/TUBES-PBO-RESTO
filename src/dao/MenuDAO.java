@@ -77,40 +77,6 @@ public class MenuDAO {
         return list;
     }
     
-//    public Menu searchMenu (String id){
-//        con = dbCon.makeConnection();
-//        
-//        String sql = "SELECT * FROM computer WHERE id = '"
-//                + id + "'";
-//        System.out.println("Searching ...");
-//        Computer c = null;
-//        
-//        try {
-//            Statement statement = con.createStatement();
-//            ResultSet rs = statement.executeQuery(sql);
-//            
-//            if (rs != null) {
-//                while (rs.next()) {                    
-//                    c = new Computer(rs.getString("id"),
-//                            rs.getString("nama"),
-//                            rs.getString("processor"),
-//                            rs.getString("jenis"),
-//                            rs.getInt("kapasitasRAM"),
-//                            rs.getInt("dayaListrik"),
-//                            rs.getInt("kapasitasBaterai"));
-//                }
-//            }
-//            rs.close();
-//            statement.close();
-//        } catch (Exception e) {
-//            System.out.println("Error reading database...");
-//            System.out.println(e);
-//        }
-//        dbCon.closeConnection();
-//        return c;
-//        
-//    }
-    
     public List<Menu> searchMenu(String query){
         con = dbCon.makeConnection();
         

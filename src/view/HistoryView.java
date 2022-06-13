@@ -457,13 +457,7 @@ public class HistoryView extends javax.swing.JFrame {
     }//GEN-LAST:event_tableRiwayatMouseClicked
 
     private void tableDetailPesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDetailPesananMouseClicked
-        // TODO add your handling code here:
-        
-//        int clickedRow = tableDetailPesanan.getSelectedRow();
-//        TableModel tableModel = tableDetailPesanan.getModel();
-//        
-       
-        
+     
     }//GEN-LAST:event_tableDetailPesananMouseClicked
 
     private void LabelTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelTransaksiMouseClicked

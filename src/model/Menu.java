@@ -70,8 +70,4 @@ public class Menu {
         this.harga_menu = harga_menu;
     }
     
-    
-    
-    
-    
 }

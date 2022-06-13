@@ -99,9 +99,4 @@ public class Pesanan {
     public void setTanggal_pesanan(String tanggal_pesanan) {
         this.tanggal_pesanan = tanggal_pesanan;
     }
-
-    
-    
-    
-    
 }

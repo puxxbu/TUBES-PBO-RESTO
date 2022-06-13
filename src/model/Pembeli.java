@@ -48,6 +48,4 @@ public class Pembeli {
         this.no_hp = no_hp;
     }
     
-    
-    
 }
