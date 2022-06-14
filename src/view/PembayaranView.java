@@ -36,12 +36,24 @@ public class PembayaranView extends javax.swing.JFrame {
     List<Pesanan> listPesanan;
     private Pegawai pegawai;
     int selectedId;
-
+    
     public PembayaranView() {
         initComponents();
         dpc = new DetailPesananControl();
         pc = new PesananControl();
         pembeliControl = new PembeliControl();
+        this.pegawai = pegawai;
+        showPesanan();
+        showDetailPesanan(0);
+      //  initComponent(false);
+    }
+
+    public PembayaranView(Pegawai pegawai) {
+        initComponents();
+        dpc = new DetailPesananControl();
+        pc = new PesananControl();
+        pembeliControl = new PembeliControl();
+        this.pegawai = pegawai;
         showPesanan();
         showDetailPesanan(0);
       //  initComponent(false);

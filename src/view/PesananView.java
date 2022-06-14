@@ -493,9 +493,9 @@ public class PesananView extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(namaMenuField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namaMenuField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -833,7 +833,7 @@ public class PesananView extends javax.swing.JFrame {
             pembeliControl.insertPembeli(pembeli);
 
             tempPembeli = pembeliControl.getLastPembeli();
-
+            
             Pesanan pesanan = new Pesanan(pegawai.getId(), tempPembeli.getId(), sub_total, tanggalTransaksiInput.getText(),"BELUM DIBAYAR");
 
             pesananControl.insertDetailPesanan(pesanan);
@@ -1067,7 +1067,7 @@ public class PesananView extends javax.swing.JFrame {
 
     private void pembayaranLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pembayaranLabelMouseClicked
         // TODO add your handling code here:
-        PembayaranView lv = new PembayaranView();
+        PembayaranView lv = new PembayaranView(pegawai);
         this.dispose();
         lv.setVisible(true);
     }//GEN-LAST:event_pembayaranLabelMouseClicked
