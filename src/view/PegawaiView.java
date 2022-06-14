@@ -18,6 +18,7 @@ import javax.swing.table.TableModel;
 import model.Pegawai;
 import model.AkunPegawai;
 import table.TableAkunPegawai;
+import java.text.DecimalFormat;
 public class PegawaiView extends javax.swing.JFrame {
     private AkunPegawaiControl akunPegawaiControl;
     private PegawaiControl pegawaiControl;
@@ -611,7 +612,8 @@ public class PegawaiView extends javax.swing.JFrame {
         namaPegawaiInput.setText(tableModel.getValueAt(clickedRow, 0).toString());
         shifMulaiInput.setText(tableModel.getValueAt(clickedRow, 1).toString());
         shiftSelesaiInput.setText(tableModel.getValueAt(clickedRow, 2).toString());
-        gajiInput.setText(tableModel.getValueAt(clickedRow, 3).toString());
+        DecimalFormat DF = new DecimalFormat("0.#");
+        gajiInput.setText(DF.format(tableModel.getValueAt(clickedRow, 3)).toString());
         emailInput.setText(tableModel.getValueAt(clickedRow, 4).toString());
         selectedId2 = Integer.parseInt(tableModel.getValueAt(clickedRow, 7).toString());
         usernameInput.setText(tableModel.getValueAt(clickedRow, 5).toString());
