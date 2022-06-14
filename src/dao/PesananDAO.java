@@ -165,7 +165,7 @@ public class PesananDAO {
     public Pesanan getLastPesanan(){
         con = dbCon.makeConnection();
         
-        String sql = "SELECT m.*,p.*, g.* FROM pembeli as m JOIN pesanan as p ON m.id = p.id_pembeli JOIN pegawai as g ON p.id_pegawai = g.id";
+        String sql = "SELECT m.*,p.*, g.* FROM pembeli as m JOIN pesanan as p ON m.id = p.id_pembeli JOIN pegawai as g ON p.id_pegawai = g.id ORDER BY p.id DESC LIMIT 1";
                   
                        
         
@@ -211,7 +211,7 @@ public class PesananDAO {
             System.out.println("Error reading database...");
             System.out.println(e);
         }
-        return list.get(list.size()-1);
+        return list.get(0);
     }
     
 }

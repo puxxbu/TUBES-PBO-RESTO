@@ -840,6 +840,10 @@ public class PesananView extends javax.swing.JFrame {
 
             for (int i = 0; i < tempListMenu.size(); i++){
                 tempData = mc.searchMenu(tempListMenu.get(i).getNama_menu());
+                
+                System.out.println("PESANAN CONTROL ID : "+ pesananControl.getLastPesanan().getId());
+                System.out.println("PESANAN CONTROL DATA : "+tempData.get(0).getNama_menu());
+                
 
                 DetailPesanan dp = new DetailPesanan(pesananControl.getLastPesanan().getId(),
                         tempData.get(0),
