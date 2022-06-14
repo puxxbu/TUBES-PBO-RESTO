@@ -812,7 +812,7 @@ public class MenuView extends javax.swing.JFrame {
 
     private void pembayaranLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pembayaranLabelMouseClicked
         // TODO add your handling code here:
-        PembayaranView hv = new PembayaranView();
+        PembayaranView hv = new PembayaranView(pegawai);
         this.dispose();
         hv.setVisible(true);
     }//GEN-LAST:event_pembayaranLabelMouseClicked

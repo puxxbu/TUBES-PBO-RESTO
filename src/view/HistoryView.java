@@ -515,7 +515,7 @@ public class HistoryView extends javax.swing.JFrame {
 
     private void pembayaranLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pembayaranLabelMouseClicked
         // TODO add your handling code here:
-        PembayaranView lv = new PembayaranView();
+        PembayaranView lv = new PembayaranView(pegawai);
         this.dispose();
         lv.setVisible(true);
     }//GEN-LAST:event_pembayaranLabelMouseClicked
